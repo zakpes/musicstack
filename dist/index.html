@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <title>MusicStack</title>
+
+    <!-- Google Fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,700&display=swap" rel="stylesheet"> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<link href="index.d3dc7396aeabe31a95e9.css" rel="stylesheet"></head>
+
+<body>
+
+    <!-- HEADER -->
+<header id="home-header">
+
+    <div class="container">
+        
+    <!--  NAVBAR  -->
+    <nav class="navbar navbar-expand-md">
+
+        <a class="navbar-brand" href="index.html"><img class="img-fluid img-logo" src="imgs/vinyl-record.13a864b8904674651babda9a40a115cc.svg" alt="Logo">MusicStack</a>
+
+        <button class="navbar-toggler navbar-light ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto align-items-center">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home<span class="sr-only">(current)Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="marketplace.html">Marketplace<span class="sr-only">(current)Marketplace</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html">Register<span class="sr-only">(current)Register</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html">Sign In<span class="sr-only">(current)Sign In</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="wishlist.html">Wish List<span class="sr-only">(current)Wish List</span></a>
+                </li>
+                <li class="nav-item">
+                    <select class="form-control select-currency">
+                        <option value="usd">USD</option>
+                        <option value="eur">EUR</option>
+                    </select>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link shopping-cart" href="cart.html"><img class="img-fluid img-cart" src="imgs/cart.3c77a8425630b9493d7875a81adf0945.svg" alt="Shopping Cart"><span class="items-in-cart">3</span><span class="sr-only">(current)Shopping Cart<span></a>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    </div><!-- /.container -->
+
+</header>
+        
+    <!-- SECTION hero-->
+    <section id="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title-container">
+                        <h1 class="title">the best <span class="text-bold">vinyl records and cd marketplace</span> available on internet.</h1>
+                    </div>
+                    <div class="form-search-container">
+                        <form id="formSearch" class="form-inline form-search" action="">
+                            <input id="formSearchInput" class="form-control form-search-input" type="text" name="search" placeholder="Search">
+                            <button class="btn btn-search" type="submit" name="button"><img class="img-fluid img-search" src='imgs/search.0cd11c474b58b8e2f0e904d728632561.svg' alt='Search Icon'></button>
+                        </form>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#hero -->
+
+
+    <!-- SECTION rescordStores -->
+    <section id="recordStores">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="record-stores-title-container d-flex">
+                        <h3 class="record-stores-title mr-auto">Featured record stores</h3>
+                        <a href="#" class="see-all-link ml-auto">See All <img class="img-fluid img-arrow-r" src='imgs/arrow-right.da8f63a126c4101774782e6ad22a6f06.svg' alt='Right arrow'></a>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+
+            <div class="row">
+                <div class="col-12">
+                    <div id="sliderRecordStores">
+                        <div class="slider-cell">
+                            <a href="#">
+                                <div class="card record-store">
+                                    <img class="img-fluid" src='imgs/record-store-1.626c30fb43823e73996a33c1c65d06ef.png' alt=''>
+                                    <div class="card-body record-store-info">
+                                        <h5 class="record-store-name">Andy Grey Records</h5>
+                                        <h5 class="record-store-country">Germany</h5>
+                                        <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="slider-cell">
+                            <a href="#">
+                                <div class="card record-store">
+                                    <img class="img-fluid" src='imgs/record-store-2.23ec7db0696d3c944af318d73252f101.png' alt=''>
+                                    <div class="card-body record-store-info">
+                                        <h5 class="record-store-name">Andy Grey Records</h5>
+                                        <h5 class="record-store-country">Germany</h5>
+                                        <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="slider-cell">
+                            <a href="#">
+                                <div class="card record-store">
+                                    <img class="img-fluid" src='imgs/record-store-3.1f52e9b998702d07f3639a19778a7412.png' alt=''>
+                                    <div class="card-body record-store-info">
+                                        <h5 class="record-store-name">Andy Grey Records</h5>
+                                        <h5 class="record-store-country">Germany</h5>
+                                        <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="slider-cell">
+                            <a href="#">
+                                <div class="card record-store">
+                                    <img class="img-fluid" src='imgs/record-store-4.18ca8b49f12718f1f1d11b0d4edeb977.png' alt=''>
+                                    <div class="card-body record-store-info">
+                                        <h5 class="record-store-name">Andy Grey Records</h5>
+                                        <h5 class="record-store-country">Germany</h5>
+                                        <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="slider-cell">
+                            <a href="#">
+                                <div class="card record-store">
+                                    <img class="img-fluid" src='imgs/record-store-1.626c30fb43823e73996a33c1c65d06ef.png' alt=''>
+                                    <div class="card-body record-store-info">
+                                        <h5 class="record-store-name">Andy Grey Records</h5>
+                                        <h5 class="record-store-country">Germany</h5>
+                                        <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="slider-cell">
+                            <a href="#">
+                                <div class="card record-store">
+                                    <img class="img-fluid" src='imgs/c04820a1503fa3ee896c7e5e6e4e93ee@2x.7be7f91501002c0c28204c3ddaa50bf8.png' alt=''>
+                                    <div class="card-body record-store-info">
+                                        <h5 class="record-store-name">Andy Grey Records</h5>
+                                        <h5 class="record-store-country">Germany</h5>
+                                        <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.container -->
+    </section><!-- /#recordStores -->
+
+
+    <!-- SECTION main -->
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="form-advanced-search-container">
+                        <div class="listed-title-container">
+                            <h3 class="listed-title">Advanced search</h3>
+                        </div>
+                        <form id="formAdvancedSearch" class="form-advanced-search" action="">
+                            <select class="form-control" name="formats" id="selectFormat">
+                                <option value="all-formats">All Formats</option>
+                                <option value="format-1">Format 1</option>
+                                <option value="format-2">Format 2</option>
+                            </select>
+                            <input class="form-control" type="text" name="artist" id="inputArtist" placeholder="Artist">
+                            <input class="form-control" type="text" name="title" id="inputTitle" placeholder="Title">
+                            <input class="form-control" type="text" name="label" id="inputLabel" placeholder="Label">
+                            <input class="form-control" type="text" name="catnum" id="inputCatNum" placeholder="Cat Num">
+                            <input class="form-control" type="number" name="barcode" id="inputBarcode" placeholder="Barcode">
+                            <input class="form-control" type="text" name="genre" id="inputGenre" placeholder="Genre">
+                            <input class="form-control" type="text" name="country" id="inputCountry" placeholder="Country">
+
+                            <div class="form-group">
+                                <label for="inputSeller">Seller</label>
+                                <input type="text" class="form-control" id="inputSeller" placeholder="Seller Name">
+                                <select class="form-control" name="sellers-coutries" id="sellersCountries">
+                                    <option value="all-sellers-countries">All Sellers Countries</option>
+                                    <option value="usa">USA</option>
+                                    <option value="united-kingdom">United Kingdom</option>
+                                </select>
+                                <select class="form-control" name="sellers-coutries" id="sellersCountries">
+                                    <option value="all-sellers-countries">All Sellers Rating</option>
+                                    <option value="five-stars">Five Stars</option>
+                                    <option value="four-stars">Four Stars</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group price-container">
+                                <label for="priceInput">Price</label>
+
+                                <div class="price-container d-flex">
+                                    <input class="form-control price mr-auto" id="priceInputMin" type="text" name="min-price" placeholder="$50">
+                                    <span class="price-to mr-auto ml-auto">to</span>
+                                    <input class="form-control price ml-auto" id="priceInputMax" type="text" name="max-price" placeholder="$500">
+
+                                </div>
+                            </div>
+
+                            <button class="btn btn-advanced-search" type="submit" name="btn-advanced-search">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="listed-title-container">
+                                <h3 class="listed-title">Just listed</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="listed-record-container">
+                                
+                                <div class="card listed-record">
+                                    <a href="#">
+                                        <img src="imgs/listed-1.ad4ef8e4c079a689316be13f078f0ca5.png" class="img-fluid card-img-top" alt="...">
+                                        <div class="card-body listed-record-info">
+                                            <h5 class="card-title title">Andy Grey Records</h5>
+                                            <h5 class="card-title country">UK</h5>
+                                            <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="card listed-record">
+                                    <a href="#">
+                                        <img src="imgs/listed-2.4c6cdc1344e7db5f196247f8d538d562.png" class="img-fluid card-img-top" alt="...">
+                                        <div class="card-body listed-record-info">
+                                            <h5 class="card-title title">Andy Grey Records</h5>
+                                            <h5 class="card-title country">UK</h5>
+                                            <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="card listed-record">
+                                    <a href="#">
+                                        <img src="imgs/listed-3.cef901a329547fa6c46f62e8d9c98ab4.png" class="img-fluid card-img-top" alt="...">
+                                        <div class="card-body listed-record-info">
+                                            <h5 class="card-title title">Andy Grey Records</h5>
+                                            <h5 class="card-title country">UK</h5>
+                                            <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="card listed-record">
+                                    <a href="#">
+                                        <img src="imgs/listed-4.ebfc49ecf0af000ccc9cbb7d8d149571.png" class="img-fluid card-img-top" alt="...">
+                                        <div class="card-body listed-record-info">
+                                            <h5 class="card-title title">Andy Grey Records</h5>
+                                            <h5 class="card-title country">UK</h5>
+                                            <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="card listed-record">
+                                    <a href="#">
+                                        <img src="imgs/listed-5.febf0e38d72412feb60118d4506cdfe3.png" class="img-fluid card-img-top" alt="...">
+                                        <div class="card-body listed-record-info">
+                                            <h5 class="card-title title">Andy Grey Records</h5>
+                                            <h5 class="card-title country">UK</h5>
+                                            <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="card listed-record">
+                                    <a href="#">
+                                        <img src="imgs/listed-6.763a9a24a0289334f7760dbeb9c917ff.png" class="img-fluid card-img-top" alt="...">
+                                        <div class="card-body listed-record-info">
+                                            <h5 class="card-title title">Andy Grey Records</h5>
+                                            <h5 class="card-title country">UK</h5>
+                                            <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="card listed-record">
+                                    <a href="#">
+                                        <img src="imgs/listed-7.70ea37f268819c026117868c591b2c18.png" class="img-fluid card-img-top" alt="...">
+                                        <div class="card-body listed-record-info">
+                                            <h5 class="card-title title">Andy Grey Records</h5>
+                                            <h5 class="card-title country">UK</h5>
+                                            <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="card listed-record">
+                                    <a href="#">
+                                        <img src="imgs/listed-8.ab088abda889e2af20defdf1fb8c8988.png" class="img-fluid card-img-top" alt="...">
+                                        <div class="card-body listed-record-info">
+                                            <h5 class="card-title title">Andy Grey Records</h5>
+                                            <h5 class="card-title country">UK</h5>
+                                            <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="see-all-link-container d-flex">
+                                <a href="#" class="see-all-link ml-auto">See All <img class="img-fluid img-arrow-r" src='imgs/arrow-right.da8f63a126c4101774782e6ad22a6f06.svg' alt='Right arrow'></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#main -->
+
+
+    <!-- SECTION trusted -->
+    <section id="trusted">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="trusted-container">
+                        <h1 class="trusted-title">Trusted by record collectors for 22 years</h1>
+                        <p class="trusted-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil porro nisi at neque perspiciatis recusandae aperiam libero nulla veniam, excepturi error est explicabo illum obcaecati quis enim vero. Libero, distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quisquam quibusdam quos nihil a? Aspernatur a doloribus, nihil vel minima molestias! Quia distinctio earum nulla iusto sed atque aliquam.</p>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#trusted -->
+
+    <!-- FOOTER -->
+<footer id="footer">
+
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-12">
+                <div class="footer-links-container">
+                    <ul class="footer-links d-flex justify-content-center">
+                        <li>
+                            <a href="sell.html">Sell Your Records</a>
+                        </li>
+                        <li>
+                            <a href="terms.html">Terms of Use</a>
+                        </li>
+                        <li>
+                            <a href="privacy.html">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a href="help.html">Help</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="footer-social-container">
+                    <ul class="footer-links footer-social-links d-flex justify-content-center">
+                        <li>
+                            <a href="facebook.com"><img class="img-fluid img-social" src="imgs/facebook.ed6ea9bec1036d5bd68fb4624a71f880.svg" alt="Facebook"></a>
+                        </li>
+                        <li>
+                            <a href="instagram.com"><img class="img-fluid img-social" src="imgs/instagram.69f13ecdd348cee23dad103aa2edcd48.svg" alt="Instagram"></a>
+                        </li>
+                        <li>
+                            <a href="twitter.com"><img class="img-fluid img-social" src="imgs/twitter.9074c1a9a8b2cd68ee7fdaed4ef91f34.svg" alt="Twitter"></a>
+                        </li>
+                        <li>
+                            <a href="pinterest.com"><img class="img-fluid img-social" src="imgs/pinterest.4a3258004b8fd2398d4076f7de5f6a8b.svg" alt="Pinterest"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-copyright-container">
+                    <h5 class="footer-copyright">&copy; <span id="current-year">2019</span> MusicStack, LLC</h5>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.container -->
+
+</footer><!-- /footer -->
+
+<script type="text/javascript" src="index.5ca85bb022866fdc4cc9.bundle.js"></script></body>
+
+</html>
