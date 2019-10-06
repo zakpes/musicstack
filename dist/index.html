@@ -26,7 +26,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<link href="index.d3dc7396aeabe31a95e9.css" rel="stylesheet"></head>
+<link href="index.249d5db5a3e1087406ec.css" rel="stylesheet"></head>
 
 <body>
 
@@ -63,8 +63,8 @@
                 </li>
                 <li class="nav-item">
                     <select class="form-control select-currency">
-                        <option value="usd">USD</option>
-                        <option value="eur">EUR</option>
+                        <option value="usd">$ USD</option>
+                        <option value="eur">€ EUR</option>
                     </select>
                 </li>
                 <li class="nav-item">
@@ -89,7 +89,12 @@
                     </div>
                     <div class="form-search-container">
                         <form id="formSearch" class="form-inline form-search" action="">
-                            <input id="formSearchInput" class="form-control form-search-input" type="text" name="search" placeholder="Search">
+                            <select name="form-search-select" id="formSearchSelect" class="form-control form-search-select">
+                                <option value="artist-search">Artist Search</option>
+                                <option value="title-search">Title Search</option>
+                                <option value="label-search">Label Search</option>
+                            </select>
+                            <input id="formSearchInput" class="form-control form-search-input" type="text" name="search" placeholder="">
                             <button class="btn btn-search" type="submit" name="button"><img class="img-fluid img-search" src='imgs/search.0cd11c474b58b8e2f0e904d728632561.svg' alt='Search Icon'></button>
                         </form>
                     </div>
@@ -116,12 +121,15 @@
                     <div id="sliderRecordStores">
                         <div class="slider-cell">
                             <a href="#">
-                                <div class="card record-store">
+                                <div class="record-store">
                                     <img class="img-fluid" src='imgs/record-store-1.626c30fb43823e73996a33c1c65d06ef.png' alt=''>
-                                    <div class="card-body record-store-info">
+                                    <div class="record-store-info">
                                         <h5 class="record-store-name">Andy Grey Records</h5>
-                                        <h5 class="record-store-country">Germany</h5>
-                                        <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                        <div class="d-flex">
+                                            <h5 class="record-store-country mr-auto">Germany</h5>
+                                            <h5 class="card-title record-store-items ml-auto"><span class="number-of-items">16,894</span> items</h5>
+
+                                        </div>
                                     </div>
                                     
                                 </div>
@@ -130,12 +138,15 @@
                         </div>
                         <div class="slider-cell">
                             <a href="#">
-                                <div class="card record-store">
+                                <div class="record-store">
                                     <img class="img-fluid" src='imgs/record-store-2.23ec7db0696d3c944af318d73252f101.png' alt=''>
-                                    <div class="card-body record-store-info">
+                                    <div class="record-store-info">
                                         <h5 class="record-store-name">Andy Grey Records</h5>
-                                        <h5 class="record-store-country">Germany</h5>
-                                        <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                        <div class="d-flex">
+                                            <h5 class="record-store-country mr-auto">Germany</h5>
+                                            <h5 class="card-title record-store-items ml-auto"><span class="number-of-items">16,894</span> items</h5>
+
+                                        </div>
                                     </div>
                                     
                                 </div>
@@ -144,12 +155,15 @@
                         </div>
                         <div class="slider-cell">
                             <a href="#">
-                                <div class="card record-store">
+                                <div class="record-store">
                                     <img class="img-fluid" src='imgs/record-store-3.1f52e9b998702d07f3639a19778a7412.png' alt=''>
-                                    <div class="card-body record-store-info">
+                                    <div class="record-store-info">
                                         <h5 class="record-store-name">Andy Grey Records</h5>
-                                        <h5 class="record-store-country">Germany</h5>
-                                        <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                        <div class="d-flex">
+                                            <h5 class="record-store-country mr-auto">Germany</h5>
+                                            <h5 class="card-title record-store-items ml-auto"><span class="number-of-items">16,894</span> items</h5>
+
+                                        </div>
                                     </div>
                                     
                                 </div>
@@ -158,13 +172,15 @@
                         </div>
                         <div class="slider-cell">
                             <a href="#">
-                                <div class="card record-store">
+                                <div class="record-store">
                                     <img class="img-fluid" src='imgs/record-store-4.18ca8b49f12718f1f1d11b0d4edeb977.png' alt=''>
-                                    <div class="card-body record-store-info">
+                                    <div class="record-store-info">
                                         <h5 class="record-store-name">Andy Grey Records</h5>
-                                        <h5 class="record-store-country">Germany</h5>
-                                        <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
-                                    </div>
+                                        <div class="d-flex">
+                                            <h5 class="record-store-country mr-auto">Germany</h5>
+                                            <h5 class="card-title record-store-items ml-auto"><span class="number-of-items">16,894</span> items</h5>
+
+                                        </div></div>
                                     
                                 </div>
                             </a>
@@ -172,12 +188,15 @@
                         </div>
                         <div class="slider-cell">
                             <a href="#">
-                                <div class="card record-store">
+                                <div class="record-store">
                                     <img class="img-fluid" src='imgs/record-store-1.626c30fb43823e73996a33c1c65d06ef.png' alt=''>
-                                    <div class="card-body record-store-info">
+                                    <div class="record-store-info">
                                         <h5 class="record-store-name">Andy Grey Records</h5>
-                                        <h5 class="record-store-country">Germany</h5>
-                                        <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                        <div class="d-flex">
+                                            <h5 class="record-store-country mr-auto">Germany</h5>
+                                            <h5 class="card-title record-store-items ml-auto"><span class="number-of-items">16,894</span> items</h5>
+
+                                        </div>
                                     </div>
                                     
                                 </div>
@@ -186,12 +205,15 @@
                         </div>
                         <div class="slider-cell">
                             <a href="#">
-                                <div class="card record-store">
+                                <div class="record-store">
                                     <img class="img-fluid" src='imgs/c04820a1503fa3ee896c7e5e6e4e93ee@2x.7be7f91501002c0c28204c3ddaa50bf8.png' alt=''>
-                                    <div class="card-body record-store-info">
+                                    <div class="record-store-info">
                                         <h5 class="record-store-name">Andy Grey Records</h5>
-                                        <h5 class="record-store-country">Germany</h5>
-                                        <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
+                                        <div class="d-flex">
+                                            <h5 class="record-store-country mr-auto">Germany</h5>
+                                            <h5 class="card-title record-store-items ml-auto"><span class="number-of-items">16,894</span> items</h5>
+
+                                        </div>
                                     </div>
                                     
                                 </div>
@@ -209,7 +231,7 @@
     <section id="main">
         <div class="container">
             <div class="row">
-                <div class="col-3">
+                <div class="col-12 col-md-3">
                     <div class="form-advanced-search-container">
                         <div class="listed-title-container">
                             <h3 class="listed-title">Advanced search</h3>
@@ -224,7 +246,7 @@
                             <input class="form-control" type="text" name="title" id="inputTitle" placeholder="Title">
                             <input class="form-control" type="text" name="label" id="inputLabel" placeholder="Label">
                             <input class="form-control" type="text" name="catnum" id="inputCatNum" placeholder="Cat Num">
-                            <input class="form-control" type="number" name="barcode" id="inputBarcode" placeholder="Barcode">
+                            <input class="form-control" type="text" name="barcode" id="inputBarcode" placeholder="Barcode">
                             <input class="form-control" type="text" name="genre" id="inputGenre" placeholder="Genre">
                             <input class="form-control" type="text" name="country" id="inputCountry" placeholder="Country">
 
@@ -246,10 +268,10 @@
                             <div class="form-group price-container">
                                 <label for="priceInput">Price</label>
 
-                                <div class="price-container d-flex">
-                                    <input class="form-control price mr-auto" id="priceInputMin" type="text" name="min-price" placeholder="$50">
+                                <div class="price-container d-flex justify-content-space-between">
+                                    <input class="form-control price" id="priceInputMin" type="text" name="min-price" placeholder="$50">
                                     <span class="price-to mr-auto ml-auto">to</span>
-                                    <input class="form-control price ml-auto" id="priceInputMax" type="text" name="max-price" placeholder="$500">
+                                    <input class="form-control price" id="priceInputMax" type="text" name="max-price" placeholder="$500">
 
                                 </div>
                             </div>
@@ -258,7 +280,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-9">
+                <div class="col-12 col-md-9">
                     <div class="row">
                         <div class="col-12">
                             <div class="listed-title-container">
@@ -270,10 +292,10 @@
                         <div class="col-12">
                             <div class="listed-record-container">
                                 
-                                <div class="card listed-record">
+                                <div class="listed-record">
                                     <a href="#">
                                         <img src="imgs/listed-1.ad4ef8e4c079a689316be13f078f0ca5.png" class="img-fluid card-img-top" alt="...">
-                                        <div class="card-body listed-record-info">
+                                        <div class="listed-record-info">
                                             <h5 class="card-title title">Andy Grey Records</h5>
                                             <h5 class="card-title country">UK</h5>
                                             <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
@@ -281,10 +303,10 @@
                                     </a>
                                 </div>
                                 
-                                <div class="card listed-record">
+                                <div class="listed-record">
                                     <a href="#">
                                         <img src="imgs/listed-2.4c6cdc1344e7db5f196247f8d538d562.png" class="img-fluid card-img-top" alt="...">
-                                        <div class="card-body listed-record-info">
+                                        <div class="listed-record-info">
                                             <h5 class="card-title title">Andy Grey Records</h5>
                                             <h5 class="card-title country">UK</h5>
                                             <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
@@ -292,10 +314,10 @@
                                     </a>
                                 </div>
                                 
-                                <div class="card listed-record">
+                                <div class="listed-record">
                                     <a href="#">
                                         <img src="imgs/listed-3.cef901a329547fa6c46f62e8d9c98ab4.png" class="img-fluid card-img-top" alt="...">
-                                        <div class="card-body listed-record-info">
+                                        <div class="listed-record-info">
                                             <h5 class="card-title title">Andy Grey Records</h5>
                                             <h5 class="card-title country">UK</h5>
                                             <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
@@ -303,10 +325,10 @@
                                     </a>
                                 </div>
                                 
-                                <div class="card listed-record">
+                                <div class="listed-record">
                                     <a href="#">
                                         <img src="imgs/listed-4.ebfc49ecf0af000ccc9cbb7d8d149571.png" class="img-fluid card-img-top" alt="...">
-                                        <div class="card-body listed-record-info">
+                                        <div class="listed-record-info">
                                             <h5 class="card-title title">Andy Grey Records</h5>
                                             <h5 class="card-title country">UK</h5>
                                             <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
@@ -314,10 +336,10 @@
                                     </a>
                                 </div>
                                 
-                                <div class="card listed-record">
+                                <div class="listed-record">
                                     <a href="#">
                                         <img src="imgs/listed-5.febf0e38d72412feb60118d4506cdfe3.png" class="img-fluid card-img-top" alt="...">
-                                        <div class="card-body listed-record-info">
+                                        <div class="listed-record-info">
                                             <h5 class="card-title title">Andy Grey Records</h5>
                                             <h5 class="card-title country">UK</h5>
                                             <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
@@ -325,10 +347,10 @@
                                     </a>
                                 </div>
                                 
-                                <div class="card listed-record">
+                                <div class="listed-record">
                                     <a href="#">
                                         <img src="imgs/listed-6.763a9a24a0289334f7760dbeb9c917ff.png" class="img-fluid card-img-top" alt="...">
-                                        <div class="card-body listed-record-info">
+                                        <div class="listed-record-info">
                                             <h5 class="card-title title">Andy Grey Records</h5>
                                             <h5 class="card-title country">UK</h5>
                                             <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
@@ -336,10 +358,10 @@
                                     </a>
                                 </div>
                                 
-                                <div class="card listed-record">
+                                <div class="listed-record">
                                     <a href="#">
                                         <img src="imgs/listed-7.70ea37f268819c026117868c591b2c18.png" class="img-fluid card-img-top" alt="...">
-                                        <div class="card-body listed-record-info">
+                                        <div class="listed-record-info">
                                             <h5 class="card-title title">Andy Grey Records</h5>
                                             <h5 class="card-title country">UK</h5>
                                             <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
@@ -347,10 +369,10 @@
                                     </a>
                                 </div>
                                 
-                                <div class="card listed-record">
+                                <div class="listed-record">
                                     <a href="#">
                                         <img src="imgs/listed-8.ab088abda889e2af20defdf1fb8c8988.png" class="img-fluid card-img-top" alt="...">
-                                        <div class="card-body listed-record-info">
+                                        <div class="listed-record-info">
                                             <h5 class="card-title title">Andy Grey Records</h5>
                                             <h5 class="card-title country">UK</h5>
                                             <h5 class="card-title record-store-items"><span class="number-of-items">16,894</span> items</h5>
