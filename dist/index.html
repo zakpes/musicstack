@@ -26,9 +26,11 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<link href="index.a76e3fab0f6af183a3b2.css" rel="stylesheet"></head>
+<link href="index.1f37b2d213713de04c73.css" rel="stylesheet"></head>
 
-<body>
+<body id="indexBody">
+
+    <div class="form-advanced-overlay"></div>
 
     <!-- HEADER -->
 <header id="home-header">
@@ -39,7 +41,8 @@
     <nav class="navbar navbar-expand-lg fixed-top bg-light justify-content-start">
 
         <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <div class="menu icon"></div>
         </button>
 
         <a class="navbar-brand" href="index.html"><img class="img-fluid img-logo" src="imgs/vinyl-record.13a864b8904674651babda9a40a115cc.svg" alt="Logo">MusicStack</a>
@@ -87,7 +90,7 @@
                     <div class="title-container">
                         <h1 class="title">the best <span class="text-bold">vinyl records and cd marketplace</span> available on internet.</h1>
                     </div>
-                    <div class="form-search-container">
+                    <div id="formSearchContainer" class="form-search-container">
                         <form id="formSearch" class="form-inline form-search" action="">
                             <select name="form-search-select" id="formSearchSelect" class="form-control form-search-select">
                                 <option value="artist-search">Artist Search</option>
@@ -97,6 +100,7 @@
                             <input id="formSearchInput" class="form-control form-search-input" type="text" name="search" placeholder="">
                             <button class="btn btn-search" type="submit" name="button"><img class="img-fluid img-search" src='imgs/search.0cd11c474b58b8e2f0e904d728632561.svg' alt='Search Icon'></button>
                         </form>
+                        <button id="btnOpenForm" class="btn advanced-search-link d-block d-md-none">Advanced search <img class="img-fluid img-arrow-r-white" src="imgs/arrow-right-white.2a82467c9a9e2b1fd3d42dde1ff9347a.svg" ></button>
                     </div>
                 </div>
             </div><!-- /.row -->
@@ -231,8 +235,11 @@
     <section id="main">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-3 d-none d-md-block">
+                <div class="col-12 col-md-3">
                     <div class="form-advanced-search-container">
+                        <div class="btn-x-container d-block d-md-none">
+                            <button id="btnCloseForm" class="btn btn-x" type="button" name="button"><div class="icon close"></div></button>
+                        </div>
                         <div class="listed-title-container">
                             <h3 class="listed-title">Advanced search</h3>
                         </div>
@@ -499,6 +506,6 @@
 
 </footer><!-- /footer -->
 
-<script type="text/javascript" src="index.1fe3d1cdaa815ccddf6a.bundle.js"></script></body>
+<script type="text/javascript" src="index.2671873616ec9f20a07b.bundle.js"></script></body>
 
 </html>
