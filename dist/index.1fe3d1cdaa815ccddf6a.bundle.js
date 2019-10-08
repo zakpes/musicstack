@@ -21557,8 +21557,8 @@ var js_default = /*#__PURE__*/__webpack_require__.n(js);
 
 // })(jQuery);
 
-let sliderRecordStores = document.querySelector('#sliderRecordStores');
-let flkty = new js_default.a( sliderRecordStores, {
+const sliderRecordStores = document.querySelector('#sliderRecordStores');
+const flkty = new js_default.a( sliderRecordStores, {
     // options
     cellAlign: 'left',
     contain: true,
@@ -21567,8 +21567,40 @@ let flkty = new js_default.a( sliderRecordStores, {
     dragThreshold: 10
 });
 
+//fix flickity swiping scrollng on mobile
+flkty.on( 'dragStart.flickity', function( event, pointer ) {
+    document.ontouchmove = function (e) {
+        e.preventDefault();
+    }
+});
 
+flkty.on( 'dragEnd.flickity', function( event, pointer ) {
+    document.ontouchmove = function (e) {
+        return true;
+    }
+});
 
+// fix flexbox last row
+const listedRecordContainer = document.querySelector(".listed-record-container");
+const emptyDiv1 = document.createElement("div");
+const emptyDiv2 = document.createElement("div");
+const emptyDiv3 = document.createElement("div");
+const emptyDiv4 = document.createElement("div");
+emptyDiv1.className = "empty-space-filler";
+emptyDiv2.className = "empty-space-filler";
+emptyDiv3.className = "empty-space-filler";
+emptyDiv4.className = "empty-space-filler";
+listedRecordContainer.append(emptyDiv1);
+listedRecordContainer.append(emptyDiv2);
+listedRecordContainer.append(emptyDiv3);
+listedRecordContainer.append(emptyDiv4);
+
+// window.onload = () => {
+// for (let i = 0; i < 5; i++) {
+//     const emptyDiv = document.createElement("div");
+//     listedRecordContainer.append(emptyDiv);
+// }
+// }
 // CONCATENATED MODULE: ./src/page-index/index.js
 
 
