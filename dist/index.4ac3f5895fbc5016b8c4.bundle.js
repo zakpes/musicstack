@@ -21586,7 +21586,8 @@ const flktyTrustpilot = new js_default.a( sliderTrustpilot, {
     contain: true,
     wrapAround: true,
     pageDots: false,
-    touchVerticalScroll: false
+    touchVerticalScroll: false,
+    autoPlay: true
 })
 
 //fix flickity swiping scrollng on mobile
@@ -21625,7 +21626,7 @@ jquery_default()(window).scroll(function () {
     let windowW = $window.width();
     let $btnAdvancedSearch = jquery_default()("#hero .form-search-container .advanced-search-link")
 
-    console.log($formSearch.offset().top - $window.scrollTop());
+    // console.log($formSearch.offset().top - $window.scrollTop());
     
 
     if (windowW <= 991) {
@@ -21663,6 +21664,39 @@ jquery_default()(window).scroll(function () {
 //         listedRecordContainer.append(emptyDiv);
 //     }
 // }
+
+// fade in on scroll
+const sectionTrusted = document.querySelector("#trusted");
+const trustedTitle = document.querySelector(".trusted-title");
+const trustedText = document.querySelector(".trusted-text");
+const sectionTrustpilot = document.querySelector("#trustpilotReviews");
+
+const options = {
+    root: null,  // viewport or other element
+    threshold: 0.5, // 0 to 1
+    // rootMargin: "-100px 100px 100px 100px"
+};
+
+const observerTrusted = new IntersectionObserver(function
+    (entries, observer) {
+        entries.forEach(entry => {
+            console.log(entry.target);
+            entry.target.classList.toggle("fade-in");
+            trustedTitle.classList.toggle("slide-in");
+            trustedText.classList.toggle("slide-in");
+        });
+}, options);
+
+const observerTrustpilot = new IntersectionObserver(function
+    (entries, observer) {
+        entries.forEach(entry => {
+            console.log(entry.target);
+            sliderTrustpilot.classList.toggle("scale-up");
+        });
+}, {threshold: 0.5});
+
+observerTrusted.observe(sectionTrusted);
+observerTrustpilot.observe(sectionTrustpilot);
 // CONCATENATED MODULE: ./src/page-index/index.js
 
 
