@@ -21665,11 +21665,14 @@ jquery_default()(window).scroll(function () {
 //     }
 // }
 
-// fade in on scroll
+// intersection observer animations
 const sectionTrusted = document.querySelector("#trusted");
 const trustedTitle = document.querySelector(".trusted-title");
 const trustedText = document.querySelector(".trusted-text");
 const sectionTrustpilot = document.querySelector("#trustpilotReviews");
+let formSearch = document.querySelector("#formSearchContainer");
+let main_$btnAdvancedSearch = jquery_default()("#hero .form-search-container .advanced-search-link")
+const titleContainer = document.querySelector(".title-container");
 
 const options = {
     root: null,  // viewport or other element
@@ -21695,8 +21698,25 @@ const observerTrustpilot = new IntersectionObserver(function
         });
 }, {threshold: 0.5});
 
+// const observerFormSearch = new IntersectionObserver(function
+//     (entries, observer) {
+//         entries.forEach(entry => {
+            
+//             if (!entry.isIntersecting) {
+//                 // formSearch.addClass("form-search-sticky").children(".form-search").addClass("width-76");
+//                 formSearch.classList.add("form-search-sticky");
+//                 // $btnAdvancedSearch.addClass("btn-sticky").children("svg").addClass("dark-grey");
+//             } else {
+//                 // formSearch.removeClass("form-search-sticky").children(".form-search").removeClass("width-76");
+//                 formSearch.classList.remove("form-search-sticky");
+//                 // $btnAdvancedSearch.removeClass("btn-sticky").children("svg").removeClass("dark-grey");
+//             }
+//         });
+// }, {rootMargin: "-78px 0px 0px 0px"});
+
 observerTrusted.observe(sectionTrusted);
 observerTrustpilot.observe(sectionTrustpilot);
+// observerFormSearch.observe(titleContainer);
 // CONCATENATED MODULE: ./src/page-index/index.js
 
 
