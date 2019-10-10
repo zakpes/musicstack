@@ -10937,7 +10937,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Flickity main
     // AMD
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
       __webpack_require__(3),
-      __webpack_require__(5),
+      __webpack_require__(6),
       __webpack_require__(1),
       __webpack_require__(12),
       __webpack_require__(13),
@@ -12253,6 +12253,46 @@ return Unipointer;
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ * Flickity v2.2.1
+ * Touch, responsive, flickable carousels
+ *
+ * Licensed GPLv3 for open source use
+ * or Flickity Commercial License for commercial use
+ *
+ * https://flickity.metafizzy.co
+ * Copyright 2015-2019 Metafizzy
+ */
+
+( function( window, factory ) {
+  // universal module definition
+  /* jshint strict: false */
+  if ( true ) {
+    // AMD
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
+      __webpack_require__(2),
+      __webpack_require__(15),
+      __webpack_require__(17),
+      __webpack_require__(18),
+      __webpack_require__(19),
+      __webpack_require__(20),
+      __webpack_require__(21)
+    ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {}
+
+})( window, function factory( Flickity ) {
+  /*jshint strict: false*/
+  return Flickity;
+});
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  * getSize v2.0.3
  * measure size of elements
@@ -12457,46 +12497,6 @@ function getSize( elem ) {
 
 return getSize;
 
-});
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * Flickity v2.2.1
- * Touch, responsive, flickable carousels
- *
- * Licensed GPLv3 for open source use
- * or Flickity Commercial License for commercial use
- *
- * https://flickity.metafizzy.co
- * Copyright 2015-2019 Metafizzy
- */
-
-( function( window, factory ) {
-  // universal module definition
-  /* jshint strict: false */
-  if ( true ) {
-    // AMD
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-      __webpack_require__(2),
-      __webpack_require__(15),
-      __webpack_require__(17),
-      __webpack_require__(18),
-      __webpack_require__(19),
-      __webpack_require__(20),
-      __webpack_require__(21)
-    ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else {}
-
-})( window, function factory( Flickity ) {
-  /*jshint strict: false*/
-  return Flickity;
 });
 
 
@@ -19653,7 +19653,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Flickity.Cell
   if ( true ) {
     // AMD
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-      __webpack_require__(5)
+      __webpack_require__(6)
     ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( getSize ) {
       return factory( window, getSize );
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
@@ -21532,7 +21532,7 @@ var jquery_default = /*#__PURE__*/__webpack_require__.n(jquery);
 var bootstrap = __webpack_require__(8);
 
 // EXTERNAL MODULE: ./node_modules/flickity/js/index.js
-var js = __webpack_require__(6);
+var js = __webpack_require__(5);
 var js_default = /*#__PURE__*/__webpack_require__.n(js);
 
 // CONCATENATED MODULE: ./src/js/main.js
@@ -21558,6 +21558,8 @@ var js_default = /*#__PURE__*/__webpack_require__.n(js);
 
 // })(jQuery);
 
+// navbar brand img rotate on hover
+
 // navbar toggle hamburger btn
 jquery_default()('.navbar-toggler').click(function(){
     jquery_default()(this).children(".icon")
@@ -21575,6 +21577,17 @@ const flkty = new js_default.a( sliderRecordStores, {
     pageDots: false,
     touchVerticalScroll: false
 });
+
+// trustpilot slider
+const sliderTrustpilot = document.querySelector("#sliderTrustpilot");
+const flktyTrustpilot = new js_default.a( sliderTrustpilot, {
+    // options
+    cellAlign: "left",
+    contain: true,
+    wrapAround: true,
+    pageDots: false,
+    touchVerticalScroll: false
+})
 
 //fix flickity swiping scrollng on mobile
 // flkty.on( 'dragStart.flickity', function( event, pointer ) {
@@ -21618,34 +21631,37 @@ jquery_default()(window).scroll(function () {
     if (windowW <= 991) {
         if ($formSearchTop + 160 <= wScroll) {
             $formSearch.addClass("form-search-sticky").children(".form-search").addClass("width-76");
-            $btnAdvancedSearch.addClass("btn-sticky").children(".img-arrow-r-white").addClass("dark-grey");
+            $btnAdvancedSearch.addClass("btn-sticky").children("svg").addClass("dark-grey");
         } else if ($formSearchTop + 160 > wScroll) {
             $formSearch.removeClass("form-search-sticky").children(".form-search").removeClass("width-76");
-            $btnAdvancedSearch.removeClass("btn-sticky").children(".img-arrow-r-white").removeClass("dark-grey");
+            $btnAdvancedSearch.removeClass("btn-sticky").children("svg").removeClass("dark-grey");
         }
     }
 });
 
-// fix flexbox last row
-const listedRecordContainer = document.querySelector(".listed-record-container");
-const emptyDiv1 = document.createElement("div");
-const emptyDiv2 = document.createElement("div");
-const emptyDiv3 = document.createElement("div");
-const emptyDiv4 = document.createElement("div");
-emptyDiv1.className = "empty-space-filler";
-emptyDiv2.className = "empty-space-filler";
-emptyDiv3.className = "empty-space-filler";
-emptyDiv4.className = "empty-space-filler";
-listedRecordContainer.append(emptyDiv1);
-listedRecordContainer.append(emptyDiv2);
-listedRecordContainer.append(emptyDiv3);
-listedRecordContainer.append(emptyDiv4);
+// intersection observer for sticky advanced search
+// let observer = new IntersectionObserver(
+//     (entries, observer) => {
+//         entries.forEach(entry => {
+
+//         });
+//     },
+//     {rootMargin: "0 0 -100px 0" }
+// );
+
+// fix flexbox last row left align
+// create empty elements in the last row
+// const listedRecordContainer = document.querySelector(".listed-record-container");
 
 // window.onload = () => {
-// for (let i = 0; i < 5; i++) {
-//     const emptyDiv = document.createElement("div");
-//     listedRecordContainer.append(emptyDiv);
-// }
+
+//     for (let i = 0; i < 4; i++) {
+//         console.log(`div ${[i]} created`);
+        
+//         let emptyDiv = document.createElement("div");
+//         emptyDiv.className = "empty-space-filler";
+//         listedRecordContainer.append(emptyDiv);
+//     }
 // }
 // CONCATENATED MODULE: ./src/page-index/index.js
 
