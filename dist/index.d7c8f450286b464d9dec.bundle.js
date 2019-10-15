@@ -21617,28 +21617,28 @@ jquery_default()("#btnCloseForm").click(function() {
 });
 
 // stick advanced search to top when scrolling on mobile
-jquery_default()(window).scroll(function () {
+// $(window).scroll(function () {
 
-    let $window = jquery_default()(window);
-    let $formSearch = jquery_default()("#formSearchContainer");
-    let $formSearchTop = $formSearch.offset().top - $window.scrollTop();
-    let wScroll = $window.scrollTop();
-    let windowW = $window.width();
-    let $btnAdvancedSearch = jquery_default()("#hero .form-search-container .advanced-search-link")
+//     let $window = $(window);
+//     let $formSearch = $("#formSearchContainer");
+//     let $formSearchTop = $formSearch.offset().top - $window.scrollTop();
+//     let wScroll = $window.scrollTop();
+//     let windowW = $window.width();
+//     let $btnAdvancedSearch = $("#hero .form-search-container .advanced-search-link")
 
-    // console.log($formSearch.offset().top - $window.scrollTop());
+//     // console.log($formSearch.offset().top - $window.scrollTop());
     
 
-    if (windowW <= 991) {
-        if ($formSearchTop + 160 <= wScroll) {
-            $formSearch.addClass("form-search-sticky").children(".form-search").addClass("width-76");
-            $btnAdvancedSearch.addClass("btn-sticky").children("svg").addClass("dark-grey");
-        } else if ($formSearchTop + 160 > wScroll) {
-            $formSearch.removeClass("form-search-sticky").children(".form-search").removeClass("width-76");
-            $btnAdvancedSearch.removeClass("btn-sticky").children("svg").removeClass("dark-grey");
-        }
-    }
-});
+//     if (windowW <= 991) {
+//         if ($formSearchTop + 160 <= wScroll) {
+//             $formSearch.addClass("form-search-sticky").children(".form-search").addClass("width-76");
+//             $btnAdvancedSearch.addClass("btn-sticky").children("svg").addClass("dark-grey");
+//         } else if ($formSearchTop + 160 > wScroll) {
+//             $formSearch.removeClass("form-search-sticky").children(".form-search").removeClass("width-76");
+//             $btnAdvancedSearch.removeClass("btn-sticky").children("svg").removeClass("dark-grey");
+//         }
+//     }
+// });
 
 // intersection observer for sticky advanced search
 // let observer = new IntersectionObserver(
@@ -21670,9 +21670,13 @@ const sectionTrusted = document.querySelector("#trusted");
 const trustedTitle = document.querySelector(".trusted-title");
 const trustedText = document.querySelector(".trusted-text");
 const sectionTrustpilot = document.querySelector("#trustpilotReviews");
-let formSearch = document.querySelector("#formSearchContainer");
-let main_$btnAdvancedSearch = jquery_default()("#hero .form-search-container .advanced-search-link")
+const formSearchContainer = document.querySelector("#formSearchContainer");
+const formSearch = document.querySelector(".form-search");
+const btnAdvancedSearch = document.querySelector("#btnOpenForm");
+const btnAdvancedSearchArrow = document.querySelector("#btnOpenForm svg");
 const titleContainer = document.querySelector(".title-container");
+const advancedSearchSelect = document.querySelector("#formSearchSelect");
+const advancedSearchInput = document.querySelector("#formSearchInput");
 
 const options = {
     root: null,  // viewport or other element
@@ -21698,25 +21702,31 @@ const observerTrustpilot = new IntersectionObserver(function
         });
 }, {threshold: 0.5});
 
-// const observerFormSearch = new IntersectionObserver(function
-//     (entries, observer) {
-//         entries.forEach(entry => {
+const observerFormSearch = new IntersectionObserver(function
+    (entries, observer) {
+        entries.forEach(entry => {
             
-//             if (!entry.isIntersecting) {
-//                 // formSearch.addClass("form-search-sticky").children(".form-search").addClass("width-76");
-//                 formSearch.classList.add("form-search-sticky");
-//                 // $btnAdvancedSearch.addClass("btn-sticky").children("svg").addClass("dark-grey");
-//             } else {
-//                 // formSearch.removeClass("form-search-sticky").children(".form-search").removeClass("width-76");
-//                 formSearch.classList.remove("form-search-sticky");
-//                 // $btnAdvancedSearch.removeClass("btn-sticky").children("svg").removeClass("dark-grey");
-//             }
-//         });
-// }, {rootMargin: "-78px 0px 0px 0px"});
+            if (!entry.isIntersecting) {
+                formSearchContainer.classList.add("form-search-sticky");
+                formSearch.classList.add("width-76", "form-search-sticky");
+                btnAdvancedSearch.classList.add("btn-sticky");
+                btnAdvancedSearchArrow.classList.add("dark-grey");
+                advancedSearchSelect.classList.add("no-border-radius");
+                advancedSearchInput.classList.add("no-border-radius");
+            } else {
+                formSearchContainer.classList.remove("form-search-sticky");
+                formSearch.classList.remove("width-76", "form-search-sticky");
+                btnAdvancedSearch.classList.remove("btn-sticky");
+                btnAdvancedSearchArrow.classList.remove("dark-grey");
+                advancedSearchSelect.classList.remove("no-border-radius");
+                advancedSearchInput.classList.remove("no-border-radius");
+            }
+        });
+}, {rootMargin: "-78px 0px 0px 0px"});
 
 observerTrusted.observe(sectionTrusted);
 observerTrustpilot.observe(sectionTrustpilot);
-// observerFormSearch.observe(titleContainer);
+observerFormSearch.observe(titleContainer);
 // CONCATENATED MODULE: ./src/page-index/index.js
 
 
