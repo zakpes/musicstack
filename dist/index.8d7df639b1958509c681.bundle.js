@@ -21607,13 +21607,13 @@ const flktyTrustpilot = new js_default.a( sliderTrustpilot, {
 jquery_default()("#btnOpenForm").click(function() {
     jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
     jquery_default()(".form-advanced-overlay").fadeToggle();
-    jquery_default()(".no-scroll-body-wrapper").toggleClass("modal-open");
+    jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
 });
 
 jquery_default()("#btnCloseForm").click(function() {
     jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
     jquery_default()(".form-advanced-overlay").fadeToggle();
-    jquery_default()(".no-scroll-body-wrapper").toggleClass("modal-open");
+    jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
 });
 
 // stick advanced search to top when scrolling on mobile
@@ -21722,7 +21722,7 @@ const observerFormSearch = new IntersectionObserver(function
                 advancedSearchInput.classList.remove("no-border-radius");
             }
         });
-}, {rootMargin: "-78px 0px 0px 0px"});
+}, {rootMargin: "-48px 0px 0px 0px"});
 
 observerTrusted.observe(sectionTrusted);
 observerTrustpilot.observe(sectionTrustpilot);
