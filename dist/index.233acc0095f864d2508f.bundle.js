@@ -21607,13 +21607,13 @@ const flktyTrustpilot = new js_default.a( sliderTrustpilot, {
 jquery_default()("#btnOpenForm").click(function() {
     jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
     jquery_default()(".form-advanced-overlay").fadeToggle();
-    jquery_default()("#indexBody").toggleClass("modal-open");
+    jquery_default()(".no-scroll-body-wrapper").toggleClass("modal-open");
 });
 
 jquery_default()("#btnCloseForm").click(function() {
     jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
     jquery_default()(".form-advanced-overlay").fadeToggle();
-    jquery_default()("#indexBody").toggleClass("modal-open");
+    jquery_default()(".no-scroll-body-wrapper").toggleClass("modal-open");
 });
 
 // stick advanced search to top when scrolling on mobile
