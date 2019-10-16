@@ -21727,6 +21727,17 @@ const observerFormSearch = new IntersectionObserver(function
 observerTrusted.observe(sectionTrusted);
 observerTrustpilot.observe(sectionTrustpilot);
 observerFormSearch.observe(titleContainer);
+
+// hide loader on window load
+const loader = document.querySelector(".loader-container");
+
+window.onload = function() {
+    loader.classList.add("hide-loader");
+
+    setTimeout(function() {
+        loader.style.display = "none";
+    }, 500);
+};
 // CONCATENATED MODULE: ./src/page-index/index.js
 
 
