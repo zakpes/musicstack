@@ -26,7 +26,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<link href="index.fed758429fe07cf1d0ec.css" rel="stylesheet"></head>
+<link href="index.4748266e0f25e93cbe73.css" rel="stylesheet"></head>
 
 <body id="indexBody">
 
@@ -251,7 +251,7 @@
                         <div class="listed-title-container">
                             <h3 class="listed-title">Advanced search</h3>
                         </div>
-                        <form id="formAdvancedSearch" class="form-advanced-search" action="">
+                        <!-- <form id="formAdvancedSearch" class="form-advanced-search" action="">
                             <select class="form-control" name="formats" id="selectFormat">
                                 <option value="all-formats">All Formats</option>
                                 <option value="format-1">Format 1</option>
@@ -278,6 +278,81 @@
                                     <option value="five-stars">Five Stars</option>
                                     <option value="four-stars">Four Stars</option>
                                 </select>
+                            </div>
+
+                            <div class="form-group price-container">
+                                <label for="priceInput">Price</label>
+
+                                <div class="price-container d-flex justify-content-space-between">
+                                    <input class="form-control price" id="priceInputMin" type="text" name="min-price" placeholder="$50">
+                                    <span class="price-to mr-auto ml-auto">to</span>
+                                    <input class="form-control price" id="priceInputMax" type="text" name="max-price" placeholder="$500">
+
+                                </div>
+                            </div>
+
+                            <button class="btn btn-advanced-search" type="submit" name="btn-advanced-search">Search</button>
+                        </form> -->
+                        <form id="formAdvancedSearch" class="form-advanced-search form-advanced-search-labels" action="">
+                            <div class="form-group">
+                                <label class="label-small" for="selectFormat">Format</label>
+                                <select class="form-control" name="formats" id="selectFormat">
+                                    <option value="all-formats">All</option>
+                                    <option value="format-1">Format 1</option>
+                                    <option value="format-2">Format 2</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputArtist">Artist</label>
+                                <input class="form-control" type="text" name="artist" id="inputArtist" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputTitle">Title</label>
+                                <input class="form-control" type="text" name="title" id="inputTitle" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputLabel">Label</label>
+                                <input class="form-control" type="text" name="label" id="inputLabel" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputCatNum">Cat Num</label>
+                                <input class="form-control" type="text" name="catnum" id="inputCatNum" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputBarcode">Barcode</label>
+                                <input class="form-control" type="text" name="barcode" id="inputBarcode" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputGenre">Genre</label>
+                                <input class="form-control" type="text" name="genre" id="inputGenre" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputCountry">Country</label>
+                                <input class="form-control" type="text" name="country" id="inputCountry" placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputSeller">Seller</label>
+                                <div class="form-group">
+                                    <label class="label-small" for="inputSellerName">Seller Name</label>
+                                    <input type="text" class="form-control" id="inputSellerName" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="label-small" for="inputSellersCountry">Sellers Country</label>
+                                    <select class="form-control" name="sellers-country" id="inputSellersCountry">
+                                        <option value="all-sellers-countries">All</option>
+                                        <option value="usa">USA</option>
+                                        <option value="united-kingdom">United Kingdom</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label-small" for="inputSellersRating">Sellers Rating</label>
+                                    <select class="form-control" name="sellers-rating" id="inputSellersRating">
+                                        <option value="all-sellers-countries">All</option>
+                                        <option value="five-stars">Five Stars</option>
+                                        <option value="four-stars">Four Stars</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div class="form-group price-container">
