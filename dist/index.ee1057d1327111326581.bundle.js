@@ -21603,6 +21603,18 @@ const flktyTrustpilot = new js_default.a( sliderTrustpilot, {
 //     }
 // });
 
+// toggle reset btn on form focus
+const advancedSearchInput = document.querySelector("#formSearchInput");
+const btnReset = document.querySelector(".form-search-reset");
+
+advancedSearchInput.addEventListener("focus", function() {
+    btnReset.classList.add("show-reset");
+});
+
+advancedSearchInput.addEventListener("blur", function() {
+    btnReset.classList.remove("show-reset");
+});
+
 // toggle advanced search form on mobile
 jquery_default()("#btnOpenForm").click(function() {
     jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
@@ -21677,7 +21689,6 @@ const btnAdvancedSearch = document.querySelector("#btnOpenForm");
 const btnAdvancedSearchArrow = document.querySelector("#btnOpenForm svg");
 const titleContainer = document.querySelector(".title-container");
 const advancedSearchSelect = document.querySelector("#formSearchSelect");
-const advancedSearchInput = document.querySelector("#formSearchInput");
 const navbar = document.querySelector(".navbar");
 
 const options = {
@@ -21709,12 +21720,10 @@ const observerFormSearch = new IntersectionObserver(function
         entries.forEach(entry => {
             
             if (!entry.isIntersecting) {
-                console.log("intersecting");
+                console.log("intersecting 1");
                 
                 formSearchContainer.classList.add("form-search-sticky");
-                setTimeout(function() {
-                formSearch.classList.add("width-76");
-                }, 1000);
+                formSearch.classList.add("width-76", "form-search-sticky");
                 // btnAdvancedSearch.classList.add("btn-sticky");
                 // btnAdvancedSearchArrow.classList.add("dark-grey");
                 advancedSearchSelect.classList.add("no-border-radius");
@@ -21728,11 +21737,26 @@ const observerFormSearch = new IntersectionObserver(function
                 advancedSearchInput.classList.remove("no-border-radius");
             }
         });
-}, {rootMargin: "-78px 0px 0px 0px"});
+}, {rootMargin: "50px 0px 0px 0px"});
+
+const observerFormSearchTop = new IntersectionObserver(function
+    (entries, observer) {
+        entries.forEach(entry => {
+            
+            if (!entry.isIntersecting) {
+                console.log("intersecting-2");
+                
+                formSearchContainer.classList.add("sticky-top");
+            } else {
+                formSearchContainer.classList.remove("sticky-top");
+            }
+        });
+}, {rootMargin: "100px 0px 0px 0px"});
 
 observerTrusted.observe(sectionTrusted);
 observerTrustpilot.observe(sectionTrustpilot);
 observerFormSearch.observe(titleContainer);
+observerFormSearchTop.observe(titleContainer);
 
 // hide loader on window load
 const loader = document.querySelector(".loader-container");

@@ -26,7 +26,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<link href="index.afbf359ae09c881f5ddb.css" rel="stylesheet"></head>
+<link href="index.c5d2aeae8cbe21ed137b.css" rel="stylesheet"></head>
 
 <body id="indexBody">
 
@@ -47,14 +47,14 @@
             <div class="menu icon"></div>
         </button>
 
-        <a class="navbar-brand" href="index.html"><img class="img-fluid img-logo img-logo-record" src="imgs/vinyl-record.13a864b8904674651babda9a40a115cc.svg" alt="Logo"><img class="img-fluid img-logo" src="imgs/musicstack-logo.0d9472fd0d2475bbce7579e35e623f42.gif" alt="Logo"></a>
+        <a class="navbar-brand" href="index.html"><img class="img-fluid img-logo img-logo-record d-none d-lg-block" src="imgs/vinyl-record.13a864b8904674651babda9a40a115cc.svg" alt="Logo"><img class="img-fluid img-logo" src="imgs/musicstack-logo.0d9472fd0d2475bbce7579e35e623f42.gif" alt="Logo"></a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-md-auto align-items-lg-center">
                 <li class="nav-item">
                     <a class="nav-link" href="register.html">Register<span class="sr-only">(current)Register</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item d-none d-lg-block">
                     <a class="nav-link nav-link-sign-in" href="sign-in.html">Sign In<span class="sr-only">(current)Sign In</span></a>
                 </li>
                 <li class="nav-item">
@@ -65,6 +65,22 @@
                         <option value="usd">$ USD</option>
                         <option value="eur">€ EUR</option>
                     </select>
+                </li>
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link" href="sell-music.html">Sell Your Music<span class="sr-only">(current)Sell your music</span></a>
+                </li>
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link" href="help.html">Help & FAQs<span class="sr-only">(current)Help</span></a>
+                </li>
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link" href="contact.html">Contact<span class="sr-only">(current)Contact</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-right ml-auto">
+            <ul>
+                <li class="nav-item d-block d-lg-none nav-item-sign-in">
+                    <a class="nav-link nav-link-sign-in" href="sign-in.html">Sign In<span class="sr-only">(current)Sign In</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link shopping-cart" href="cart.html">
@@ -90,24 +106,27 @@
                     <div class="title-container">
                         <h1 class="title">the best <span class="text-bold">vinyl records and cd marketplace</span> available on internet.</h1>
                     </div>
-                    <div id="formSearchContainer" class="form-search-container">
-                        <form id="formSearch" class="form-inline form-search" action="">
-                            <select name="form-search-select" id="formSearchSelect" class="form-control form-search-select">
-                                <option value="artist-search">Artist Search</option>
-                                <option value="title-search">Title Search</option>
-                                <option value="label-search">Label Search</option>
-                            </select>
-                            <input id="formSearchInput" class="form-control form-search-input" type="text" name="search" placeholder="">
-                            <button class="btn btn-search" type="submit" name="button">
-                                <!-- <img class="img-fluid img-search" src='../img/icons/search.svg' alt='Search Icon'> -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="26.271" height="27.211" viewBox="0 0 26.271 27.211"><path class="a" d="M26.856,24.785l-6.476-6.736a10.982,10.982,0,1,0-8.409,3.924,10.869,10.869,0,0,0,6.294-1.988l6.525,6.787a1.433,1.433,0,1,0,2.065-1.987ZM11.97,2.866a8.12,8.12,0,1,1-8.12,8.12A8.13,8.13,0,0,1,11.97,2.866Z" transform="translate(-0.984 0)"/></svg>
+                    <div class="form-search-container-wrapper">
+                        <div id="formSearchContainer" class="form-search-container">
+                            <form id="formSearch" class="form-inline form-search" action="">
+                                <select name="form-search-select" id="formSearchSelect" class="form-control form-search-select">
+                                    <option value="artist-search">Artist Search</option>
+                                    <option value="title-search">Title Search</option>
+                                    <option value="label-search">Label Search</option>
+                                </select>
+                                <input id="formSearchInput" class="form-control form-search-input" type="text" name="search" placeholder="">
+                                <input class="form-control form-search-reset" type="reset" name="Reset" value="x" placeholder="">
+                                <button class="btn btn-search" type="submit" name="button">
+                                    <!-- <img class="img-fluid img-search" src='../img/icons/search.svg' alt='Search Icon'> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26.271" height="27.211" viewBox="0 0 26.271 27.211"><path class="a" d="M26.856,24.785l-6.476-6.736a10.982,10.982,0,1,0-8.409,3.924,10.869,10.869,0,0,0,6.294-1.988l6.525,6.787a1.433,1.433,0,1,0,2.065-1.987ZM11.97,2.866a8.12,8.12,0,1,1-8.12,8.12A8.13,8.13,0,0,1,11.97,2.866Z" transform="translate(-0.984 0)"/></svg>
+                                </button>
+                            </form><!--
+                            --><button id="btnOpenForm" class="btn advanced-search-link d-block d-lg-none">Advanced <span class="no-wrap">search 
+                                <!-- <img class="img-fluid img-arrow-r-white" src="../img/icons/arrow-right-white.svg" > -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18.108" height="15.04" viewBox="0 0 18.108 15.04"><g transform="translate(0 -41.674)"><g transform="translate(0 41.674)"><path class="a" d="M1.018,47.774l-.028.006H13.106L9.3,43.963a1,1,0,0,1,0-1.406l.593-.593a.991.991,0,0,1,1.4,0l6.529,6.529a1,1,0,0,1,0,1.4l-6.529,6.529a.992.992,0,0,1-1.4,0L9.3,55.832a.981.981,0,0,1-.289-.7.951.951,0,0,1,.289-.686l3.852-3.839H1a1.026,1.026,0,0,1-1-1.016v-.839A1.006,1.006,0,0,1,1.018,47.774Z" transform="translate(0 -41.674)"/></g></g></svg>
+                                </span>
                             </button>
-                        </form><!--
-                        --><button id="btnOpenForm" class="btn advanced-search-link d-block d-lg-none">Advanced <span class="no-wrap">search 
-                            <!-- <img class="img-fluid img-arrow-r-white" src="../img/icons/arrow-right-white.svg" > -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18.108" height="15.04" viewBox="0 0 18.108 15.04"><g transform="translate(0 -41.674)"><g transform="translate(0 41.674)"><path class="a" d="M1.018,47.774l-.028.006H13.106L9.3,43.963a1,1,0,0,1,0-1.406l.593-.593a.991.991,0,0,1,1.4,0l6.529,6.529a1,1,0,0,1,0,1.4l-6.529,6.529a.992.992,0,0,1-1.4,0L9.3,55.832a.981.981,0,0,1-.289-.7.951.951,0,0,1,.289-.686l3.852-3.839H1a1.026,1.026,0,0,1-1-1.016v-.839A1.006,1.006,0,0,1,1.018,47.774Z" transform="translate(0 -41.674)"/></g></g></svg>
-                            </span>
-                        </button>
+                        </div>
                     </div>
                 </div>
             </div><!-- /.row -->
@@ -220,7 +239,7 @@
                         <div class="slider-cell">
                             <a href="#">
                                 <div class="record-store">
-                                    <img class="img-fluid" src='imgs/c04820a1503fa3ee896c7e5e6e4e93ee@2x.7be7f91501002c0c28204c3ddaa50bf8.png' alt=''>
+                                    <img class="img-fluid" src='imgs/038d7b4d4a1dc9591357a2fd9260e07d@2x.4a7df96b58704a05c57bf8047675663f.png' alt=''>
                                     <div class="record-store-info">
                                         <h5 class="record-store-name">Andy Grey Records</h5>
                                         <div class="d-flex">
@@ -387,7 +406,7 @@
                                 <div class="listed-record">
                                     <div class="listed-record-inner">
                                         <a href="#">
-                                            <img src="imgs/listed-1.ad4ef8e4c079a689316be13f078f0ca5.png" class="img-fluid card-img-top" alt="...">
+                                            <img src="imgs/listed-1.ad4ef8e4c079a689316be13f078f0ca5.png" class="img-fluid" alt="...">
                                             <div class="listed-record-info">
                                                 <h5 class="card-title artist">Andy Grey Records Production Company</h5>
                                                 <h5 class="card-title title">Thing Of The Past / Try This At Home (Acoustic)</h5>
@@ -402,7 +421,7 @@
                                 <div class="listed-record">
                                     <div class="listed-record-inner">
                                         <a href="#">
-                                            <img src="imgs/listed-2.4c6cdc1344e7db5f196247f8d538d562.png" class="img-fluid card-img-top" alt="...">
+                                            <img src="imgs/listed-2.4c6cdc1344e7db5f196247f8d538d562.png" class="img-fluid" alt="...">
                                             <div class="listed-record-info">
                                                 <h5 class="card-title title">Andy Grey Records Production Company</h5>
                                                 <h5 class="card-title country">UK</h5>
@@ -415,7 +434,7 @@
                                 <div class="listed-record">
                                     <div class="listed-record-inner">
                                         <a href="#">
-                                            <img src="imgs/listed-3.cef901a329547fa6c46f62e8d9c98ab4.png" class="img-fluid card-img-top" alt="...">
+                                            <img src="imgs/listed-3.cef901a329547fa6c46f62e8d9c98ab4.png" class="img-fluid" alt="...">
                                             <div class="listed-record-info">
                                                 <h5 class="card-title title">Andy Grey Records</h5>
                                                 <h5 class="card-title country">UK</h5>
@@ -428,7 +447,7 @@
                                 <div class="listed-record">
                                     <div class="listed-record-inner">
                                         <a href="#">
-                                            <img src="imgs/listed-4.ebfc49ecf0af000ccc9cbb7d8d149571.png" class="img-fluid card-img-top" alt="...">
+                                            <img src="imgs/listed-4.ebfc49ecf0af000ccc9cbb7d8d149571.png" class="img-fluid" alt="...">
                                             <div class="listed-record-info">
                                                 <h5 class="card-title title">Andy Grey Records</h5>
                                                 <h5 class="card-title country">UK</h5>
@@ -441,7 +460,7 @@
                                 <div class="listed-record">
                                     <div class="listed-record-inner">
                                         <a href="#">
-                                            <img src="imgs/listed-5.febf0e38d72412feb60118d4506cdfe3.png" class="img-fluid card-img-top" alt="...">
+                                            <img src="imgs/listed-5.febf0e38d72412feb60118d4506cdfe3.png" class="img-fluid" alt="...">
                                             <div class="listed-record-info">
                                                 <h5 class="card-title title">Andy Grey Records</h5>
                                                 <h5 class="card-title country">UK</h5>
@@ -454,7 +473,7 @@
                                 <div class="listed-record">
                                     <div class="listed-record-inner">
                                         <a href="#">
-                                            <img src="imgs/listed-6.763a9a24a0289334f7760dbeb9c917ff.png" class="img-fluid card-img-top" alt="...">
+                                            <img src="imgs/listed-6.763a9a24a0289334f7760dbeb9c917ff.png" class="img-fluid" alt="...">
                                             <div class="listed-record-info">
                                                 <h5 class="card-title title">Andy Grey Records</h5>
                                                 <h5 class="card-title country">UK</h5>
@@ -467,7 +486,7 @@
                                 <div class="listed-record">
                                     <div class="listed-record-inner">
                                         <a href="#">
-                                            <img src="imgs/listed-7.70ea37f268819c026117868c591b2c18.png" class="img-fluid card-img-top" alt="...">
+                                            <img src="imgs/listed-7.70ea37f268819c026117868c591b2c18.png" class="img-fluid" alt="...">
                                             <div class="listed-record-info">
                                                 <h5 class="card-title title">Andy Grey Records</h5>
                                                 <h5 class="card-title country">UK</h5>
@@ -480,7 +499,7 @@
                                 <div class="listed-record">
                                     <div class="listed-record-inner">
                                         <a href="#">
-                                            <img src="imgs/listed-8.ab088abda889e2af20defdf1fb8c8988.png" class="img-fluid card-img-top" alt="...">
+                                            <img src="imgs/listed-8.ab088abda889e2af20defdf1fb8c8988.png" class="img-fluid" alt="...">
                                             <div class="listed-record-info">
                                                 <h5 class="card-title title">Andy Grey Records</h5>
                                                 <h5 class="card-title country">UK</h5>
@@ -493,7 +512,7 @@
                                 <div class="listed-record">
                                     <div class="listed-record-inner">
                                         <a href="#">
-                                            <img src="imgs/listed-8.ab088abda889e2af20defdf1fb8c8988.png" class="img-fluid card-img-top" alt="...">
+                                            <img src="imgs/listed-8.ab088abda889e2af20defdf1fb8c8988.png" class="img-fluid" alt="...">
                                             <div class="listed-record-info">
                                                 <h5 class="card-title title">Andy Grey Records</h5>
                                                 <h5 class="card-title country">UK</h5>
@@ -506,7 +525,7 @@
                                 <div class="listed-record">
                                     <div class="listed-record-inner">
                                         <a href="#">
-                                            <img src="imgs/listed-8.ab088abda889e2af20defdf1fb8c8988.png" class="img-fluid card-img-top" alt="...">
+                                            <img src="imgs/listed-8.ab088abda889e2af20defdf1fb8c8988.png" class="img-fluid" alt="...">
                                             <div class="listed-record-info">
                                                 <h5 class="card-title title">Andy Grey Records</h5>
                                                 <h5 class="card-title country">UK</h5>
@@ -686,6 +705,6 @@
     </div>
 
     </div>
-<script type="text/javascript" src="index.53acac1647249b7b9dd4.bundle.js"></script></body>
+<script type="text/javascript" src="index.ee1057d1327111326581.bundle.js"></script></body>
 
 </html>
