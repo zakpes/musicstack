@@ -21608,6 +21608,7 @@ jquery_default()("#btnOpenForm").click(function() {
     jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
     jquery_default()(".form-advanced-overlay").fadeToggle();
     jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
+    
 });
 
 jquery_default()("#btnCloseForm").click(function() {
@@ -21677,6 +21678,7 @@ const btnAdvancedSearchArrow = document.querySelector("#btnOpenForm svg");
 const titleContainer = document.querySelector(".title-container");
 const advancedSearchSelect = document.querySelector("#formSearchSelect");
 const advancedSearchInput = document.querySelector("#formSearchInput");
+const navbar = document.querySelector(".navbar");
 
 const options = {
     root: null,  // viewport or other element
@@ -21707,22 +21709,26 @@ const observerFormSearch = new IntersectionObserver(function
         entries.forEach(entry => {
             
             if (!entry.isIntersecting) {
+                console.log("intersecting");
+                
                 formSearchContainer.classList.add("form-search-sticky");
-                formSearch.classList.add("width-76", "form-search-sticky");
-                btnAdvancedSearch.classList.add("btn-sticky");
-                btnAdvancedSearchArrow.classList.add("dark-grey");
+                setTimeout(function() {
+                formSearch.classList.add("width-76");
+                }, 1000);
+                // btnAdvancedSearch.classList.add("btn-sticky");
+                // btnAdvancedSearchArrow.classList.add("dark-grey");
                 advancedSearchSelect.classList.add("no-border-radius");
                 advancedSearchInput.classList.add("no-border-radius");
             } else {
                 formSearchContainer.classList.remove("form-search-sticky");
                 formSearch.classList.remove("width-76", "form-search-sticky");
-                btnAdvancedSearch.classList.remove("btn-sticky");
-                btnAdvancedSearchArrow.classList.remove("dark-grey");
+                // btnAdvancedSearch.classList.remove("btn-sticky");
+                // btnAdvancedSearchArrow.classList.remove("dark-grey");
                 advancedSearchSelect.classList.remove("no-border-radius");
                 advancedSearchInput.classList.remove("no-border-radius");
             }
         });
-}, {rootMargin: "-48px 0px 0px 0px"});
+}, {rootMargin: "-78px 0px 0px 0px"});
 
 observerTrusted.observe(sectionTrusted);
 observerTrustpilot.observe(sectionTrustpilot);
