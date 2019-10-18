@@ -21586,38 +21586,40 @@ navbarBrand.addEventListener("mouseleave", function() {
 });
 
 // toggle mobile navbar menu
-const navbarMobile = document.querySelector("#navbarMobile");
-const navbarMobileToggle = document.querySelector("#navbarMobileToggle");
+// const navbarMobile = document.querySelector("#navbarMobile");
+// const navbarMobileToggle = document.querySelector("#navbarMobileToggle");
 
-navbarMobileToggle.addEventListener("click", function() {
+// navbarMobileToggle.addEventListener("click", function() {
 
-    if(this.classList.contains("navbar-mobile-closed")) {
-        disableBodyScroll(navbarMobile);
-    } else {
-        enableBodyScroll(navbarMobile);
-    }
-});
+//     if(this.classList.contains("navbar-mobile-closed")) {
+//         disableBodyScroll(navbarMobile);
+//     } else {
+//         enableBodyScroll(navbarMobile);
+//     }
+// });
 
 // navbar toggle hamburger btn
 jquery_default()('#navbarMobileToggle').click(function(){
-    // $(this).toggleClass("navbar-mobile-closed");
+    jquery_default()(this).toggleClass("navbar-mobile-closed");
     jquery_default()(this).children(".icon")
         .toggleClass('menu')
         .toggleClass('close');
 
     jquery_default()("#navbarMobile").toggleClass("slide-in");
     jquery_default()(".navbar-mobile-overlay").fadeToggle();
-    // $(".no-scroll-body-wrapper")
-    //     .toggleClass("advanced-search-form-open")
-    //     .css({position: "fixed", top: '-' + $(window).scrollTop() + 'px'});
-    //     console.log(window.scrollY + 'px');
+    jquery_default()(".no-scroll-body-wrapper")
+        .toggleClass("advanced-search-form-open");
+        // .css({position: "fixed", top: '-' + $(window).scrollTop() + 'px'});
+        // console.log(window.scrollY + 'px');
 });
 
 jquery_default()(".navbar-mobile-overlay").click(function() {
     jquery_default()(this).fadeToggle();
     jquery_default()('#navbarMobileToggle').children(".icon").toggleClass("menu").toggleClass("close");
     jquery_default()("#navbarMobile").toggleClass("slide-in");
-    jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
+    jquery_default()(".no-scroll-body-wrapper")
+    .toggleClass("advanced-search-form-open");
+    // .css({position: "", top: ""});
 });
 
 // record stores slider
