@@ -21818,9 +21818,9 @@ const observerFormSearchTop = new IntersectionObserver(function
             if (!entry.isIntersecting) {
                 // console.log("intersecting-2");
                 
-                formSearchContainer.classList.add("sticky-top");
+                formSearchContainer.classList.add("slide-in-place");
             } else {
-                formSearchContainer.classList.remove("sticky-top");
+                formSearchContainer.classList.remove("slide-in-place");
             }
         });
 }, {rootMargin: "100px 0px 0px 0px"});
