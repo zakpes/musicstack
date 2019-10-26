@@ -26,7 +26,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<link href="vendorCSS.70798492efcabc1666e3.css" rel="stylesheet"><link href="index.d416e89d7ca109038ebf.css" rel="stylesheet"></head>
+<link href="vendorCSS.70798492efcabc1666e3.css" rel="stylesheet"><link href="index.c2254889a4e884f4bbb6.css" rel="stylesheet"></head>
 
 <body id="indexBody">
 
@@ -54,6 +54,7 @@
         <button id="navbarMobileToggle" class="navbar-toggler navbar-light navbar-mobile-closed" type="button" aria-expanded="false" aria-label="Toggle navigation">
             
             <div class="menu icon"></div>
+            <h6 class="navbar-toggler-text-menu">Menu</h6>
         </button>
 
         <a class="navbar-brand" href="index.html">
@@ -154,16 +155,18 @@
                         <div id="formSearchContainer" class="form-search-container">
                             <form id="formSearch" class="form-inline form-search" action="">
                                 <select name="form-search-select" id="formSearchSelect" class="form-control form-search-select">
-                                    <option value="artist-search">Artist Search</option>
-                                    <option value="title-search">Title Search</option>
-                                    <option value="label-search">Label Search</option>
+                                    <option value="artist-search">Artist</option>
+                                    <option value="title-search">Title</option>
+                                    <option value="label-search">Label</option>
+                                    <option value="label-search" class="d-block d-lg-none">Advanced</option>
                                 </select>
                                 <input id="formSearchInput" class="form-control form-search-input" type="text" name="search" placeholder="">
                                 <!-- <input class="form-control form-search-reset" type="reset" name="Reset" value="x" placeholder=""> -->
                                 <i class="clearable__clear form-search-reset">&times;</i>
                                 <button class="btn btn-search" type="submit" name="button">
                                     <!-- <img class="img-fluid img-search" src='../img/icons/search.svg' alt='Search Icon'> -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="26.271" height="27.211" viewBox="0 0 26.271 27.211"><path class="a" d="M26.856,24.785l-6.476-6.736a10.982,10.982,0,1,0-8.409,3.924,10.869,10.869,0,0,0,6.294-1.988l6.525,6.787a1.433,1.433,0,1,0,2.065-1.987ZM11.97,2.866a8.12,8.12,0,1,1-8.12,8.12A8.13,8.13,0,0,1,11.97,2.866Z" transform="translate(-0.984 0)"/></svg>
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="26.271" height="27.211" viewBox="0 0 26.271 27.211"><path class="a" d="M26.856,24.785l-6.476-6.736a10.982,10.982,0,1,0-8.409,3.924,10.869,10.869,0,0,0,6.294-1.988l6.525,6.787a1.433,1.433,0,1,0,2.065-1.987ZM11.97,2.866a8.12,8.12,0,1,1-8.12,8.12A8.13,8.13,0,0,1,11.97,2.866Z" transform="translate(-0.984 0)"/></!-->
+                                        
                                 </button>
                             </form><!--
                             --><button id="btnOpenForm" class="btn advanced-search-link d-block d-lg-none">Advanced <span class="no-wrap">search 
@@ -204,7 +207,6 @@
                                         <h5 class="record-store-name">Andy Grey Records Production Company</h5>
                                         <div class="d-flex">
                                             <h5 class="record-store-country mr-auto">Germany</h5>
-                                            <h5 class="card-title record-store-items ml-auto"><span class="number-of-items">16,894</span> items</h5>
 
                                         </div>
                                     </div>
@@ -219,7 +221,6 @@
                                         <h5 class="record-store-name">Andy Grey Records Production Company</h5>
                                         <div class="d-flex">
                                             <h5 class="record-store-country mr-auto">Germany</h5>
-                                            <h5 class="card-title record-store-items ml-auto"><span class="number-of-items">16,894</span> items</h5>
 
                                         </div>
                                     </div>
@@ -235,7 +236,6 @@
                                         <h5 class="record-store-name">Andy Grey Records</h5>
                                         <div class="d-flex">
                                             <h5 class="record-store-country mr-auto">Germany</h5>
-                                            <h5 class="card-title record-store-items ml-auto"><span class="number-of-items">16,894</span> items</h5>
 
                                         </div>
                                     </div>
@@ -251,7 +251,6 @@
                                         <h5 class="record-store-name">Andy Grey Records</h5>
                                         <div class="d-flex">
                                             <h5 class="record-store-country mr-auto">Germany</h5>
-                                            <h5 class="card-title record-store-items ml-auto"><span class="number-of-items">16,894</span> items</h5>
 
                                         </div>
                                     </div>
@@ -269,7 +268,6 @@
                                         <h5 class="record-store-name">Andy Grey Records</h5>
                                         <div class="d-flex">
                                             <h5 class="record-store-country mr-auto">Germany</h5>
-                                            <h5 class="card-title record-store-items ml-auto"><span class="number-of-items">16,894</span> items</h5>
 
                                         </div>
                                     </div>
@@ -285,7 +283,7 @@
                                         <h5 class="record-store-name">Andy Grey Records</h5>
                                         <div class="d-flex">
                                             <h5 class="record-store-country mr-auto">Germany</h5>
-                                            <h5 class="card-title record-store-items ml-auto"><span class="number-of-items">16,894</span> items</h5>
+                                            <!-- <h5 class="card-title record-store-items ml-auto"><span class="number-of-items">16,894</span> items</h5> -->
 
                                         </div>
                                     </div>
@@ -434,14 +432,17 @@
                 </div>
                 <div class="col-12 col-lg-9">
                     <div class="row">
-                        <div class="col-12">
+                        <!-- <div class="col-12">
                             <div class="listed-title-container">
                                 <h3 class="listed-title">Just listed</h3>
-                            </div>
-                        </div>
+                            </div> -->
+                        <!-- </div> -->
                     </div>
                     <div class="row">
                         <div class="col-12">
+                            <div class="listed-title-container main">
+                                <h3 class="listed-title">Just listed</h3>
+                            </div>
                             <div class="listed-record-container">
                                 
                                 <div class="listed-record">
@@ -618,7 +619,7 @@
                                 </div> -->
                             </div>
                             <div class="see-all-link-container d-flex">
-                                <a href="#" class="see-all-link next-link m-auto">Next 
+                                <a href="#" class="see-all-link next-link m-auto">View More 
                                     <!-- <img class="img-fluid img-arrow-r" src='../img/icons/arrow-right.svg' alt='Right arrow'> -->
                                     <!-- <svg xmlns="http://www.w3.org/2000/svg" width="18.108" height="15.04" viewBox="0 0 18.108 15.04"><g transform="translate(0 -41.674)"><g transform="translate(0 41.674)"><path class="a" d="M1.018,47.774l-.028.006H13.106L9.3,43.963a1,1,0,0,1,0-1.406l.593-.593a.991.991,0,0,1,1.4,0l6.529,6.529a1,1,0,0,1,0,1.4l-6.529,6.529a.992.992,0,0,1-1.4,0L9.3,55.832a.981.981,0,0,1-.289-.7.951.951,0,0,1,.289-.686l3.852-3.839H1a1.026,1.026,0,0,1-1-1.016v-.839A1.006,1.006,0,0,1,1.018,47.774Z" transform="translate(0 -41.674)"/></g></g></svg> -->
 
@@ -655,7 +656,7 @@
                     <div class="trustpilot-header">
                         <div class="see-all-link-container d-flex">
                             <img class="img-fluid img-trustpilot-logo" src='imgs/trustpilot-logo.c2c216441f84e22ce3f13985f8c49304.png' alt='Trustpilot logo'>
-                            <img class="img-fluid img-trustpilot-5-stars" src='imgs/trustpilot-5-stars.d7d9325b7ddf05531c7e065a47d3e79a.png' alt='Five stars'>
+                            <img class="img-fluid img-trustpilot-5-stars" src='imgs/trustpilot-4-5-stars.7a0bfd5f1de8f3ef9b6511587447d31c.svg' alt='Five stars'>
                             <h5 class="trustpilot-rating">TrustScore <span class="trustpilot-score">4.8</span><a href="reviews.html" class="trustpilot-reviews-link"><span>267</span> reviews</a></h5>
                             <!-- <a href="#" class="see-all-link ml-auto">See All 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18.108" height="15.04" viewBox="0 0 18.108 15.04"><g transform="translate(0 -41.674)"><g transform="translate(0 41.674)"><path class="a" d="M1.018,47.774l-.028.006H13.106L9.3,43.963a1,1,0,0,1,0-1.406l.593-.593a.991.991,0,0,1,1.4,0l6.529,6.529a1,1,0,0,1,0,1.4l-6.529,6.529a.992.992,0,0,1-1.4,0L9.3,55.832a.981.981,0,0,1-.289-.7.951.951,0,0,1,.289-.686l3.852-3.839H1a1.026,1.026,0,0,1-1-1.016v-.839A1.006,1.006,0,0,1,1.018,47.774Z" transform="translate(0 -41.674)"/></g></g></svg>
