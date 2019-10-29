@@ -1605,7 +1605,7 @@ select {
   }
   #hero .form-search-container.form-search-sticky {
     position: fixed;
-    top: 58px;
+    top: 56px;
     z-index: 1010;
   }
   #hero .form-search-container.slide-in-place {
@@ -1743,6 +1743,9 @@ select {
 @media (max-width: 480px) {
   .navbar .navbar-toggler {
     margin-right: 15px;
+  }
+  .navbar .navbar-brand {
+    margin-right: 0;
   }
   .navbar .navbar-brand .img-logo {
     margin-right: 0;

@@ -302,7 +302,8 @@ const flkty = new js_default.a( sliderRecordStores, {
     wrapAround: true,
     pageDots: false,
     touchVerticalScroll: false,
-    autoPlay: false
+    autoPlay: false,
+    dragThreshold: 1
 });
 
 // trustpilot slider
@@ -314,7 +315,8 @@ const flktyTrustpilot = new js_default.a( sliderTrustpilot, {
     wrapAround: true,
     pageDots: false,
     touchVerticalScroll: false,
-    autoPlay: 6000
+    autoPlay: 6000,
+    dragThreshold: 1
 })
 
 //fix flickity swiping scrollng on mobile
@@ -501,7 +503,7 @@ const observerFormSearch = new IntersectionObserver(function
                 // advancedSearchInput.classList.remove("no-border-radius");
             }
         });
-}, {rootMargin: "-46px 0px 0px 0px"});
+}, {rootMargin: "-54px 0px 0px 0px"});
 
 const observerFormSearchTop = new IntersectionObserver(function
     (entries, observer) {
