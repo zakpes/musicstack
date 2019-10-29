@@ -93,6 +93,12 @@ select {
   cursor: pointer;
 }
 
+.container-main {
+  max-width: 1440px;
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
 .img-cart,
 .img-search {
   width: 30px;
@@ -224,6 +230,49 @@ select {
   background-color: currentColor;
 }
 
+/* menu icon v2*/
+.menu.icon,
+.menu.icon::before,
+.menu.icon::after {
+  height: 3px;
+  width: 30px;
+  background-color: #404040;
+}
+
+.menu.icon {
+  top: 11px;
+}
+
+.menu.icon::before {
+  top: -7px;
+}
+
+.menu.icon::after {
+  top: 7px;
+}
+
+.close.icon {
+  top: 15px;
+  left: 1px;
+  width: 30px;
+  height: 30px;
+}
+
+.close.icon::before,
+.close.icon:after {
+  width: 30px;
+  height: 3px;
+}
+
+.navbar-toggler-text-menu {
+  position: absolute;
+  left: -1px;
+  font-size: 11px;
+  font-family: "Avenir";
+  bottom: -12px;
+  letter-spacing: 1px;
+}
+
 #homeHeader {
   background-color: #fff;
 }
@@ -238,7 +287,7 @@ select {
 
 .navbar .navbar-toggler {
   position: relative;
-  margin-left: 20px;
+  margin-left: 16px;
   margin-right: 50px;
 }
 
@@ -310,6 +359,10 @@ select {
   color: #278bed;
 }
 
+.navbar .nav-item .nav-link-advanced {
+  cursor: pointer;
+}
+
 .navbar .nav-item .nav-link-sign-in {
   border: 2px solid #404040;
   border-radius: 24px;
@@ -347,10 +400,11 @@ select {
 }
 
 .navbar .nav-item .shopping-cart svg {
-  width: 31px;
-  height: 31px;
+  width: 29px;
+  height: 29px;
   fill: #404040;
   transition: fill, transform, 200ms;
+  vertical-align: text-top;
 }
 
 .navbar .nav-item .shopping-cart:hover svg {
@@ -373,11 +427,6 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#recordStores .container-main,
-#main .container-main {
-  width: 85%;
 }
 
 /* section #hero
@@ -477,7 +526,8 @@ select {
   margin-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  padding-right: 95px;
+  padding-right: 108px;
+  margin-left: -1px;
 }
 
 #hero .form-search .form-search-reset {
@@ -526,7 +576,7 @@ select {
 }
 
 #hero .form-search .btn-search {
-  margin-left: -56px;
+  margin-left: -55px;
   width: 56px;
   height: 56px;
   border: 1px solid #c9c9c9;
@@ -608,22 +658,27 @@ select {
 #recordStores .see-all-link {
   font-family: "Lato Bold", sans-serif;
   font-size: 16px;
+  margin-right: -5px;
 }
 
 #recordStores .record-stores-title {
   font-family: "Lato Regular", sans-serif;
   font-size: 22px;
   text-transform: capitalize;
-  margin-left: 8px;
+  margin-left: -6px;
 }
 
 #recordStores #sliderRecordStores {
   margin-top: -10px;
 }
 
+#recordStores #sliderRecordStores .flickity-slider {
+  display: flex;
+}
+
 #recordStores .slider-cell {
-  width: 25%;
-  height: 285.5px;
+  width: 20%;
+  height: auto;
   border-radius: 15px;
   margin-left: 0;
   margin-right: 0;
@@ -657,10 +712,7 @@ select {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding-top: 20px;
-  padding-left: 16px;
-  padding-right: 20px;
-  padding-bottom: 14px;
+  padding: 20px 8px 8px;
   width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0), black);
   border-bottom-left-radius: 4px;
@@ -678,31 +730,59 @@ select {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 15px;
+  font-size: 16px;
+  margin-bottom: 0;
 }
 
 #recordStores .flickity-prev-next-button.previous,
 #recordStores .flickity-prev-next-button.next {
   transition: transform, 200ms;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #dbdbdb;
+  transform: translateY(-75%);
 }
 
 #recordStores .flickity-prev-next-button.previous .flickity-button-icon,
 #recordStores .flickity-prev-next-button.next .flickity-button-icon {
-  transition: transform, 200ms;
+  transition: background-color 200ms;
 }
 
-#recordStores .flickity-prev-next-button.previous .flickity-button-icon:hover,
-#recordStores .flickity-prev-next-button.next .flickity-button-icon:hover {
-  transform: scale(1.2);
+#recordStores .flickity-prev-next-button.previous:hover,
+#recordStores .flickity-prev-next-button.next:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#recordStores .flickity-prev-next-button.previous:hover svg .arrow,
+#recordStores .flickity-prev-next-button.next:hover svg .arrow {
+  fill: #278bed;
 }
 
 #recordStores .flickity-prev-next-button.previous {
-  left: -50px;
+  left: 15px;
 }
 
 #recordStores .flickity-prev-next-button.next {
-  right: -50px;
+  right: 15px;
+}
+
+#recordStores .flex-wrapper-record-stores {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#recordStores .container-flex-record-stores .flickity-viewport {
+  display: flex;
+}
+
+#recordStores .container-flex-record-stores .slider-cell {
+  flex: 1 1 240px;
+  min-width: 240px;
+  max-width: 280px;
+}
+
+#recordStores .container-flex-record-stores .slider-cell .record-store {
+  height: 0;
+  padding-bottom: 100%;
 }
 
 /* section #main
@@ -710,6 +790,8 @@ select {
 #main {
   padding-top: 30px;
   padding-bottom: 40px;
+  /* flex
+    * ==================================== */
 }
 
 #main .listed-title-container {
@@ -718,13 +800,13 @@ select {
 
 #main .btn-x-container {
   text-align: right;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 #main .btn-x-container .btn-x {
   position: relative;
-  height: 22px;
-  width: 22px;
+  height: 30px;
+  width: 30px;
 }
 
 #main .btn-x-container .btn-x:focus {
@@ -887,10 +969,11 @@ select {
 
 #main .listed-record-container .listed-record .listed-record-info,
 #main .listed-record-container .empty-space-filler .listed-record-info {
-  padding: 10px 10px 8px;
+  padding: 5px 10px 8px;
   border-radius: 0 0 2px 2px;
   background-color: #fff;
   height: 110px;
+  position: relative;
 }
 
 #main .listed-record-container .listed-record .listed-record-info .card-title,
@@ -904,25 +987,26 @@ select {
 #main .listed-record-container .listed-record .listed-record-info .artist,
 #main .listed-record-container .empty-space-filler .listed-record-info .artist {
   font-family: "Lato Regular", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   color: #404040;
+  margin-bottom: 6px;
 }
 
 #main .listed-record-container .listed-record .listed-record-info .title,
 #main .listed-record-container .empty-space-filler .listed-record-info .title {
   font-family: "Lato Regular", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   white-space: normal;
-  color: #737373;
+  color: #404040;
 }
 
 #main .listed-record-container .listed-record .listed-record-info .description,
 #main .listed-record-container .empty-space-filler .listed-record-info .description {
   font-family: "Lato Regular", sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   margin-bottom: 10px;
   color: #a6a6a6;
 }
@@ -930,9 +1014,11 @@ select {
 #main .listed-record-container .listed-record .listed-record-info .price,
 #main .listed-record-container .empty-space-filler .listed-record-info .price {
   font-family: "Lato Bold", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   color: #404040;
   margin-bottom: 0;
+  position: absolute;
+  bottom: 6px;
 }
 
 #main .listed-record-container .empty-space-filler {
@@ -954,10 +1040,6 @@ select {
   background-color: #daedfb;
 }
 
-#main .next-link:focus {
-  outline: 1px solid #278bed;
-}
-
 #main .next-link::after {
   background-position: 50%;
   background-repeat: no-repeat;
@@ -975,6 +1057,80 @@ select {
 
 #main .next-link:hover::after {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 16 36' width='16px' height='36px' preserveAspectRatio='defer' shape-rendering='geometricPrecision'%3E%3Cg fill='%23057bc4'%3E%3Cpath d='M2,31.55A1.5,1.5,0,0,1,.92,29l11-11L.92,7A1.5,1.5,0,0,1,3,4.9l12,12a1.5,1.5,0,0,1,0,2.12l-12,12A1.5,1.5,0,0,1,2,31.55Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+#main .next-link-1 {
+  font-family: "Lato Bold",sans-serif;
+  font-size: 16px;
+  padding: 10px 16px;
+  border: 2px solid #2b2b2b;
+  border-radius: 2px;
+  transition: all 200ms;
+  background-color: #fff;
+}
+
+#main .next-link-1:hover {
+  background-color: #278bed;
+  color: #fff;
+  border: 2px solid #1171d0;
+}
+
+#main .next-link-1:focus {
+  box-shadow: 0 0 4px #057bc4;
+}
+
+#main .next-link-1:hover::after {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 16 36' width='16px' height='36px' preserveAspectRatio='defer' shape-rendering='geometricPrecision'%3E%3Cg fill='%23fff'%3E%3Cpath d='M2,31.55A1.5,1.5,0,0,1,.92,29l11-11L.92,7A1.5,1.5,0,0,1,3,4.9l12,12a1.5,1.5,0,0,1,0,2.12l-12,12A1.5,1.5,0,0,1,2,31.55Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+#main .next-link-2 {
+  font-family: "Lato Bold",sans-serif;
+  font-size: 16px;
+  padding: 10px 16px;
+  border: 2px solid #2b2b2b;
+  border-radius: 2px;
+  transition: all 200ms;
+  background-color: #fff;
+}
+
+#main .next-link-2:hover {
+  background-color: #f9f9f9;
+  color: #1171d0;
+  border: 2px solid #1171d0;
+}
+
+#main .next-link-2:focus {
+  box-shadow: 0 0 4px #057bc4;
+}
+
+#main .next-link-2:hover::after {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 16 36' width='16px' height='36px' preserveAspectRatio='defer' shape-rendering='geometricPrecision'%3E%3Cg fill='%23278bed'%3E%3Cpath d='M2,31.55A1.5,1.5,0,0,1,.92,29l11-11L.92,7A1.5,1.5,0,0,1,3,4.9l12,12a1.5,1.5,0,0,1,0,2.12l-12,12A1.5,1.5,0,0,1,2,31.55Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+#main .flex-wrapper {
+  justify-content: space-between;
+}
+
+#main .flex-container-1 {
+  flex: 0 0 220px;
+}
+
+#main .flex-container-2 {
+  width: calc(98% - 230px);
+}
+
+#main .flex-container-2 .listed-record,
+#main .flex-container-2 .empty-space-filler {
+  min-width: 190px;
+  max-width: 240px;
+  flex: 1 1 190px;
+}
+
+#main .flex-container-2 .listed-record .listed-record-img,
+#main .flex-container-2 .empty-space-filler .listed-record-img {
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
 }
 
 /* section #trusted
@@ -1045,7 +1201,7 @@ select {
 }
 
 #trustpilotReviews .trustpilot-header .img-trustpilot-5-stars {
-  max-width: 160px;
+  max-width: 140px;
   height: 33px;
   margin-right: 20px;
 }
@@ -1087,7 +1243,6 @@ select {
 
 #trustpilotReviews .slider-cell {
   width: 33.3%;
-  height: 330px;
   padding: 10px;
 }
 
@@ -1138,27 +1293,32 @@ select {
 #trustpilotReviews .flickity-prev-next-button.previous,
 #trustpilotReviews .flickity-prev-next-button.next {
   transition: transform, 200ms;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #dbdbdb;
+  transform: translateY(-75%);
 }
 
-#trustpilotReviews .flickity-button-icon {
-  transition: transform 150ms;
+#trustpilotReviews .flickity-prev-next-button.previous .flickity-button-icon,
+#trustpilotReviews .flickity-prev-next-button.next .flickity-button-icon {
+  transition: background-color 200ms;
+}
+
+#trustpilotReviews .flickity-prev-next-button.previous:hover,
+#trustpilotReviews .flickity-prev-next-button.next:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#trustpilotReviews .flickity-prev-next-button.previous:hover svg .arrow,
+#trustpilotReviews .flickity-prev-next-button.next:hover svg .arrow {
+  fill: #278bed;
 }
 
 #trustpilotReviews .flickity-prev-next-button.previous {
-  left: -50px;
-}
-
-#trustpilotReviews .flickity-prev-next-button.previous .flickity-button-icon:hover {
-  transform: scale(1.2);
+  left: 15px;
 }
 
 #trustpilotReviews .flickity-prev-next-button.next {
-  right: -50px;
-}
-
-#trustpilotReviews .flickity-prev-next-button.next .flickity-button-icon:hover {
-  transform: scale(1.2);
+  right: 15px;
 }
 
 /* footer
@@ -1264,7 +1424,7 @@ select {
 }
 
 .loader-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -1288,69 +1448,15 @@ select {
 
 /* MEDIA QUERIES DESKTOP-FIRST
  * ==================================== */
-@media (min-width: 1700px) and (max-width: 2000px) {
-  #recordStores .container-main,
-  #main .container-main {
-    width: 70%;
-  }
-  #main .listed-record-container {
-    margin-left: -60px;
-  }
-  #main .listed-title-container.main {
-    margin-left: -50px;
-  }
-}
-
-@media (min-width: 1500px) and (max-width: 1699px) {
-  #recordStores .container-main,
-  #main .container-main {
-    width: 70%;
-  }
-  #main .listed-record-container {
-    margin-left: -30px;
-  }
-  #main .listed-title-container.main {
-    margin-left: -20px;
-  }
-}
-
-@media (min-width: 1400px) and (max-width: 1499px) {
-  #recordStores .container-main,
-  #main .container-main {
-    width: 80%;
-  }
-  #main .listed-record-container {
-    margin-left: -30px;
-  }
-  #main .listed-title-container.main {
-    margin-left: -20px;
-  }
-}
-
 /* Extra large devices (desktops, more than 1400px) */
 @media (min-width: 1400px) {
-  #recordStores .container-main,
-  #main .container-main {
-    width: 80%;
-  }
-  #main .listed-record-container {
-    margin-left: -30px;
-  }
-  #main .listed-title-container.main {
-    margin-left: -20px;
-  }
   .container {
     max-width: 1340px;
   }
   #recordStores .slider-cell {
     width: 20%;
-    height: 270px;
     margin-left: 0;
     margin-right: 0;
-  }
-  #main .listed-record-container .listed-record,
-  #main .listed-record-container .empty-space-filler {
-    width: 20%;
   }
   #trustpilotReviews .slider-cell {
     width: 25%;
@@ -1358,23 +1464,10 @@ select {
 }
 
 /* Large devices (desktops, less than 1200px) */
-@media (max-width: 1299px) {
-  #main .form-advanced-search-container {
-    margin-left: -30px;
-  }
-}
-
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199px) {
   #recordStores .slider-cell {
-    height: 240.5px;
-  }
-  #main .listed-record-container .listed-record,
-  #main .listed-record-container .empty-space-filler {
-    width: 33%;
-  }
-  #main .form-advanced-search-container {
-    margin-left: -70px;
+    width: 25%;
   }
 }
 
@@ -1385,7 +1478,7 @@ select {
     top: 18px;
   }
   .menu.icon {
-    top: 50%;
+    top: 15px;
     margin-right: 20px;
   }
   .navbar {
@@ -1406,8 +1499,8 @@ select {
   }
   .navbar .navbar-toggler {
     height: 33px;
-    width: 25px;
-    margin-right: 20px;
+    width: 33px;
+    margin-right: 12px;
   }
   .navbar #navbarMobile {
     position: fixed;
@@ -1440,29 +1533,20 @@ select {
     padding: 30px 0 30px 30px;
   }
   #recordStores .slider-cell {
-    width: 33%;
-    height: 236px;
+    width: 25%;
     margin-left: 0;
     margin-right: 0;
-  }
-  #recordStores .flickity-prev-next-button.previous {
-    left: -35px;
-  }
-  #recordStores .flickity-prev-next-button.next {
-    right: -35px;
-  }
-  #main .container-main {
-    width: 96%;
   }
   #main .form-advanced-search-container {
     position: fixed;
     display: block;
     top: 0;
+    left: 0;
     background-color: #fff;
     z-index: 9999;
     margin-top: 0;
     margin-left: 0;
-    left: -260px;
+    transform: translateX(-100%);
     transition: transform 300ms;
     overflow-x: hidden;
     overflow-y: auto;
@@ -1473,11 +1557,16 @@ select {
     margin-bottom: 30px;
   }
   #main .slide-in {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
-  #main .listed-record-container .listed-record,
-  #main .listed-record-container .empty-space-filler {
-    width: 25%;
+  #main .flex-container-2 {
+    width: 100%;
+  }
+  #main .flex-container-2 .listed-title {
+    margin-left: 10px;
+  }
+  #main .flex-container-2 .listed-record-container {
+    margin-left: 0;
   }
 }
 
@@ -1489,6 +1578,14 @@ select {
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767px) {
+  .navbar .navbar-right ul .nav-item-sign-in {
+    padding-top: 1px;
+    margin-right: -4px;
+  }
+  .navbar .nav-item .shopping-cart {
+    padding-bottom: 0;
+    padding-top: 4px;
+  }
   .form-search-container-wrapper {
     height: 107px;
     position: relative;
@@ -1498,25 +1595,18 @@ select {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
-    transform: translateY(0px);
+    width: 510px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   #hero .form-search-container #formSearch {
     position: relative;
     transition: width 500ms;
   }
-  #hero .form-search-container #formSearch::after {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 1px;
-    right: 0;
-    background-color: #ced4da;
-  }
   #hero .form-search-container.form-search-sticky {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 58px;
+    z-index: 1010;
   }
   #hero .form-search-container.slide-in-place {
     transform: translateY(63px);
@@ -1553,9 +1643,14 @@ select {
     font-size: 40px;
     text-align: center;
   }
+  #recordStores {
+    padding-top: 20px;
+  }
+  #recordStores .see-all-link {
+    margin-right: 0;
+  }
   #recordStores .slider-cell {
-    width: 50%;
-    height: 263px;
+    width: 33%;
     margin-left: 0;
     margin-right: 0;
   }
@@ -1563,8 +1658,33 @@ select {
   #recordStores .flickity-prev-next-button.next {
     display: none;
   }
+  #main {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  #main .listed-record-container {
+    margin-bottom: 10px;
+  }
+  #main #main .flex-container-2 .listed-record,
+  #main #main .flex-container-2 .empty-space-filler {
+    min-width: 180px;
+    max-width: 250px;
+    flex: 1 1 180px;
+  }
+  #main .flex-container-2 .listed-record,
+  #main .flex-container-2 .empty-space-filler {
+    min-width: 180px;
+    max-width: 240px;
+    flex: 1 1 180px;
+  }
   #trusted .trusted-text {
     line-height: 1.7;
+  }
+  #trustpilotReviews .see-all-link-container {
+    padding-left: 6px;
+  }
+  #trustpilotReviews .trustpilot-header .trustpilot-rating {
+    margin-top: 10px;
   }
   #trustpilotReviews .slider-cell {
     width: 50%;
@@ -1574,10 +1694,6 @@ select {
   #trustpilotReviews .flickity-prev-next-button.previous,
   #trustpilotReviews .flickity-prev-next-button.next {
     display: none;
-  }
-  #main .listed-record-container .listed-record,
-  #main .listed-record-container .empty-space-filler {
-    width: 33%;
   }
   #footer {
     padding-top: 30px;
@@ -1604,18 +1720,31 @@ select {
   #hero .title-container .title {
     font-size: 30px;
   }
+  #hero .form-search-container {
+    width: 548px;
+  }
+  #recordStores .see-all-link {
+    margin-right: 0;
+  }
+  #recordStores .slider-cell {
+    width: 50%;
+    margin-left: 0;
+    margin-right: 0;
+  }
   #main .container-main {
     width: 100%;
+  }
+  #trustpilotReviews .see-all-link-container {
+    padding-left: 6px;
   }
 }
 
 /* Extra Small Devices, Phones */
 @media (max-width: 480px) {
   .navbar .navbar-toggler {
-    margin-right: 10px;
+    margin-right: 15px;
   }
   .navbar .navbar-brand .img-logo {
-    width: 100px;
     margin-right: 0;
   }
   .navbar .navbar-right {
@@ -1637,11 +1766,56 @@ select {
   }
 }
 
+@media (max-width: 420px) {
+  #trustpilotReviews .trustpilot-header .img-trustpilot-logo {
+    margin-bottom: 10px;
+  }
+  #trustpilotReviews .trustpilot-header .img-trustpilot-5-stars {
+    margin-bottom: 8px;
+  }
+  #trustpilotReviews .trustpilot-header .trustpilot-rating span.trustpilot-score {
+    margin-right: 25px;
+  }
+}
+
+@media (max-width: 390px) {
+  #hero .form-search-container {
+    width: 360px;
+  }
+  #recordStores .record-stores-title {
+    margin-left: 4px;
+  }
+  #recordStores .flex-wrapper-record-stores {
+    padding-left: 10px;
+    padding-right: 20px;
+  }
+  #main .flex-container-2 .listed-title {
+    margin-left: 20px;
+  }
+  #main .flex-container-2 .listed-record-container {
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #trusted .trusted-container {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  #trustpilotReviews .trustpilot-header .img-trustpilot-logo {
+    margin-left: -2px;
+  }
+  #trustpilotReviews .see-all-link-container {
+    padding-left: 10px;
+  }
+}
+
 /* Custom, iPhone Retina */
 @media (max-width: 360px) {
+  #hero .form-search-container {
+    width: 95%;
+  }
   #recordStores .slider-cell {
     width: 70%;
-    height: 239px;
   }
   .navbar-brand {
     margin-right: 0;

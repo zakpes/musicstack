@@ -26,7 +26,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<link href="vendorCSS.70798492efcabc1666e3.css" rel="stylesheet"><link href="index.c2254889a4e884f4bbb6.css" rel="stylesheet"></head>
+<link href="vendorCSS.70798492efcabc1666e3.css" rel="stylesheet"><link href="index.d5989cd26085843fab60.css" rel="stylesheet"></head>
 
 <body id="indexBody">
 
@@ -37,7 +37,7 @@
     <!-- HEADER -->
 <header id="homeHeader">
 
-    <div class="container">
+    <div class="container-fluid container-main">
 
         <div class="navbar-mobile-overlay">
             
@@ -54,7 +54,7 @@
         <button id="navbarMobileToggle" class="navbar-toggler navbar-light navbar-mobile-closed" type="button" aria-expanded="false" aria-label="Toggle navigation">
             
             <div class="menu icon"></div>
-            <h6 class="navbar-toggler-text-menu">Menu</h6>
+            <h6 class="navbar-toggler-text-menu d-none">Menu</h6>
         </button>
 
         <a class="navbar-brand" href="index.html">
@@ -96,7 +96,7 @@
                 <li class="nav-item d-block d-lg-none nav-item-sign-in">
                     <a class="nav-link nav-link-sign-in" href="sign-in.html">Sign In<span class="sr-only">(current)Sign In</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item nav-item-shopping-cart">
                     <a class="nav-link shopping-cart" href="cart.html">
                         <!-- <img class="img-fluid img-cart" src="../img/icons/cart.svg" alt="Shopping Cart"> -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31"><path class="a" d="M9.3,24.8a3.1,3.1,0,1,0,3.1,3.1A3.109,3.109,0,0,0,9.3,24.8ZM0,0V3.1H3.1L8.68,14.88,6.51,18.6a5.507,5.507,0,0,0-.31,1.55,3.109,3.109,0,0,0,3.1,3.1H27.9v-3.1H9.92a.333.333,0,0,1-.31-.31v-.155l1.4-2.635h11.47A2.827,2.827,0,0,0,25.11,15.5L30.69,5.425A.853.853,0,0,0,31,4.65,1.464,1.464,0,0,0,29.45,3.1H6.51L5.115,0ZM24.8,24.8a3.1,3.1,0,1,0,3.1,3.1A3.109,3.109,0,0,0,24.8,24.8Z"/></svg>
@@ -109,6 +109,9 @@
 
         <div class="navbar-mobile-custom d-block d-lg-none" id="navbarMobile">
             <ul class="navbar-nav ml-md-auto align-items-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-advanced" id="btnOpenForm2">Advanced search<span class="sr-only">(current)Advanced search</span></a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="register.html">Register<span class="sr-only">(current)Register</span></a>
                 </li>
@@ -155,12 +158,12 @@
                         <div id="formSearchContainer" class="form-search-container">
                             <form id="formSearch" class="form-inline form-search" action="">
                                 <select name="form-search-select" id="formSearchSelect" class="form-control form-search-select">
-                                    <option value="artist-search">Artist</option>
-                                    <option value="title-search">Title</option>
-                                    <option value="label-search">Label</option>
-                                    <option value="label-search" class="d-block d-lg-none">Advanced</option>
-                                </select>
-                                <input id="formSearchInput" class="form-control form-search-input" type="text" name="search" placeholder="">
+                                    <option class="artist" value="artist-search">Artist</option>
+                                    <option class="title" value="title-search">Title</option>
+                                    <option class="label" value="label-search">Label</option>
+                                    <option class="d-block d-lg-none advanced" value="advanced" id="btnOpenForm1">Advanced</option>
+                                </select><!--
+                            --><input id="formSearchInput" class="form-control form-search-input" type="text" name="search" placeholder="">
                                 <!-- <input class="form-control form-search-reset" type="reset" name="Reset" value="x" placeholder=""> -->
                                 <i class="clearable__clear form-search-reset">&times;</i>
                                 <button class="btn btn-search" type="submit" name="button">
@@ -168,12 +171,11 @@
                                     <!-- <svg xmlns="http://www.w3.org/2000/svg" width="26.271" height="27.211" viewBox="0 0 26.271 27.211"><path class="a" d="M26.856,24.785l-6.476-6.736a10.982,10.982,0,1,0-8.409,3.924,10.869,10.869,0,0,0,6.294-1.988l6.525,6.787a1.433,1.433,0,1,0,2.065-1.987ZM11.97,2.866a8.12,8.12,0,1,1-8.12,8.12A8.13,8.13,0,0,1,11.97,2.866Z" transform="translate(-0.984 0)"/></!-->
                                         
                                 </button>
-                            </form><!--
-                            --><button id="btnOpenForm" class="btn advanced-search-link d-block d-lg-none">Advanced <span class="no-wrap">search 
-                                <!-- <img class="img-fluid img-arrow-r-white" src="../img/icons/arrow-right-white.svg" > -->
+                            </form>
+                            <!-- <button id="btnOpenForm" class="btn advanced-search-link d-block d-lg-none">Advanced <span class="no-wrap">search 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18.108" height="15.04" viewBox="0 0 18.108 15.04"><g transform="translate(0 -41.674)"><g transform="translate(0 41.674)"><path class="a" d="M1.018,47.774l-.028.006H13.106L9.3,43.963a1,1,0,0,1,0-1.406l.593-.593a.991.991,0,0,1,1.4,0l6.529,6.529a1,1,0,0,1,0,1.4l-6.529,6.529a.992.992,0,0,1-1.4,0L9.3,55.832a.981.981,0,0,1-.289-.7.951.951,0,0,1,.289-.686l3.852-3.839H1a1.026,1.026,0,0,1-1-1.016v-.839A1.006,1.006,0,0,1,1.018,47.774Z" transform="translate(0 -41.674)"/></g></g></svg>
                                 </span>
-                            </button>
+                            </button> -->
                         </div>
                     </div>
                 </div>
@@ -198,8 +200,8 @@
             </div><!-- /.row -->
 
             <div class="row">
-                <div class="col-12">
-                    <div id="sliderRecordStores">
+                <div class="col-12 flex-wrapper-record-stores">
+                    <div id="sliderRecordStores" class="container-flex-record-stores">
                         <div class="slider-cell">
                             <a href="#">
                                 <div class="record-store" style="background-image: url('imgs/record-store-1.b4ceec016f903fa9ab575d3cb7e80dc8.png');">
@@ -302,8 +304,8 @@
     <!-- SECTION main -->
     <section id="main">
         <div class="container-fluid container-main">
-            <div class="row">
-                <div class="col-12 col-lg-3">
+            <div class="row flex-wrapper">
+                <div class="flex-container flex-container-1">
                     <div class="form-advanced-search-container">
                         <div class="btn-x-container d-block d-lg-none">
                             <button id="btnCloseForm" class="btn btn-x" type="button" name="button"><div class="icon close"></div></button>
@@ -430,7 +432,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-12 col-lg-9">
+                <div class="flex-container flex-container-2">
                     <div class="row">
                         <!-- <div class="col-12">
                             <div class="listed-title-container">
@@ -605,24 +607,15 @@
                                         </a>
                                     </div>
                                 </div>
-                                <!-- <div class="empty-space-filler">
-                                    
-                                </div>
-                                <div class="empty-space-filler">
-                                    
-                                </div>
-                                <div class="empty-space-filler">
-                                    
-                                </div>
-                                <div class="empty-space-filler">
-                                    
-                                </div> -->
+                                
                             </div>
                             <div class="see-all-link-container d-flex">
-                                <a href="#" class="see-all-link next-link m-auto">View More 
+                                <a href="#" class="see-all-link next-link m-auto next-link-1">View More 
                                     <!-- <img class="img-fluid img-arrow-r" src='../img/icons/arrow-right.svg' alt='Right arrow'> -->
                                     <!-- <svg xmlns="http://www.w3.org/2000/svg" width="18.108" height="15.04" viewBox="0 0 18.108 15.04"><g transform="translate(0 -41.674)"><g transform="translate(0 41.674)"><path class="a" d="M1.018,47.774l-.028.006H13.106L9.3,43.963a1,1,0,0,1,0-1.406l.593-.593a.991.991,0,0,1,1.4,0l6.529,6.529a1,1,0,0,1,0,1.4l-6.529,6.529a.992.992,0,0,1-1.4,0L9.3,55.832a.981.981,0,0,1-.289-.7.951.951,0,0,1,.289-.686l3.852-3.839H1a1.026,1.026,0,0,1-1-1.016v-.839A1.006,1.006,0,0,1,1.018,47.774Z" transform="translate(0 -41.674)"/></g></g></svg> -->
 
+                                </a>
+                                <a href="#" class="see-all-link next-link m-auto next-link-2">View More 
                                 </a>
                             </div>
                         </div>
@@ -635,7 +628,7 @@
 
     <!-- SECTION trusted -->
     <section id="trusted">
-        <div class="container">
+        <div class="container-fluid container-main">
             <div class="row">
                 <div class="col-12">
                     <div class="trusted-container">
@@ -650,7 +643,7 @@
 
     <!-- SECTION trustpilot -->
     <section id="trustpilotReviews">
-        <div class="container">
+        <div class="container-fluid container-main">
             <div class="row">
                 <div class="col-12">
                     <div class="trustpilot-header">
@@ -748,23 +741,21 @@
                 <div class="footer-social-container">
                     <ul class="footer-links footer-social-links d-flex justify-content-center">
                         <li>
-                            <a href="facebook.com"><svg xlink:href="data:image/svg+xml;" version='1.1' xmlns="http://www.w3.org/2000/svg" xmlns:xlink='http://www.w3.org/1999/xlink' width="45.087" height="45.087" viewBox="0 0 45.087 45.087"><circle fill="#3b5998" class="a" cx="22.543" cy="22.543" r="22.543" transform="translate(0 0)"/><path fill="#fff" class="b" d="M50.828,36.443H46.805V51.18H40.711V36.443h-2.9V31.264h2.9V27.913c0-2.4,1.138-6.15,6.149-6.15l4.514.019v5.027H48.1a1.241,1.241,0,0,0-1.293,1.412v3.048H51.36Z" transform="translate(-22.617 -13.017)"/></svg></a>
+                            <a href="#"><svg xlink:href="data:image/svg+xml;" version='1.1' xmlns="http://www.w3.org/2000/svg" xmlns:xlink='http://www.w3.org/1999/xlink' width="45.087" height="45.087" viewBox="0 0 45.087 45.087"><circle fill="#3b5998" class="a" cx="22.543" cy="22.543" r="22.543" transform="translate(0 0)"/><path fill="#fff" class="b" d="M50.828,36.443H46.805V51.18H40.711V36.443h-2.9V31.264h2.9V27.913c0-2.4,1.138-6.15,6.149-6.15l4.514.019v5.027H48.1a1.241,1.241,0,0,0-1.293,1.412v3.048H51.36Z" transform="translate(-22.617 -13.017)"/></svg></a>
                         </li>
                         <li>
-                            <a href="instagram.com" class="instagram-icon">
-                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="45.248" height="45.248" viewBox="0 0 45.248 45.248"><defs><style>.instagram-gradient{fill:url(#a);}</style><linearGradient id="a" x1="1.082" y1="-0.174" x2="-0.26" y2="1.425" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#e09b3d"/><stop offset="0.293" stop-color="#c74c4d"/><stop offset="0.6" stop-color="#c21975"/><stop offset="1" stop-color="#7024c4"/></linearGradient></defs><path class="instagram-gradient" d="M41.149,23.88H27.663a3.908,3.908,0,0,0-3.9,3.9V41.27a3.909,3.909,0,0,0,3.9,3.9H41.149a3.909,3.909,0,0,0,3.9-3.9V27.784A3.908,3.908,0,0,0,41.149,23.88ZM34.406,41.537a7.01,7.01,0,1,1,7.01-7.01A7.018,7.018,0,0,1,34.406,41.537Zm7.236-12.571A1.659,1.659,0,1,1,43.3,27.308,1.661,1.661,0,0,1,41.641,28.966Z" transform="translate(-11.782 -11.842)"/><path class="instagram-gradient" d="M40.9,36.971a4.048,4.048,0,1,0,4.048,4.047A4.053,4.053,0,0,0,40.9,36.971Z" transform="translate(-18.273 -18.333)"/><path class="instagram-gradient" d="M22.624,0A22.624,22.624,0,1,0,45.248,22.624,22.625,22.625,0,0,0,22.624,0ZM36.233,29.428a6.873,6.873,0,0,1-6.866,6.866H15.881a6.874,6.874,0,0,1-6.866-6.866V15.942a6.874,6.874,0,0,1,6.866-6.866H29.367a6.874,6.874,0,0,1,6.866,6.866Z"/></svg> -->
+                            <a href="#" class="instagram-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="45.248" height="45.248" viewBox="0 0 45.248 45.248"><defs><style>.instagram-gradient{fill:url(#a);}</style><linearGradient id="a" x1="1.082" y1="-0.174" x2="-0.26" y2="1.425" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#e09b3d"/><stop offset="0.293" stop-color="#c74c4d"/><stop offset="0.6" stop-color="#c21975"/><stop offset="1" stop-color="#7024c4"/></linearGradient></defs><path class="instagram-gradient" d="M41.149,23.88H27.663a3.908,3.908,0,0,0-3.9,3.9V41.27a3.909,3.909,0,0,0,3.9,3.9H41.149a3.909,3.909,0,0,0,3.9-3.9V27.784A3.908,3.908,0,0,0,41.149,23.88ZM34.406,41.537a7.01,7.01,0,1,1,7.01-7.01A7.018,7.018,0,0,1,34.406,41.537Zm7.236-12.571A1.659,1.659,0,1,1,43.3,27.308,1.661,1.661,0,0,1,41.641,28.966Z" transform="translate(-11.782 -11.842)"/><path class="instagram-gradient" d="M40.9,36.971a4.048,4.048,0,1,0,4.048,4.047A4.053,4.053,0,0,0,40.9,36.971Z" transform="translate(-18.273 -18.333)"/><path class="instagram-gradient" d="M22.624,0A22.624,22.624,0,1,0,45.248,22.624,22.625,22.625,0,0,0,22.624,0ZM36.233,29.428a6.873,6.873,0,0,1-6.866,6.866H15.881a6.874,6.874,0,0,1-6.866-6.866V15.942a6.874,6.874,0,0,1,6.866-6.866H29.367a6.874,6.874,0,0,1,6.866,6.866Z"/></svg>
                             </a>
                         </li>
                         <li>
-                            <a href="twitter.com">
-                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="44.965" height="44.965" viewBox="0 0 44.965 44.965"><g transform="translate(-0.001)"><circle fill="#55acee" class="a" cx="22.482" cy="22.482" r="22.482" transform="translate(0.001 0)"/><g transform="translate(10.061 13.637)"><path fill="#fff" class="b" d="M51.3,36.548a10.722,10.722,0,0,1-3.087.845,5.389,5.389,0,0,0,2.363-2.973,10.758,10.758,0,0,1-3.413,1.3A5.378,5.378,0,0,0,38,40.627a15.255,15.255,0,0,1-11.077-5.616,5.38,5.38,0,0,0,1.663,7.175,5.336,5.336,0,0,1-2.434-.673c0,.023,0,.046,0,.068a5.377,5.377,0,0,0,4.311,5.269,5.395,5.395,0,0,1-2.427.093,5.38,5.38,0,0,0,5.02,3.732A10.848,10.848,0,0,1,25.1,52.9,15.283,15.283,0,0,0,48.63,40.024c0-.233-.005-.465-.016-.695A10.9,10.9,0,0,0,51.3,36.548Z" transform="translate(-25.103 -34.028)"/></g></g></svg> -->
-                                <img src="imgs/twitter.eccdccab6e18282cf4fe503e5f12c5d9.svg" width="39" height="39" type="data:image/svg+xml;">
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="44.965" height="44.965" viewBox="0 0 44.965 44.965"><g transform="translate(-0.001)"><circle fill="#55acee" class="a" cx="22.482" cy="22.482" r="22.482" transform="translate(0.001 0)"/><g transform="translate(10.061 13.637)"><path fill="#fff" class="b" d="M51.3,36.548a10.722,10.722,0,0,1-3.087.845,5.389,5.389,0,0,0,2.363-2.973,10.758,10.758,0,0,1-3.413,1.3A5.378,5.378,0,0,0,38,40.627a15.255,15.255,0,0,1-11.077-5.616,5.38,5.38,0,0,0,1.663,7.175,5.336,5.336,0,0,1-2.434-.673c0,.023,0,.046,0,.068a5.377,5.377,0,0,0,4.311,5.269,5.395,5.395,0,0,1-2.427.093,5.38,5.38,0,0,0,5.02,3.732A10.848,10.848,0,0,1,25.1,52.9,15.283,15.283,0,0,0,48.63,40.024c0-.233-.005-.465-.016-.695A10.9,10.9,0,0,0,51.3,36.548Z" transform="translate(-25.103 -34.028)"/></g></g></svg>
                             </a>
                         </li>
                         <li>
-                            <a href="pinterest.com">
-                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="44.965" height="44.965" viewBox="0 0 44.965 44.965"><path fill="#c8232c" class="a" d="M22.482,0A22.482,22.482,0,1,1,0,22.483,22.483,22.483,0,0,1,22.482,0Z"/><path fill="#fff" class="b" d="M84.79,63.781c-7.922,0-11.914,5.5-11.914,10.085,0,2.777,1.085,5.247,3.415,6.167a.577.577,0,0,0,.835-.4l.34-1.3a.766.766,0,0,0-.239-.9,4.554,4.554,0,0,1-1.1-3.166c0-4.079,3.152-7.731,8.208-7.731,4.478,0,6.937,2.649,6.937,6.186,0,4.654-2.127,8.583-5.286,8.583a2.523,2.523,0,0,1-2.63-3.111c.5-2.043,1.473-4.251,1.473-5.727a2.19,2.19,0,0,0-2.25-2.424c-1.783,0-3.215,1.786-3.215,4.179a6.037,6.037,0,0,0,.533,2.555l-2.146,8.8a17.573,17.573,0,0,0-.049,6.134.225.225,0,0,0,.4.093,17.112,17.112,0,0,0,3.01-5.285c.205-.718,1.173-4.438,1.173-4.438a4.819,4.819,0,0,0,4.072,2.014c5.358,0,8.994-4.731,8.994-11.063C95.344,68.241,91.157,63.781,84.79,63.781Z" transform="translate(-61.628 -53.936)"/></svg> -->
-                                <object width="39" height="39" data="../img/icons/pinterest.svg" type="data:image/svg+xml;"></object>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="44.965" height="44.965" viewBox="0 0 44.965 44.965"><path fill="#c8232c" class="a" d="M22.482,0A22.482,22.482,0,1,1,0,22.483,22.483,22.483,0,0,1,22.482,0Z"/><path fill="#fff" class="b" d="M84.79,63.781c-7.922,0-11.914,5.5-11.914,10.085,0,2.777,1.085,5.247,3.415,6.167a.577.577,0,0,0,.835-.4l.34-1.3a.766.766,0,0,0-.239-.9,4.554,4.554,0,0,1-1.1-3.166c0-4.079,3.152-7.731,8.208-7.731,4.478,0,6.937,2.649,6.937,6.186,0,4.654-2.127,8.583-5.286,8.583a2.523,2.523,0,0,1-2.63-3.111c.5-2.043,1.473-4.251,1.473-5.727a2.19,2.19,0,0,0-2.25-2.424c-1.783,0-3.215,1.786-3.215,4.179a6.037,6.037,0,0,0,.533,2.555l-2.146,8.8a17.573,17.573,0,0,0-.049,6.134.225.225,0,0,0,.4.093,17.112,17.112,0,0,0,3.01-5.285c.205-.718,1.173-4.438,1.173-4.438a4.819,4.819,0,0,0,4.072,2.014c5.358,0,8.994-4.731,8.994-11.063C95.344,68.241,91.157,63.781,84.79,63.781Z" transform="translate(-61.628 -53.936)"/></svg>
                             </a>
                         </li>
                     </ul>
@@ -783,6 +774,6 @@
     </div>
 
     </div>
-<script type="text/javascript" src="vendor.08b6e1c1745b17d0d7dd.bundle.js"></script><script type="text/javascript" src="index.ee5a450fc17cc318ff35.bundle.js"></script></body>
+<script type="text/javascript" src="vendor.08b6e1c1745b17d0d7dd.bundle.js"></script><script type="text/javascript" src="index.5d5ba2dfddc6168e04b6.bundle.js"></script></body>
 
 </html>

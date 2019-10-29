@@ -254,6 +254,45 @@ jquery_default()(".navbar-mobile-overlay").click(function() {
     jquery_default()("html").toggleClass("advanced-search-form-open");
 });
 
+// set search placeholder on load
+jquery_default()(document).ready(function() {
+
+    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("artist")) {
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by artist");
+    }
+
+    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("title")) {
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by title");
+    }
+
+    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("label")) {
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by label");
+    }
+
+    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("advanced")) {
+        jquery_default()("#formSearchInput").attr("placeholder", "");
+    }
+});
+
+// change search placeholder on select
+jquery_default()("#formSearchSelect").change(function() {
+    if (jquery_default()(this).find("option:selected").hasClass("artist")) {
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by artist");
+    }
+
+    if (jquery_default()(this).find("option:selected").hasClass("title")) {
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by title");
+    }
+
+    if (jquery_default()(this).find("option:selected").hasClass("label")) {
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by label");
+    }
+
+    if (jquery_default()(this).find("option:selected").hasClass("advanced")) {
+        jquery_default()("#formSearchInput").attr("placeholder", "");
+    }
+});
+
 // record stores slider
 const sliderRecordStores = document.querySelector('#sliderRecordStores');
 const flkty = new js_default.a( sliderRecordStores, {
@@ -321,7 +360,7 @@ $cle.on("touchstart click", function(e) {
 // });
 
 // toggle advanced search form on mobile
-jquery_default()("#btnOpenForm").click(function() {
+jquery_default()("#btnOpenForm1, #btnOpenForm2").click(function() {
     jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
     jquery_default()(".form-advanced-overlay").fadeToggle();
     jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
@@ -372,18 +411,22 @@ jquery_default()("#btnCloseForm, .form-advanced-overlay").click(function() {
 
 // fix flexbox last row left align
 // create empty elements in the last row
-// const listedRecordContainer = document.querySelector(".listed-record-container");
+const listedRecordContainer = document.querySelector(".listed-record-container");
 
-// window.onload = () => {
+document.addEventListener("DOMContentLoaded", createEmpty);
 
-//     for (let i = 0; i < 4; i++) {
-//         console.log(`div ${[i]} created`);
+function createEmpty() {
+
+    console.log("window loaded");
+    
+    for (let i = 0; i < 4; i++) {
+        console.log("div created");
         
-//         let emptyDiv = document.createElement("div");
-//         emptyDiv.className = "empty-space-filler";
-//         listedRecordContainer.append(emptyDiv);
-//     }
-// }
+        let emptyDiv = document.createElement("div");
+        emptyDiv.className = "empty-space-filler";
+        listedRecordContainer.append(emptyDiv);
+    }
+}
 
 // intersection observer animations
 const sectionTrusted = document.querySelector("#trusted");
@@ -447,18 +490,18 @@ const observerFormSearch = new IntersectionObserver(function
                 formSearch.classList.add("width-76", "form-search-sticky");
                 // btnAdvancedSearch.classList.add("btn-sticky");
                 // btnAdvancedSearchArrow.classList.add("dark-grey");
-                advancedSearchSelect.classList.add("no-border-radius");
-                advancedSearchInput.classList.add("no-border-radius");
+                // advancedSearchSelect.classList.add("no-border-radius");
+                // advancedSearchInput.classList.add("no-border-radius");
             } else {
                 formSearchContainer.classList.remove("form-search-sticky");
                 formSearch.classList.remove("width-76", "form-search-sticky");
                 // btnAdvancedSearch.classList.remove("btn-sticky");
                 // btnAdvancedSearchArrow.classList.remove("dark-grey");
-                advancedSearchSelect.classList.remove("no-border-radius");
-                advancedSearchInput.classList.remove("no-border-radius");
+                // advancedSearchSelect.classList.remove("no-border-radius");
+                // advancedSearchInput.classList.remove("no-border-radius");
             }
         });
-}, {rootMargin: "50px 0px 0px 0px"});
+}, {rootMargin: "-46px 0px 0px 0px"});
 
 const observerFormSearchTop = new IntersectionObserver(function
     (entries, observer) {
@@ -475,7 +518,7 @@ const observerFormSearchTop = new IntersectionObserver(function
 }, {rootMargin: "100px 0px 0px 0px"});
 
 observerFormSearch.observe(titleContainer);
-observerFormSearchTop.observe(titleContainer);
+// observerFormSearchTop.observe(titleContainer);
 
 // hide loader on window load
 const loader = document.querySelector(".loader-container");
