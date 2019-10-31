@@ -132,6 +132,7 @@ select {
  * ==================================== */
 .navbar-brand {
   height: auto;
+  position: relative;
 }
 
 .icon {
@@ -338,7 +339,7 @@ select {
 .navbar .navbar-brand .img-logo-text-hover {
   position: absolute;
   left: 72px;
-  top: 35px;
+  top: 16px;
   opacity: 0;
   transition: opacity 500ms 500ms;
 }
@@ -626,7 +627,7 @@ select {
 #hero .form-search-container.navbar-fixed {
   position: fixed;
   top: 7px;
-  left: 300px;
+  left: 330px;
   max-width: 430px;
 }
 
@@ -687,6 +688,7 @@ select {
   border-bottom-left-radius: 0;
   padding-right: 108px;
   margin-left: -1px;
+  position: relative;
 }
 
 #hero .form-search .form-search-reset {
@@ -711,7 +713,7 @@ select {
   font-size: 32px;
   font-style: normal;
   vertical-align: middle;
-  line-height: 56px;
+  line-height: 1.5;
 }
 
 #hero .form-search .form-search-reset::before {
@@ -1642,6 +1644,12 @@ select {
   }
 }
 
+@media (max-width: 1400px) {
+  #hero .form-search-container.navbar-fixed {
+    left: 300px;
+  }
+}
+
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1249px) {
   #hero .form-search-container.navbar-fixed {
@@ -1651,6 +1659,38 @@ select {
 
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199px) {
+  #hero .form-search-container.form-search-sticky {
+    position: fixed;
+    top: 71px;
+    z-index: 1010;
+  }
+  #hero .form-search-container {
+    transition: transform 500ms;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 730px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #hero .form-search-container::before {
+    content: "";
+    width: 100vw;
+    height: 65px;
+    background-color: #fff;
+    display: block;
+    position: fixed;
+    top: -1px;
+    transition: opacity 200ms;
+    opacity: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #hero .form-search-container.show-bg::before {
+    opacity: 1;
+  }
   #recordStores .slider-cell {
     width: 25%;
   }
@@ -1661,9 +1701,11 @@ select {
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991px) {
-  .navbar .navbar-brand .img-logo-text-hover {
-    left: 66px;
-    top: 18px;
+  #hero .form-search-container {
+    width: 690px;
+  }
+  #hero .form-search-container.form-search-sticky {
+    top: 59px;
   }
   .menu.icon {
     top: 16px;
@@ -1682,8 +1724,8 @@ select {
     margin-right: 0;
   }
   .navbar .navbar-brand .img-logo-text-hover {
-    left: 61px;
-    top: 14px;
+    left: 0px;
+    top: 3px;
   }
   .navbar .navbar-right {
     padding-left: 0;
@@ -1762,6 +1804,9 @@ select {
   }
   #hero .form-search-container {
     z-index: 1;
+  }
+  #hero .form-search .form-search-reset {
+    line-height: 56px;
   }
   #recordStores .slider-cell {
     width: 25%;
@@ -2003,9 +2048,6 @@ select {
   .navbar .navbar-brand .img-logo {
     margin-right: 0;
   }
-  .navbar .navbar-brand .img-logo-text-hover {
-    left: 64px;
-  }
   .navbar .navbar-right {
     padding-left: 0;
   }
@@ -2056,6 +2098,12 @@ select {
     padding-left: 10px;
     padding-right: 10px;
   }
+  #main .listed-record-container .listed-record,
+  #main .listed-record-container .empty-space-filler {
+    width: 50%;
+    min-width: 140px;
+    flex: 1 1 140px;
+  }
   #trusted .trusted-container {
     padding-left: 4px;
     padding-right: 4px;
@@ -2076,7 +2124,7 @@ select {
   }
   .navbar .navbar-brand .img-logo-text-hover {
     width: 130px;
-    left: 64px;
+    top: 6px;
   }
   #hero .form-search-container {
     width: 95%;
