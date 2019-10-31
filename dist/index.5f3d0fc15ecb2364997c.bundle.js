@@ -179,27 +179,79 @@ var js_default = /*#__PURE__*/__webpack_require__.n(js);
 
 
 
-// const bodyScrollLock = require('body-scroll-lock');
-// const disableBodyScroll = bodyScrollLock.disableBodyScroll;
-// const enableBodyScroll = bodyScrollLock.enableBodyScroll;
 
-// (function ($) {
+const $selectDesktop = jquery_default()(".form-search-select-desktop");
+const $selectMobile = jquery_default()(".form-search-select-mobile");
 
-//     // navbar toggle hamburger menu btn X
-//     $(".navbar-toggle").mouseenter(function() {
-//         $(".icon-bar").css("background-color", "#ccc");
-//     }).mouseleave(function () {
-//         $(".icon-bar").css("background-color", "#fff");
-//     });
+// flickity fix for iOS
+(function() {
+    var touchingCarousel = false,
+      touchStartCoords;
 
-//     // navbar toggle hamburger menu btn X
-//     $(".navbar-toggle").click(function() {
-//         $(".bar-top").toggleClass("bar-top-x");
-//         $(".bar-mid").toggleClass("bar-mid-x");
-//         $(".bar-bot").toggleClass("bar-bot-x");
-//     });
+    document.body.addEventListener('touchstart', function(e) {
+      if (e.target.closest('.flickity-slider')) {
+        touchingCarousel = true;
+      } else {
+        touchingCarousel = false;
+        return;
+      }
 
-// })(jQuery);
+      touchStartCoords = {
+        x: e.touches[0].pageX,
+        y: e.touches[0].pageY
+      }
+    });
+
+    document.body.addEventListener('touchmove', function(e) {
+      if (!(touchingCarousel && e.cancelable)) {
+        return;
+      }
+
+      var moveVector = {
+        x: e.touches[0].pageX - touchStartCoords.x,
+        y: e.touches[0].pageY - touchStartCoords.y
+      };
+
+      if (Math.abs(moveVector.x) > 7)
+        e.preventDefault()
+
+    }, {passive: false});
+})();
+
+// change navbar height on scroll
+jquery_default()(window).scroll(function () {
+
+    var $window = jquery_default()(window);
+    var $wScroll = $window.scrollTop();
+    var $windowW = $window.width();
+    // console.log($wScroll);
+
+    if ($windowW >= 992) {
+        
+        if (jquery_default()("#hero").offset().top < $wScroll) {
+            jquery_default()(".navbar").addClass("navbar-shrink");
+            jquery_default()(".navbar .form-search-container").addClass("show-form");
+        } else if (jquery_default()("#hero").offset().top > $wScroll) {
+            jquery_default()(".navbar").removeClass("navbar-shrink");
+            jquery_default()(".navbar .form-search-container").removeClass("show-form");
+        }
+    }
+
+    // attach search form to navbar on scroll
+    if ($windowW >= 1200) {
+        if (jquery_default()("#hero").offset().top + 240 <= $wScroll) {
+            jquery_default()("#formSearchContainer").addClass("navbar-fixed");
+            jquery_default()("#formSearchSelect option.artist").text("Artist");
+            jquery_default()("#formSearchSelect option.title").text("Title");
+            jquery_default()("#formSearchSelect option.label").text("Label");
+        } else if (jquery_default()("#hero").offset().top + 240 > $wScroll) {
+            jquery_default()("#formSearchContainer").removeClass("navbar-fixed");
+            jquery_default()("#formSearchSelect option.artist").text("Artist Search");
+            jquery_default()("#formSearchSelect option.title").text("Title Search");
+            jquery_default()("#formSearchSelect option.label").text("Label Search");
+        }
+    }
+});
 
 // navbar brand hover
 const navbarBrand = document.querySelector(".navbar-brand");
@@ -215,19 +267,6 @@ navbarBrand.addEventListener("mouseleave", function() {
     logoImg.style.opacity = "0";
 });
 
-// toggle mobile navbar menu
-// const navbarMobile = document.querySelector("#navbarMobile");
-// const navbarMobileToggle = document.querySelector("#navbarMobileToggle");
-
-// navbarMobileToggle.addEventListener("click", function() {
-
-//     if(this.classList.contains("navbar-mobile-closed")) {
-//         disableBodyScroll(navbarMobile);
-//     } else {
-//         enableBodyScroll(navbarMobile);
-//     }
-// });
-
 // navbar toggle hamburger btn
 jquery_default()('#navbarMobileToggle').click(function(){
     jquery_default()(this).toggleClass("navbar-mobile-closed");
@@ -237,8 +276,7 @@ jquery_default()('#navbarMobileToggle').click(function(){
 
     jquery_default()("#navbarMobile").toggleClass("slide-in");
     jquery_default()(".navbar-mobile-overlay").fadeToggle();
-    jquery_default()(".no-scroll-body-wrapper")
-        .toggleClass("advanced-search-form-open");
+    jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
         // .css({position: "fixed", top: '-' + $(window).scrollTop() + 'px'});
         // console.log(window.scrollY + 'px');
     jquery_default()("html").toggleClass("advanced-search-form-open");
@@ -248,15 +286,32 @@ jquery_default()(".navbar-mobile-overlay").click(function() {
     jquery_default()(this).fadeToggle();
     jquery_default()('#navbarMobileToggle').children(".icon").toggleClass("menu").toggleClass("close");
     jquery_default()("#navbarMobile").toggleClass("slide-in");
-    jquery_default()(".no-scroll-body-wrapper")
-    .toggleClass("advanced-search-form-open");
+    jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
     // .css({position: "", top: ""});
     jquery_default()("html").toggleClass("advanced-search-form-open");
 });
 
-// set search placeholder on load
+// set search select on load
 jquery_default()(document).ready(function() {
 
+    var $windowW = jquery_default()(window).width();
+
+    if ($windowW >= 992) {
+        jquery_default()("#formSearchSelect option.artist").text("Artist Search");
+        jquery_default()("#formSearchSelect option.title").text("Title Search");
+        jquery_default()("#formSearchSelect option.label").text("Label Search");
+        jquery_default()("#formSearchSelect option.advanced").text("Advanced");
+    } else if ($windowW < 992) {
+        jquery_default()("#formSearchSelect option.artist").text("Artist");
+        jquery_default()("#formSearchSelect option.title").text("Title");
+        jquery_default()("#formSearchSelect option.label").text("Label");
+        jquery_default()("#formSearchSelect option.advanced").text("Advanced");
+    }
+});
+
+// set search placeholder on load
+jquery_default()(document).ready(function() {
+    
     if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("artist")) {
         jquery_default()("#formSearchInput").attr("placeholder", "Search by artist");
     }
@@ -276,6 +331,9 @@ jquery_default()(document).ready(function() {
 
 // change search placeholder on select
 jquery_default()("#formSearchSelect").change(function() {
+    
+    console.log(jquery_default()("#formSearchSelect").find("option:selected"));
+
     if (jquery_default()(this).find("option:selected").hasClass("artist")) {
         jquery_default()("#formSearchInput").attr("placeholder", "Search by artist");
     }
@@ -290,6 +348,10 @@ jquery_default()("#formSearchSelect").change(function() {
 
     if (jquery_default()(this).find("option:selected").hasClass("advanced")) {
         jquery_default()("#formSearchInput").attr("placeholder", "");
+        jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
+        jquery_default()(".form-advanced-overlay").fadeToggle();
+        jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
+        jquery_default()("html").toggleClass("advanced-search-form-open");
     }
 });
 
@@ -344,7 +406,8 @@ const btnReset = document.querySelector(".form-search-reset");
  * Clearable text inputs
  */
 
-const $inp = jquery_default()("#formSearchInput");
+const $inp = jquery_default()("#formSearchInput, #formSearchInputNavbar");
+const $inpNavbar = jquery_default()("#formSearchInputNavbar");
 const $cle = jquery_default()(".form-search-reset");
   
 $inp.on("input", function(){
@@ -362,12 +425,14 @@ $cle.on("touchstart click", function(e) {
 // });
 
 // toggle advanced search form on mobile
-jquery_default()("#btnOpenForm1, #btnOpenForm2").click(function() {
+jquery_default()("#btnOpenForm2").click(function() {
     jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
     jquery_default()(".form-advanced-overlay").fadeToggle();
     jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
-    jquery_default()("html").toggleClass("advanced-search-form-open");
-    
+    // $("html").toggleClass("advanced-search-form-open");
+    jquery_default()(".navbar-mobile-overlay").fadeToggle();
+    jquery_default()('#navbarMobileToggle').children(".icon").toggleClass("menu").toggleClass("close");
+    jquery_default()("#navbarMobile").toggleClass("slide-in");
 });
 
 jquery_default()("#btnCloseForm, .form-advanced-overlay").click(function() {
@@ -436,6 +501,7 @@ const trustedTitle = document.querySelector(".trusted-title");
 const trustedText = document.querySelector(".trusted-text");
 const sectionTrustpilot = document.querySelector("#trustpilotReviews");
 const formSearchContainer = document.querySelector("#formSearchContainer");
+const formSearchContainerWrapper = document.querySelector(".form-search-container-wrapper");
 const formSearch = document.querySelector(".form-search");
 const btnAdvancedSearch = document.querySelector("#btnOpenForm");
 const btnAdvancedSearchArrow = document.querySelector("#btnOpenForm svg");
@@ -488,14 +554,14 @@ const observerFormSearch = new IntersectionObserver(function
             if (!entry.isIntersecting) {
                 // console.log("intersecting 1");
                 
-                formSearchContainer.classList.add("form-search-sticky");
+                formSearchContainer.classList.add("form-search-sticky", "show-bg");
                 formSearch.classList.add("width-76", "form-search-sticky");
                 // btnAdvancedSearch.classList.add("btn-sticky");
                 // btnAdvancedSearchArrow.classList.add("dark-grey");
                 // advancedSearchSelect.classList.add("no-border-radius");
                 // advancedSearchInput.classList.add("no-border-radius");
             } else {
-                formSearchContainer.classList.remove("form-search-sticky");
+                formSearchContainer.classList.remove("form-search-sticky", "show-bg");
                 formSearch.classList.remove("width-76", "form-search-sticky");
                 // btnAdvancedSearch.classList.remove("btn-sticky");
                 // btnAdvancedSearchArrow.classList.remove("dark-grey");
@@ -503,7 +569,7 @@ const observerFormSearch = new IntersectionObserver(function
                 // advancedSearchInput.classList.remove("no-border-radius");
             }
         });
-}, {rootMargin: "-54px 0px 0px 0px"});
+}, {rootMargin: "-62px 0px 0px 0px"});
 
 const observerFormSearchTop = new IntersectionObserver(function
     (entries, observer) {

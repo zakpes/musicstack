@@ -278,11 +278,16 @@ select {
 }
 
 .navbar {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 3vw;
+  padding-right: 3vw;
   height: 100px;
   background-color: #fff;
   z-index: 1031;
+  transition: height 200ms ease-in-out;
+}
+
+.navbar.navbar-shrink {
+  height: 70px;
 }
 
 .navbar .navbar-toggler {
@@ -416,17 +421,157 @@ select {
   position: absolute;
   width: 20px;
   height: 20px;
-  top: -5px;
+  top: -3px;
   left: 26px;
   right: auto;
   color: #fff;
   background-color: #e12d39;
   border-radius: 50%;
   font-size: 11px;
-  padding-top: 1px;
+  padding-top: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.navbar .form-search-container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: opacity 200ms;
+  opacity: 0;
+}
+
+.navbar .form-search-container.show-form {
+  opacity: 1;
+}
+
+.navbar .form-search {
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.navbar .form-search .form-search-select,
+.navbar .form-search .form-search-input {
+  height: 56px;
+}
+
+.navbar .form-search .form-search-select:focus,
+.navbar .form-search .form-search-input:focus {
+  box-shadow: 0 0 10px #1a88ff;
+}
+
+.navbar .form-search .form-search-select {
+  width: 25%;
+  min-width: 80px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  background: url(imgs/caret-down-solid.39deab0bd80c657eda4ec002a949fefe.svg) 90% center no-repeat;
+  background-size: 8px;
+  background-color: #fff;
+  padding-left: 16px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.navbar .form-search::placeholder {
+  color: #e5e5e5;
+}
+
+.navbar .form-search .form-search-input {
+  width: 75%;
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-right: 108px;
+  margin-left: -1px;
+}
+
+.navbar .form-search .form-search-reset {
+  position: absolute;
+  right: 50px;
+  top: -3px;
+  width: 38px;
+  height: 56px;
+  background-color: transparent;
+  border: none;
+  font-size: 28px;
+  color: #78838e;
+  transition: opacity 150ms;
+  display: none;
+  user-select: none;
+  cursor: pointer;
+  width: initial;
+  padding: 0 12px;
+  top: 0;
+  right: 60px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 32px;
+}
+
+.navbar .form-search .form-search-reset::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background-color: #222222;
+  transform: scale(0);
+  transition: transform 200ms cubic-bezier(0.345, 0.115, 0.135, 1.42);
+  opacity: 0.15;
+  top: 10px;
+  left: 4px;
+}
+
+.navbar .form-search .form-search-reset:hover::before {
+  transform: scale(1);
+}
+
+.navbar .form-search .form-search-reset:hover {
+  color: #278bed;
+}
+
+.navbar .form-search .btn-search {
+  margin-left: -55px;
+  width: 56px;
+  height: 56px;
+  border: 1px solid #c9c9c9;
+  padding: 0;
+  transition: all 150ms ease-in-out;
+  background-color: #f1f1f1;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 36 36' width='36px' height='36px' preserveAspectRatio='defer' shape-rendering='geometricPrecision'%3E%3Cg fill='%23676767'%3E%3Cpath d='M7.76,32.19l5.47-5.47A2.5,2.5,0,0,0,13.79,24L16,21.78a10.38,10.38,0,1,0-1.41-1.41l-2.26,2.26a2.5,2.5,0,0,0-2.68.56L4.23,28.65a2.5,2.5,0,0,0,3.54,3.54Zm9-12.49a8.4,8.4,0,1,1,11.88,0A8.41,8.41,0,0,1,16.72,19.69Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 60%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  transform: rotateY(-180deg);
+  border-radius: 4px 0 0 4px;
+}
+
+.navbar .form-search .btn-search:hover {
+  background-color: #d7d7d7;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 36 36' width='36px' height='36px' preserveAspectRatio='defer' shape-rendering='geometricPrecision'%3E%3Cg fill='%23278bed'%3E%3Cpath d='M7.76,32.19l5.47-5.47A2.5,2.5,0,0,0,13.79,24L16,21.78a10.38,10.38,0,1,0-1.41-1.41l-2.26,2.26a2.5,2.5,0,0,0-2.68.56L4.23,28.65a2.5,2.5,0,0,0,3.54,3.54Zm9-12.49a8.4,8.4,0,1,1,11.88,0A8.41,8.41,0,0,1,16.72,19.69Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.navbar .form-search .btn-search:focus {
+  box-shadow: none;
+}
+
+.navbar .form-search .btn-search .img-search,
+.navbar .form-search .btn-search svg {
+  fill: #8e8e8e;
+  width: 28px;
+  height: 28px;
+  transition: fill 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.navbar .form-search .btn-search:hover .img-search,
+.navbar .form-search .btn-search:hover svg {
+  transform: scale(1.06);
+  fill: #278bed;
 }
 
 /* section #hero
@@ -436,6 +581,7 @@ select {
   background-size: cover;
   padding-top: 100px;
   padding-bottom: 100px;
+  margin-top: 100px;
 }
 
 #hero .title-container,
@@ -445,8 +591,14 @@ select {
   margin-right: auto;
 }
 
+#hero .form-search-container-wrapper {
+  height: 64px;
+}
+
 #hero .form-search-container {
   position: relative;
+  transition: opacity 300ms, max-width 300ms;
+  z-index: 1031;
 }
 
 #hero .form-search-container .advanced-search-link {
@@ -469,6 +621,13 @@ select {
 
 #hero .form-search-container .advanced-search-link svg {
   fill: #fff;
+}
+
+#hero .form-search-container.navbar-fixed {
+  position: fixed;
+  top: 7px;
+  left: 300px;
+  max-width: 430px;
 }
 
 #hero .title-container {
@@ -550,6 +709,9 @@ select {
   right: 60px;
   font-family: "Segoe UI", sans-serif;
   font-size: 32px;
+  font-style: normal;
+  vertical-align: middle;
+  line-height: 56px;
 }
 
 #hero .form-search .form-search-reset::before {
@@ -676,6 +838,10 @@ select {
   display: flex;
 }
 
+#recordStores #sliderRecordStores:hover .flickity-prev-next-button {
+  opacity: 1;
+}
+
 #recordStores .slider-cell {
   width: 20%;
   height: auto;
@@ -734,9 +900,13 @@ select {
   margin-bottom: 0;
 }
 
+#recordStores .flickity-prev-next-button {
+  opacity: 0;
+}
+
 #recordStores .flickity-prev-next-button.previous,
 #recordStores .flickity-prev-next-button.next {
-  transition: transform, 200ms;
+  transition: transform 200ms, opacity 200ms;
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid #dbdbdb;
   transform: translateY(-75%);
@@ -918,7 +1088,7 @@ select {
   justify-content: left;
   margin-left: -10px;
   margin-right: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #main .listed-record-container .listed-record,
@@ -1024,6 +1194,7 @@ select {
 #main .listed-record-container .empty-space-filler {
   height: 0;
   /*Important! for the divs to collapse should they fall in a new row*/
+  margin-bottom: 0;
 }
 
 #main .next-link {
@@ -1181,8 +1352,8 @@ select {
 /* trustpilot
 * ==================================== */
 #trustpilotReviews {
-  padding-top: 20px;
-  padding-bottom: 0;
+  padding-top: 40px;
+  padding-bottom: 35px;
 }
 
 #trustpilotReviews .see-all-link-container {
@@ -1197,7 +1368,7 @@ select {
 #trustpilotReviews .trustpilot-header .img-trustpilot-logo {
   max-width: 240px;
   margin-bottom: -7px;
-  margin-right: 20px;
+  margin-right: 70px;
 }
 
 #trustpilotReviews .trustpilot-header .img-trustpilot-5-stars {
@@ -1239,6 +1410,10 @@ select {
 
 #trustpilotReviews #sliderTrustpilot.scale-up {
   transform: scale(1);
+}
+
+#trustpilotReviews #sliderTrustpilot:hover .flickity-prev-next-button {
+  opacity: 1;
 }
 
 #trustpilotReviews .slider-cell {
@@ -1290,9 +1465,13 @@ select {
   font-size: 12px;
 }
 
+#trustpilotReviews .flickity-prev-next-button {
+  opacity: 0;
+}
+
 #trustpilotReviews .flickity-prev-next-button.previous,
 #trustpilotReviews .flickity-prev-next-button.next {
-  transition: transform, 200ms;
+  transition: transform 200ms, opacity 200ms;
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid #dbdbdb;
   transform: translateY(-75%);
@@ -1464,10 +1643,19 @@ select {
 }
 
 /* Large devices (desktops, less than 1200px) */
+@media (max-width: 1249px) {
+  #hero .form-search-container.navbar-fixed {
+    max-width: 370px;
+  }
+}
+
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199px) {
   #recordStores .slider-cell {
     width: 25%;
+  }
+  #hero .form-search-container {
+    z-index: 1;
   }
 }
 
@@ -1478,12 +1666,34 @@ select {
     top: 18px;
   }
   .menu.icon {
-    top: 15px;
+    top: 16px;
     margin-right: 20px;
   }
   .navbar {
     justify-content: left;
     height: auto;
+    padding: 11px 0 14px;
+  }
+  .navbar .navbar-brand {
+    margin-right: 0;
+    padding: 0;
+  }
+  .navbar .navbar-brand .img-logo {
+    margin-right: 0;
+  }
+  .navbar .navbar-brand .img-logo-text-hover {
+    left: 61px;
+    top: 14px;
+  }
+  .navbar .navbar-right {
+    padding-left: 0;
+  }
+  .navbar .navbar-right ul {
+    align-items: flex-end;
+  }
+  .navbar .navbar-right ul .nav-item-sign-in {
+    padding-top: 1px;
+    margin-right: -4px;
   }
   .navbar .nav-item {
     margin-bottom: 10px;
@@ -1492,10 +1702,25 @@ select {
     margin-left: -15px;
   }
   .navbar .nav-item .nav-link-sign-in {
-    width: 85px;
+    width: auto;
+    border: 2px solid transparent;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .navbar .nav-item .nav-link-sign-in:hover {
+    border: 2px solid transparent;
+  }
+  .navbar .nav-item .shopping-cart {
+    padding-top: 2px;
+    padding-bottom: 0;
+  }
+  .navbar .nav-item .shopping-cart svg {
+    height: 28px;
   }
   .navbar .nav-item .shopping-cart .items-in-cart {
     left: 18px;
+    top: -6px;
   }
   .navbar .navbar-toggler {
     height: 33px;
@@ -1531,6 +1756,12 @@ select {
   }
   .navbar-nav {
     padding: 30px 0 30px 30px;
+  }
+  #hero {
+    margin-top: 0;
+  }
+  #hero .form-search-container {
+    z-index: 1;
   }
   #recordStores .slider-cell {
     width: 25%;
@@ -1568,11 +1799,9 @@ select {
   #main .flex-container-2 .listed-record-container {
     margin-left: 0;
   }
-}
-
-@media (min-width: 992px) {
-  .navbar {
-    position: relative;
+  #trustpilotReviews {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -1584,7 +1813,6 @@ select {
   }
   .navbar .nav-item .shopping-cart {
     padding-bottom: 0;
-    padding-top: 4px;
   }
   .form-search-container-wrapper {
     height: 107px;
@@ -1599,13 +1827,29 @@ select {
     left: 50%;
     transform: translateX(-50%);
   }
+  #hero .form-search-container::before {
+    content: "";
+    width: 100vw;
+    height: 65px;
+    background-color: #fff;
+    display: block;
+    position: fixed;
+    top: -1px;
+    transition: opacity 200ms;
+    opacity: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #hero .form-search-container.show-bg::before {
+    opacity: 1;
+  }
   #hero .form-search-container #formSearch {
     position: relative;
     transition: width 500ms;
   }
   #hero .form-search-container.form-search-sticky {
     position: fixed;
-    top: 56px;
+    top: 59px;
     z-index: 1010;
   }
   #hero .form-search-container.slide-in-place {
@@ -1695,6 +1939,13 @@ select {
   #trustpilotReviews .flickity-prev-next-button.next {
     display: none;
   }
+  #trustpilotReviews .trustpilot-header .img-trustpilot-logo {
+    margin-bottom: 10px;
+  }
+  #trustpilotReviews .trustpilot-header .img-trustpilot-5-stars {
+    margin-bottom: 8px;
+    margin-right: 100%;
+  }
   #footer {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -1721,7 +1972,9 @@ select {
     font-size: 30px;
   }
   #hero .form-search-container {
-    width: 548px;
+    width: 360px;
+    margin-left: 0;
+    margin-right: 0;
   }
   #recordStores .see-all-link {
     margin-right: 0;
@@ -1749,6 +2002,9 @@ select {
   }
   .navbar .navbar-brand .img-logo {
     margin-right: 0;
+  }
+  .navbar .navbar-brand .img-logo-text-hover {
+    left: 64px;
   }
   .navbar .navbar-right {
     padding-left: 0;
@@ -1814,6 +2070,14 @@ select {
 
 /* Custom, iPhone Retina */
 @media (max-width: 360px) {
+  .navbar .navbar-brand .img-logo {
+    width: 130px;
+    margin-right: 0;
+  }
+  .navbar .navbar-brand .img-logo-text-hover {
+    width: 130px;
+    left: 64px;
+  }
   #hero .form-search-container {
     width: 95%;
   }
