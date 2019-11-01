@@ -571,19 +571,17 @@ const observerFormSearch = new IntersectionObserver(function
         });
 }, {rootMargin: "-62px 0px 0px 0px"});
 
-const observerFormSearchTop = new IntersectionObserver(function
-    (entries, observer) {
-        entries.forEach(entry => {
+// const observerFormSearchTop = new IntersectionObserver(function
+//     (entries, observer) {
+//         entries.forEach(entry => {
             
-            if (!entry.isIntersecting) {
-                // console.log("intersecting-2");
-                
-                formSearchContainer.classList.add("slide-in-place");
-            } else {
-                formSearchContainer.classList.remove("slide-in-place");
-            }
-        });
-}, {rootMargin: "100px 0px 0px 0px"});
+//             if (!entry.isIntersecting) {
+//                 formSearchContainer.classList.add("slide-in-place");
+//             } else {
+//                 formSearchContainer.classList.remove("slide-in-place");
+//             }
+//         });
+// }, {rootMargin: "100px 0px 0px 0px"});
 
 observerFormSearch.observe(titleContainer);
 // observerFormSearchTop.observe(titleContainer);
