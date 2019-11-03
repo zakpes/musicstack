@@ -219,12 +219,18 @@ const $selectMobile = jquery_default()(".form-search-select-mobile");
 })();
 
 // change navbar height on scroll
-jquery_default()(window).scroll(function () {
+function navbarShrink() {
 
     var $window = jquery_default()(window);
     var $wScroll = $window.scrollTop();
     var $windowW = $window.width();
     // console.log($wScroll);
+
+    // if ($windowW < 992) {
+        
+    //     $(".navbar").removeClass("navbar-shrink");
+    //     $(".navbar .form-search-container").removeClass("show-form");
+    // }
 
     if ($windowW >= 992) {
         
@@ -235,23 +241,52 @@ jquery_default()(window).scroll(function () {
             jquery_default()(".navbar").removeClass("navbar-shrink");
             jquery_default()(".navbar .form-search-container").removeClass("show-form");
         }
+    } else {
+        
+        jquery_default()(".navbar").removeClass("navbar-shrink");
+        jquery_default()(".navbar .form-search-container").removeClass("show-form");
     }
 
     // attach search form to navbar on scroll
     if ($windowW >= 1200) {
-        if (jquery_default()("#hero").offset().top + 240 <= $wScroll) {
-            jquery_default()("#formSearchContainer").addClass("navbar-fixed");
-            jquery_default()("#formSearchSelect option.artist").text("Artist");
-            jquery_default()("#formSearchSelect option.title").text("Title");
-            jquery_default()("#formSearchSelect option.label").text("Label");
-        } else if (jquery_default()("#hero").offset().top + 240 > $wScroll) {
-            jquery_default()("#formSearchContainer").removeClass("navbar-fixed");
-            jquery_default()("#formSearchSelect option.artist").text("Artist Search");
-            jquery_default()("#formSearchSelect option.title").text("Title Search");
-            jquery_default()("#formSearchSelect option.label").text("Label Search");
+        if (jquery_default()("#hero").offset().top + 200 <= $wScroll) {
+            jquery_default()("#formSearchContainer, .btn-search").addClass("navbar-fixed");
+            // $("#formSearchSelect option.artist").text("Artist");
+            // $("#formSearchSelect option.title").text("Title");
+            // $("#formSearchSelect option.label").text("Label");
+        } else if (jquery_default()("#hero").offset().top + 200 > $wScroll) {
+            jquery_default()("#formSearchContainer, .btn-search").removeClass("navbar-fixed");
+            // $("#formSearchSelect option.artist").text("Artist Search");
+            // $("#formSearchSelect option.title").text("Title Search");
+            // $("#formSearchSelect option.label").text("Label Search");
         }
+    } else {
+        jquery_default()("#formSearchContainer, .btn-search").removeClass("navbar-fixed");
     }
-});
+};
+
+jquery_default()(window).scroll(navbarShrink);
+jquery_default()(window).resize(navbarShrink);
+
+// position and scale attached search form on resize
+// $(document).ready(function () {
+
+//     let $windowWidth = $(window).width();
+    
+
+//     $(window).resize(function() {
+
+//         let $windowWidthResized = $(window).width();
+
+//         if ($windowWidth >= 1200 && $windowWidth <= 1440) {
+//             $("#hero .form-search-container.navbar-fixed")
+//             .css({
+//                 "left": $windowWidthResized / 3.9344,
+//                 "width": $windowWidthResized / 3.392857
+//             });
+//         }
+//     });
+// });
 
 // navbar brand hover
 const navbarBrand = document.querySelector(".navbar-brand");
@@ -291,23 +326,52 @@ jquery_default()(".navbar-mobile-overlay").click(function() {
     jquery_default()("html").toggleClass("advanced-search-form-open");
 });
 
-// set search select on load
-jquery_default()(document).ready(function() {
+// change select bg on hover
+jquery_default()("#formSearchSelect").hover(function () {
+
+    if(jquery_default()(this).is(":focus")) {
+        return;
+    } else {
+        jquery_default()(".form-search-select-bg").toggleClass("hover-bg");
+    }
+});
+
+jquery_default()("#formSearchSelect").focus(function () {
+
+    jquery_default()(".form-search-select-bg").addClass("hover-bg");
+}).blur(function () {
+
+    jquery_default()(".form-search-select-bg").removeClass("hover-bg");
+});
+
+// set search select options
+function setSearchSelectOptions() {
 
     var $windowW = jquery_default()(window).width();
 
-    if ($windowW >= 992) {
+    if ($windowW >= 768) {
         jquery_default()("#formSearchSelect option.artist").text("Artist Search");
         jquery_default()("#formSearchSelect option.title").text("Title Search");
         jquery_default()("#formSearchSelect option.label").text("Label Search");
+        jquery_default()("#formSearchSelect option.catnum").text("Cat Num Search");
+        jquery_default()("#formSearchSelect option.barcode").text("Barcode Search");
+        jquery_default()("#formSearchSelect option.genre").text("Genre Search");
+        jquery_default()("#formSearchSelect option.seller").text("Seller Search");
         jquery_default()("#formSearchSelect option.advanced").text("Advanced");
-    } else if ($windowW < 992) {
+    } else if ($windowW < 768) {
         jquery_default()("#formSearchSelect option.artist").text("Artist");
         jquery_default()("#formSearchSelect option.title").text("Title");
         jquery_default()("#formSearchSelect option.label").text("Label");
+        jquery_default()("#formSearchSelect option.catnum").text("Cat Num");
+        jquery_default()("#formSearchSelect option.barcode").text("Barcode");
+        jquery_default()("#formSearchSelect option.genre").text("Genre");
+        jquery_default()("#formSearchSelect option.seller").text("Seller");
         jquery_default()("#formSearchSelect option.advanced").text("Advanced");
     }
-});
+};
+
+jquery_default()(document).ready(setSearchSelectOptions);
+jquery_default()(window).resize(setSearchSelectOptions);
 
 // set search placeholder on load
 jquery_default()(document).ready(function() {
@@ -324,36 +388,96 @@ jquery_default()(document).ready(function() {
         jquery_default()("#formSearchInput").attr("placeholder", "Search by label");
     }
 
-    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("advanced")) {
-        jquery_default()("#formSearchInput").attr("placeholder", "");
+    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("catnum")) {
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by cat num");
     }
+
+    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("barcode")) {
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by barcode");
+    }
+
+    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("genre")) {
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by genre");
+    }
+
+    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("seller")) {
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by seller");
+    }
+
 });
 
 // change search placeholder on select
-jquery_default()("#formSearchSelect").change(function() {
-    
-    console.log(jquery_default()("#formSearchSelect").find("option:selected"));
 
+
+// var $selectedOption = $("#formSearchSelect option:selected").val();
+
+// $("#formSearchSelect").change(function() {
+//     console.log("Selected 1: " + $selectedOption);
+
+//     if ($(this).find("option:selected").hasClass("artist")) {
+//         $("#formSearchInput").attr("placeholder", "Search by artist");
+//     }
+
+//     if ($(this).find("option:selected").hasClass("title")) {
+//         $("#formSearchInput").attr("placeholder", "Search by title");
+//     }
+
+//     if ($(this).find("option:selected").hasClass("label")) {
+//         $("#formSearchInput").attr("placeholder", "Search by label");
+//     }
+
+//     if ($("#formSearchSelect").find("option:selected").hasClass("advanced")) {
+//         $("#formSearchSelect").find("option:selected").val($selectedOption);
+//         console.log("selected 2: " + $selectedOption);
+        
+//         $(".form-advanced-search-container").toggleClass("slide-in");
+//         $(".form-advanced-overlay").fadeToggle();
+//         $(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
+//         $("html").toggleClass("advanced-search-form-open");
+//     }
+// });
+
+var $sel = jquery_default()('#formSearchSelect').on('change', function(){
     if (jquery_default()(this).find("option:selected").hasClass("artist")) {
+        // store new value        
+        $sel.trigger('update');
         jquery_default()("#formSearchInput").attr("placeholder", "Search by artist");
-    }
-
-    if (jquery_default()(this).find("option:selected").hasClass("title")) {
+    } else if (jquery_default()(this).find("option:selected").hasClass("title")) {
+        // store new value        
+        $sel.trigger('update');
         jquery_default()("#formSearchInput").attr("placeholder", "Search by title");
-    }
-
-    if (jquery_default()(this).find("option:selected").hasClass("label")) {
+    } else if (jquery_default()(this).find("option:selected").hasClass("label")) {
+        // store new value        
+        $sel.trigger('update');
         jquery_default()("#formSearchInput").attr("placeholder", "Search by label");
-    }
+    } else if (jquery_default()(this).find("option:selected").hasClass("catnum")) {
+        // store new value        
+        $sel.trigger('update');
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by cat num");
+    } else if (jquery_default()(this).find("option:selected").hasClass("barcode")) {
+        // store new value        
+        $sel.trigger('update');
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by barcode");
+    } else if (jquery_default()(this).find("option:selected").hasClass("genre")) {
+        // store new value        
+        $sel.trigger('update');
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by genre");
+    } else if (jquery_default()(this).find("option:selected").hasClass("seller")) {
+        // store new value        
+        $sel.trigger('update');
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by seller");
 
-    if (jquery_default()(this).find("option:selected").hasClass("advanced")) {
-        jquery_default()("#formSearchInput").attr("placeholder", "");
+    } else {
         jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
         jquery_default()(".form-advanced-overlay").fadeToggle();
         jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
         jquery_default()("html").toggleClass("advanced-search-form-open");
+         // reset
+         $sel.val( $sel.data('currVal'));        
     }
-});
+}).on('update', function(){
+    jquery_default()(this).data('currVal', jquery_default()(this).val())
+}).trigger('update');
 
 // record stores slider
 const sliderRecordStores = document.querySelector('#sliderRecordStores');
@@ -418,11 +542,6 @@ $cle.on("touchstart click", function(e) {
     e.preventDefault();
     $inp.val("").trigger("input");
 });
-    
-
-// advancedSearchInput.addEventListener("blur", function() {
-//     btnReset.classList.remove("show-reset");
-// });
 
 // toggle advanced search form on mobile
 jquery_default()("#btnOpenForm2").click(function() {
@@ -551,22 +670,27 @@ const observerFormSearch = new IntersectionObserver(function
     (entries, observer) {
         entries.forEach(entry => {
             
-            if (!entry.isIntersecting) {
-                // console.log("intersecting 1");
-                
-                formSearchContainer.classList.add("form-search-sticky", "show-bg");
-                formSearch.classList.add("width-76", "form-search-sticky");
-                // btnAdvancedSearch.classList.add("btn-sticky");
-                // btnAdvancedSearchArrow.classList.add("dark-grey");
-                // advancedSearchSelect.classList.add("no-border-radius");
-                // advancedSearchInput.classList.add("no-border-radius");
+            if (window.innerWidth <= 1199) {
+                if (!entry.isIntersecting) {
+                    // console.log("intersecting 1");
+                    
+                    formSearchContainer.classList.add("form-search-sticky", "show-bg");
+                    formSearch.classList.add("width-76", "form-search-sticky");
+                    // btnAdvancedSearch.classList.add("btn-sticky");
+                    // btnAdvancedSearchArrow.classList.add("dark-grey");
+                    // advancedSearchSelect.classList.add("no-border-radius");
+                    // advancedSearchInput.classList.add("no-border-radius");
+                } else {
+                    formSearchContainer.classList.remove("form-search-sticky", "show-bg");
+                    formSearch.classList.remove("width-76", "form-search-sticky");
+                    // btnAdvancedSearch.classList.remove("btn-sticky");
+                    // btnAdvancedSearchArrow.classList.remove("dark-grey");
+                    // advancedSearchSelect.classList.remove("no-border-radius");
+                    // advancedSearchInput.classList.remove("no-border-radius");
+                }
             } else {
                 formSearchContainer.classList.remove("form-search-sticky", "show-bg");
                 formSearch.classList.remove("width-76", "form-search-sticky");
-                // btnAdvancedSearch.classList.remove("btn-sticky");
-                // btnAdvancedSearchArrow.classList.remove("dark-grey");
-                // advancedSearchSelect.classList.remove("no-border-radius");
-                // advancedSearchInput.classList.remove("no-border-radius");
             }
         });
 }, {rootMargin: "-62px 0px 0px 0px"});
@@ -585,6 +709,9 @@ const observerFormSearch = new IntersectionObserver(function
 
 observerFormSearch.observe(titleContainer);
 // observerFormSearchTop.observe(titleContainer);
+// window.addEventListener("resize", function () {
+//     observerFormSearch.observe(titleContainer);
+// });
 
 // hide loader on window load
 const loader = document.querySelector(".loader-container");
