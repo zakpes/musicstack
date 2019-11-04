@@ -236,7 +236,6 @@ function navbarShrink() {
     console.log(window.innerWidth);
     
     
-
     if (window.innerWidth >= 992) {
         
         if (jquery_default()("#hero").offset().top < $wScroll) {
