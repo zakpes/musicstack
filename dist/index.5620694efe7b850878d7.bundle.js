@@ -232,7 +232,12 @@ function navbarShrink() {
     //     $(".navbar .form-search-container").removeClass("show-form");
     // }
 
-    if ($windowW >= 992) {
+    console.log($windowW);
+    console.log(window.innerWidth);
+    
+    
+
+    if (window.innerWidth >= 992) {
         
         if (jquery_default()("#hero").offset().top < $wScroll) {
             jquery_default()(".navbar").addClass("navbar-shrink");
@@ -248,7 +253,7 @@ function navbarShrink() {
     }
 
     // attach search form to navbar on scroll
-    if ($windowW >= 1200) {
+    if (window.innerWidth >= 1200) {
         if (jquery_default()("#hero").offset().top + 200 <= $wScroll) {
             jquery_default()("#formSearchContainer, .btn-search").addClass("navbar-fixed");
             // $("#formSearchSelect option.artist").text("Artist");
