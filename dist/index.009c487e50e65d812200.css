@@ -460,16 +460,16 @@ select {
   margin-left: 34px;
   margin-right: auto;
   margin-top: 2px;
-  transition: transform 300ms ease-out;
+  transition: transform 200ms ease-out;
   height: 36px;
   margin-right: 26px;
   flex: 1 1 200px;
-  transform: scaleY(0);
+  transform: scaleY(0) translateY(50px);
   transform-origin: bottom;
 }
 
 .navbar .form-search-container.show-form {
-  transform: scaleY(1);
+  transform: scaleY(1) translateY(0);
 }
 
 .navbar .form-search-container.navbar-fixed {
@@ -580,13 +580,14 @@ select {
   cursor: pointer;
   width: initial;
   padding: 0 12px;
-  top: -2px;
+  top: 1px;
   right: 36px;
   font-family: "Segoe UI", sans-serif;
   font-size: 32px;
-  height: 36px;
+  height: 33px;
   font-style: normal;
-  line-height: 1;
+  line-height: 28px;
+  background-color: #fff;
 }
 
 .navbar .form-search .form-search-reset::before {
@@ -600,7 +601,7 @@ select {
   transform: scale(0);
   transition: transform 200ms cubic-bezier(0.345, 0.115, 0.135, 1.42);
   opacity: 0.15;
-  top: 4px;
+  top: 1px;
   left: 6px;
 }
 
@@ -674,7 +675,6 @@ select {
 
 #hero .form-search-container {
   position: relative;
-  transition: transform 500ms, opacity 500ms;
   transform-origin: top;
   z-index: 1031;
   z-index: 1;
@@ -839,7 +839,7 @@ select {
   font-family: "Segoe UI", sans-serif;
   font-size: 32px;
   font-style: normal;
-  line-height: 1;
+  line-height: 33px;
 }
 
 #hero .form-search .form-search-reset::before {
@@ -854,7 +854,7 @@ select {
   transition: transform 200ms cubic-bezier(0.345, 0.115, 0.135, 1.42);
   opacity: 0.15;
   top: 2px;
-  left: 5px;
+  left: 4px;
 }
 
 #hero .form-search .form-search-reset:hover::before {
@@ -1910,6 +1910,8 @@ select {
     justify-content: left;
     height: auto;
     padding: 11px 0 14px;
+    padding-left: 1vw;
+    padding-right: 2vw;
     position: fixed;
     margin-left: 0;
     margin-right: 0;
@@ -1999,7 +2001,6 @@ select {
     z-index: 1010;
   }
   #hero .form-search-container {
-    transition: transform 500ms;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -2046,7 +2047,7 @@ select {
   #hero .form-search-container.form-search-sticky {
     top: 63px;
     height: 36px;
-    width: 95%;
+    width: 97%;
   }
   .menu.icon {
     top: 16px;
@@ -2055,7 +2056,8 @@ select {
   .navbar {
     justify-content: left;
     height: auto;
-    padding: 11px 0 14px;
+    padding-left: 0.5vw;
+    padding-right: 1.5vw;
     position: fixed;
     margin-left: 0;
     margin-right: 0;
@@ -2150,12 +2152,7 @@ select {
     z-index: 1;
   }
   #hero .form-search .form-search-input {
-    padding-right: 88px;
-  }
-  #hero .form-search .form-search-reset {
-    line-height: 56px;
-    right: 52px;
-    top: 0px;
+    padding-right: 108px;
   }
   #recordStores .slider-cell {
     width: 25%;
@@ -2203,15 +2200,25 @@ select {
   }
 }
 
+@media (max-width: 800px) {
+  #main .flex-container-2 .listed-record,
+  #main .flex-container-2 .empty-space-filler {
+    min-width: 180px;
+    max-width: 240px;
+    flex: 1 1 180px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 768px) {
+  .navbar .navbar-right {
+    margin-left: -1px;
+  }
+}
+
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767px) {
   #formSearchContainerNav {
     transform: scaleX(0);
-  }
-  #hero .form-search .form-search-reset {
-    line-height: 36px;
-    right: 32px;
-    top: 0px;
   }
   .navbar .navbar-right ul .nav-item-sign-in {
     padding-top: 1px;
@@ -2261,20 +2268,66 @@ select {
     position: relative;
     transition: width 500ms;
   }
-  #hero .form-search-container.form-sticky {
-    position: fixed;
-    top: 59px;
-    z-index: 1010;
-    width: 100%;
+  #hero .form-search-container .form-search-select-bg {
+    width: 135px;
+  }
+  #hero .form-search-container {
+    transition: height 200ms;
+  }
+  #hero .form-search-container .form-search .form-search-reset {
+    top: 11px;
+  }
+  #hero .form-search-container.form-search-sticky {
+    width: 96%;
+  }
+  #hero .form-search-container.form-search-sticky .form-search-select-bg {
+    width: 97px;
+  }
+  #hero .form-search-container.form-search-sticky .form-search-reset {
+    width: 33px;
+    height: 33px;
+    height: 30px;
+    font-size: 28px;
+    line-height: 28px;
+    top: 4px;
+    right: 44px;
+    right: 34px;
+    background-color: #fff;
+    padding: 0 8px;
+  }
+  #hero .form-search-container.form-search-sticky .form-search-reset::before {
+    width: 33px;
+    height: 33px;
+    top: 0px;
+    left: 5px;
+  }
+  #hero .form-search-container .form-search .form-search-select-bg {
+    transition: height 200ms;
+    transform-origin: top;
   }
   #hero .form-search-container .form-search .form-search-select {
-    padding-left: 5px;
+    padding-left: 12px;
+    transition: height 200ms;
+    transform-origin: top;
   }
   #hero .form-search-container .form-search .form-search-select.form-sticky {
     height: 36px;
+    width: 94px;
+    padding-left: 5px;
+  }
+  #hero .form-search-container .form-search .form-search-input {
+    padding-right: 98px;
+    transition: height 200ms;
+    transform-origin: top;
   }
   #hero .form-search-container .form-search .form-search-input.form-sticky {
     height: 36px;
+    padding-right: 0;
+    flex: 1 1 140px;
+  }
+  #hero .form-search-container .form-search .btn-search {
+    transition: all 200ms;
+    transform-origin: top;
   }
   #hero .form-search-container .form-search .btn-search.form-sticky {
     margin-left: -35px;
@@ -2397,9 +2450,6 @@ select {
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575px) {
-  #hero .title-container .title {
-    font-size: 30px;
-  }
   #hero .form-search-container {
     margin-left: 0;
     margin-right: 0;
@@ -2417,6 +2467,12 @@ select {
   }
   #trustpilotReviews .see-all-link-container {
     padding-left: 6px;
+  }
+}
+
+@media (max-width: 498px) {
+  #hero .title-container .title {
+    font-size: 30px;
   }
 }
 
@@ -2463,6 +2519,12 @@ select {
 }
 
 @media (max-width: 390px) {
+  #hero .form-search-container .form-search .form-search-select {
+    padding-left: 5px;
+  }
+  #hero .form-search-container.form-search-sticky {
+    width: 91%;
+  }
   #recordStores .record-stores-title {
     margin-left: 4px;
   }
@@ -2514,12 +2576,10 @@ select {
   }
 }
 
-/* Media Queries Mobile-First
- * ==================================== */
 /* Custom, iPhone Retina */
-/* Extra Small Devices, Phones */
-/* Small devices (landscape phones, 576px and up) */
-/* Medium devices (tablets, 768px and up) */
-/* Large devices (desktops, 992px and up) */
-/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 340px) {
+  #hero .form-search-container #formSearch {
+    flex-wrap: nowrap;
+  }
+}
 

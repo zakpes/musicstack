@@ -226,7 +226,7 @@ function navbarShrink() {
     var $windowW = $window.width();
 console.log($wScroll);
 
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth > 767) {
         
         if (jquery_default()("#hero").offset().top < $wScroll) {
             jquery_default()(".navbar").addClass("navbar-shrink");
@@ -349,7 +349,7 @@ function setSearchSelectOptions() {
 
 jquery_default()(document).ready(setSearchSelectOptions);
 jquery_default()(window).resize(setSearchSelectOptions);
-jquery_default()("#formSearchSelect, #formSearchSelectNav").change(setSearchSelectOptions);
+// $("#formSearchSelect, #formSearchSelectNav").change(setSearchSelectOptions);
 
 // set search placeholder on load
 jquery_default()(document).ready(function() {
@@ -384,43 +384,86 @@ jquery_default()(document).ready(function() {
 
 });
 
-// change search placeholder on select
+// change search select text and placeholder on change select option
 var $sel = jquery_default()('#formSearchSelect, #formSearchSelectNav').on('change', function(){
     if (jquery_default()(this).find("option:selected").hasClass("artist")) {
         // store new value        
         $sel.trigger('update');
         jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by artist");
-        jquery_default()('#formSearchSelect, #formSearchSelectNav').find("option:selected").text("Artist Search");
+        jquery_default()('#formSearchSelectNav').find("option:selected").text("Artist Search");
+
+        if (window.innerWidth < 768) {
+            jquery_default()('#formSearchSelect').find("option:selected").text("Artist");
+        } else {
+            jquery_default()('#formSearchSelect').find("option:selected").text("Artist Search");
+        }
+        
     } else if (jquery_default()(this).find("option:selected").hasClass("title")) {
         // store new value        
         $sel.trigger('update');
         jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by title");
-        jquery_default()('#formSearchSelect, #formSearchSelectNav').find("option:selected").text("Title Search");
+        jquery_default()('#formSearchSelectNav').find("option:selected").text("Title Search");
+
+        if (window.innerWidth < 768) {
+            jquery_default()('#formSearchSelect').find("option:selected").text("Title");
+        } else {
+            jquery_default()('#formSearchSelect').find("option:selected").text("Title Search");
+        }
     } else if (jquery_default()(this).find("option:selected").hasClass("label")) {
         // store new value        
         $sel.trigger('update');
         jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by label");
-        jquery_default()('#formSearchSelect, #formSearchSelectNav').find("option:selected").text("Label Search");
+        jquery_default()('#formSearchSelectNav').find("option:selected").text("Label Search");
+
+        if (window.innerWidth < 768) {
+            jquery_default()('#formSearchSelect').find("option:selected").text("Label");
+        } else {
+            jquery_default()('#formSearchSelect').find("option:selected").text("Label Search");
+        }
     } else if (jquery_default()(this).find("option:selected").hasClass("catnum")) {
         // store new value        
         $sel.trigger('update');
         jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by cat num");
-        jquery_default()('#formSearchSelect, #formSearchSelectNav').find("option:selected").text("Cat Num Search");
+        jquery_default()('#formSearchSelectNav').find("option:selected").text("Cat Num Search");
+
+        if (window.innerWidth < 768) {
+            jquery_default()('#formSearchSelect').find("option:selected").text("Cat Num");
+        } else {
+            jquery_default()('#formSearchSelect').find("option:selected").text("Cat Num Search");
+        }
     } else if (jquery_default()(this).find("option:selected").hasClass("barcode")) {
         // store new value        
         $sel.trigger('update');
         jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by barcode");
-        jquery_default()('#formSearchSelect, #formSearchSelectNav').find("option:selected").text("Barcode Search");
+        jquery_default()('#formSearchSelectNav').find("option:selected").text("Barcode Search");
+
+        if (window.innerWidth < 768) {
+            jquery_default()('#formSearchSelect').find("option:selected").text("Barcode");
+        } else {
+            jquery_default()('#formSearchSelect').find("option:selected").text("Barcode Search");
+        }
     } else if (jquery_default()(this).find("option:selected").hasClass("genre")) {
         // store new value        
         $sel.trigger('update');
         jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by genre");
-        jquery_default()('#formSearchSelect, #formSearchSelectNav').find("option:selected").text("Genre Search");
+        jquery_default()('#formSearchSelectNav').find("option:selected").text("Genre Search");
+
+        if (window.innerWidth < 768) {
+            jquery_default()('#formSearchSelect').find("option:selected").text("Genre");
+        } else {
+            jquery_default()('#formSearchSelect').find("option:selected").text("Genre Search");
+        }
     } else if (jquery_default()(this).find("option:selected").hasClass("seller")) {
         // store new value        
         $sel.trigger('update');
         jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by seller");
-        jquery_default()('#formSearchSelect, #formSearchSelectNav').find("option:selected").text("Seller Search");
+        jquery_default()('#formSearchSelectNav').find("option:selected").text("Seller Search");
+
+        if (window.innerWidth < 768) {
+            jquery_default()('#formSearchSelect').find("option:selected").text("Seller");
+        } else {
+            jquery_default()('#formSearchSelect').find("option:selected").text("Seller Search");
+        }
 
     } else {
         jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
@@ -516,7 +559,7 @@ $cle.on("touchstart click", function(e) {
 // });
 
 // toggle advanced search form on mobile
-jquery_default()("#btnOpenForm2").click(function() {
+jquery_default()("#btnOpenForm1, #btnOpenForm2, #btnOpenForm3").click(function() {
     jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
     jquery_default()(".form-advanced-search-container").addClass("fade-in");
     jquery_default()(".form-advanced-overlay").fadeToggle();
@@ -686,8 +729,25 @@ function formSearchSticky() {
 
     var $wScroll = jquery_default()(window).scrollTop();
 
-    if (window.innerWidth <= 767) {
-        if (jquery_default()("#hero").offset().top + 200 <= $wScroll) {
+    if (window.innerWidth < 499) {
+        if (jquery_default()("#hero").offset().top + 193 <= $wScroll) {
+            // console.log("intersecting 1");
+            
+            formSearchContainer.classList.add("form-search-sticky", "show-bg");
+            formSearchSelect.classList.add("form-sticky");
+            formSearchInput.classList.add("form-sticky");
+            formSearchBtn.classList.add("form-sticky");
+            // formSearch.classList.add("width-76", "form-search-sticky");
+        } else {
+            formSearchContainer.classList.remove("form-search-sticky", "show-bg");
+            formSearchSelect.classList.remove("form-sticky");
+            formSearchInput.classList.remove("form-sticky");
+            formSearchBtn.classList.remove("form-sticky");
+            // formSearch.classList.remove("width-76", "form-search-sticky");
+        }
+        
+    } else if (window.innerWidth < 768) {
+        if (jquery_default()("#hero").offset().top + 235 <= $wScroll) {
             // console.log("intersecting 1");
             
             formSearchContainer.classList.add("form-search-sticky", "show-bg");
