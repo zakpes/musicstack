@@ -224,73 +224,48 @@ function navbarShrink() {
     var $window = jquery_default()(window);
     var $wScroll = $window.scrollTop();
     var $windowW = $window.width();
-    // console.log($wScroll);
+console.log($wScroll);
 
-    // if ($windowW < 992) {
-        
-    //     $(".navbar").removeClass("navbar-shrink");
-    //     $(".navbar .form-search-container").removeClass("show-form");
-    // }
-
-    console.log($windowW);
-    console.log(window.innerWidth);
-    
-    
-    if (window.innerWidth >= 992) {
+    if (window.innerWidth >= 768) {
         
         if (jquery_default()("#hero").offset().top < $wScroll) {
             jquery_default()(".navbar").addClass("navbar-shrink");
-            jquery_default()(".navbar .form-search-container").addClass("show-form");
         } else if (jquery_default()("#hero").offset().top > $wScroll) {
             jquery_default()(".navbar").removeClass("navbar-shrink");
-            jquery_default()(".navbar .form-search-container").removeClass("show-form");
+        }
+
+        // show navbar search form
+        if (jquery_default()("#hero").offset().top + 240 < $wScroll) {
+            jquery_default()("#formSearchContainerNav").addClass("show-form");
+            // $("#formSearchContainer").addClass("hide-form");
+        } else {
+            jquery_default()("#formSearchContainerNav").removeClass("show-form");
+            // $("#formSearchContainer").removeClass("hide-form");
         }
     } else {
         
         jquery_default()(".navbar").removeClass("navbar-shrink");
-        jquery_default()(".navbar .form-search-container").removeClass("show-form");
+        jquery_default()("#formSearchContainerNav").removeClass("show-form");
     }
 
+    // show navbar search form
+
     // attach search form to navbar on scroll
-    if (window.innerWidth >= 1200) {
-        if (jquery_default()("#hero").offset().top + 200 <= $wScroll) {
-            jquery_default()("#formSearchContainer, .btn-search").addClass("navbar-fixed");
-            // $("#formSearchSelect option.artist").text("Artist");
-            // $("#formSearchSelect option.title").text("Title");
-            // $("#formSearchSelect option.label").text("Label");
-        } else if (jquery_default()("#hero").offset().top + 200 > $wScroll) {
-            jquery_default()("#formSearchContainer, .btn-search").removeClass("navbar-fixed");
-            // $("#formSearchSelect option.artist").text("Artist Search");
-            // $("#formSearchSelect option.title").text("Title Search");
-            // $("#formSearchSelect option.label").text("Label Search");
-        }
-    } else {
-        jquery_default()("#formSearchContainer, .btn-search").removeClass("navbar-fixed");
-    }
+    // if (window.innerWidth >= 1200) {
+    //     if ($("#hero").offset().top + 200 <= $wScroll) {
+    //         $("#formSearchContainer, .btn-search").addClass("navbar-fixed");
+    //         $(".navbar .form-search-container").addClass("show-form");
+    //     } else if ($("#hero").offset().top + 200 > $wScroll) {
+    //         $("#formSearchContainer, .btn-search").removeClass("navbar-fixed");
+    //         $(".navbar .form-search-container").removeClass("show-form");
+    //     }
+    // } else {
+    //     $("#formSearchContainer, .btn-search").removeClass("navbar-fixed");
+    // }
 };
 
 jquery_default()(window).scroll(navbarShrink);
 jquery_default()(window).resize(navbarShrink);
-
-// position and scale attached search form on resize
-// $(document).ready(function () {
-
-//     let $windowWidth = $(window).width();
-    
-
-//     $(window).resize(function() {
-
-//         let $windowWidthResized = $(window).width();
-
-//         if ($windowWidth >= 1200 && $windowWidth <= 1440) {
-//             $("#hero .form-search-container.navbar-fixed")
-//             .css({
-//                 "left": $windowWidthResized / 3.9344,
-//                 "width": $windowWidthResized / 3.392857
-//             });
-//         }
-//     });
-// });
 
 // navbar brand hover
 const navbarBrand = document.querySelector(".navbar-brand");
@@ -351,18 +326,16 @@ jquery_default()("#formSearchSelect").focus(function () {
 // set search select options
 function setSearchSelectOptions() {
 
-    var $windowW = jquery_default()(window).width();
-
-    if ($windowW >= 768) {
-        jquery_default()("#formSearchSelect option.artist").text("Artist Search");
-        jquery_default()("#formSearchSelect option.title").text("Title Search");
-        jquery_default()("#formSearchSelect option.label").text("Label Search");
-        jquery_default()("#formSearchSelect option.catnum").text("Cat Num Search");
-        jquery_default()("#formSearchSelect option.barcode").text("Barcode Search");
-        jquery_default()("#formSearchSelect option.genre").text("Genre Search");
-        jquery_default()("#formSearchSelect option.seller").text("Seller Search");
-        jquery_default()("#formSearchSelect option.advanced").text("Advanced");
-    } else if ($windowW < 768) {
+    if (window.innerWidth >= 768) {
+        jquery_default()("#formSearchSelect option.artist, #formSearchSelectNav option.artist").text("Artist Search");
+        jquery_default()("#formSearchSelect option.title, #formSearchSelectNav option.title").text("Title Search");
+        jquery_default()("#formSearchSelect option.label, #formSearchSelectNav option.label").text("Label Search");
+        jquery_default()("#formSearchSelect option.catnum, #formSearchSelectNav option.catnum").text("Cat Num Search");
+        jquery_default()("#formSearchSelect option.barcode, #formSearchSelectNav option.barcode").text("Barcode Search");
+        jquery_default()("#formSearchSelect option.genre, #formSearchSelectNav option.genre").text("Genre Search");
+        jquery_default()("#formSearchSelect option.seller, #formSearchSelectNav option.seller").text("Seller Search");
+        jquery_default()("#formSearchSelect option.advanced, #formSearchSelectNav option.advanced").text("Advanced");
+    } else if (window.innerWidth < 768) {
         jquery_default()("#formSearchSelect option.artist").text("Artist");
         jquery_default()("#formSearchSelect option.title").text("Title");
         jquery_default()("#formSearchSelect option.label").text("Label");
@@ -376,112 +349,98 @@ function setSearchSelectOptions() {
 
 jquery_default()(document).ready(setSearchSelectOptions);
 jquery_default()(window).resize(setSearchSelectOptions);
+jquery_default()("#formSearchSelect, #formSearchSelectNav").change(setSearchSelectOptions);
 
 // set search placeholder on load
 jquery_default()(document).ready(function() {
     
-    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("artist")) {
-        jquery_default()("#formSearchInput").attr("placeholder", "Search by artist");
+    if (jquery_default()("#formSearchSelect, #formSearchSelectNav").find("option:selected").hasClass("artist")) {
+        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by artist");
     }
 
-    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("title")) {
-        jquery_default()("#formSearchInput").attr("placeholder", "Search by title");
+    if (jquery_default()("#formSearchSelect, #formSearchSelectNav").find("option:selected").hasClass("title")) {
+        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by title");
     }
 
-    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("label")) {
-        jquery_default()("#formSearchInput").attr("placeholder", "Search by label");
+    if (jquery_default()("#formSearchSelect, #formSearchSelectNav").find("option:selected").hasClass("label")) {
+        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by label");
     }
 
-    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("catnum")) {
-        jquery_default()("#formSearchInput").attr("placeholder", "Search by cat num");
+    if (jquery_default()("#formSearchSelect, #formSearchSelectNav").find("option:selected").hasClass("catnum")) {
+        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by cat num");
     }
 
-    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("barcode")) {
-        jquery_default()("#formSearchInput").attr("placeholder", "Search by barcode");
+    if (jquery_default()("#formSearchSelect, #formSearchSelectNav").find("option:selected").hasClass("barcode")) {
+        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by barcode");
     }
 
-    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("genre")) {
-        jquery_default()("#formSearchInput").attr("placeholder", "Search by genre");
+    if (jquery_default()("#formSearchSelect, #formSearchSelectNav").find("option:selected").hasClass("genre")) {
+        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by genre");
     }
 
-    if (jquery_default()("#formSearchSelect").find("option:selected").hasClass("seller")) {
-        jquery_default()("#formSearchInput").attr("placeholder", "Search by seller");
+    if (jquery_default()("#formSearchSelect, #formSearchSelectNav").find("option:selected").hasClass("seller")) {
+        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by seller");
     }
 
 });
 
 // change search placeholder on select
-
-
-// var $selectedOption = $("#formSearchSelect option:selected").val();
-
-// $("#formSearchSelect").change(function() {
-//     console.log("Selected 1: " + $selectedOption);
-
-//     if ($(this).find("option:selected").hasClass("artist")) {
-//         $("#formSearchInput").attr("placeholder", "Search by artist");
-//     }
-
-//     if ($(this).find("option:selected").hasClass("title")) {
-//         $("#formSearchInput").attr("placeholder", "Search by title");
-//     }
-
-//     if ($(this).find("option:selected").hasClass("label")) {
-//         $("#formSearchInput").attr("placeholder", "Search by label");
-//     }
-
-//     if ($("#formSearchSelect").find("option:selected").hasClass("advanced")) {
-//         $("#formSearchSelect").find("option:selected").val($selectedOption);
-//         console.log("selected 2: " + $selectedOption);
-        
-//         $(".form-advanced-search-container").toggleClass("slide-in");
-//         $(".form-advanced-overlay").fadeToggle();
-//         $(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
-//         $("html").toggleClass("advanced-search-form-open");
-//     }
-// });
-
-var $sel = jquery_default()('#formSearchSelect').on('change', function(){
+var $sel = jquery_default()('#formSearchSelect, #formSearchSelectNav').on('change', function(){
     if (jquery_default()(this).find("option:selected").hasClass("artist")) {
         // store new value        
         $sel.trigger('update');
-        jquery_default()("#formSearchInput").attr("placeholder", "Search by artist");
+        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by artist");
+        jquery_default()('#formSearchSelect, #formSearchSelectNav').find("option:selected").text("Artist Search");
     } else if (jquery_default()(this).find("option:selected").hasClass("title")) {
         // store new value        
         $sel.trigger('update');
-        jquery_default()("#formSearchInput").attr("placeholder", "Search by title");
+        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by title");
+        jquery_default()('#formSearchSelect, #formSearchSelectNav').find("option:selected").text("Title Search");
     } else if (jquery_default()(this).find("option:selected").hasClass("label")) {
         // store new value        
         $sel.trigger('update');
-        jquery_default()("#formSearchInput").attr("placeholder", "Search by label");
+        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by label");
+        jquery_default()('#formSearchSelect, #formSearchSelectNav').find("option:selected").text("Label Search");
     } else if (jquery_default()(this).find("option:selected").hasClass("catnum")) {
         // store new value        
         $sel.trigger('update');
-        jquery_default()("#formSearchInput").attr("placeholder", "Search by cat num");
+        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by cat num");
+        jquery_default()('#formSearchSelect, #formSearchSelectNav').find("option:selected").text("Cat Num Search");
     } else if (jquery_default()(this).find("option:selected").hasClass("barcode")) {
         // store new value        
         $sel.trigger('update');
-        jquery_default()("#formSearchInput").attr("placeholder", "Search by barcode");
+        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by barcode");
+        jquery_default()('#formSearchSelect, #formSearchSelectNav').find("option:selected").text("Barcode Search");
     } else if (jquery_default()(this).find("option:selected").hasClass("genre")) {
         // store new value        
         $sel.trigger('update');
-        jquery_default()("#formSearchInput").attr("placeholder", "Search by genre");
+        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by genre");
+        jquery_default()('#formSearchSelect, #formSearchSelectNav').find("option:selected").text("Genre Search");
     } else if (jquery_default()(this).find("option:selected").hasClass("seller")) {
         // store new value        
         $sel.trigger('update');
-        jquery_default()("#formSearchInput").attr("placeholder", "Search by seller");
+        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by seller");
+        jquery_default()('#formSearchSelect, #formSearchSelectNav').find("option:selected").text("Seller Search");
 
     } else {
         jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
         jquery_default()(".form-advanced-overlay").fadeToggle();
         jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
         jquery_default()("html").toggleClass("advanced-search-form-open");
-         // reset
-         $sel.val( $sel.data('currVal'));        
+        // reset
+        $sel.val( $sel.data('currVal'));        
     }
 }).on('update', function(){
     jquery_default()(this).data('currVal', jquery_default()(this).val())
 }).trigger('update');
+
+// match input on both forms
+jquery_default()("#formSearchInput, #formSearchInputNav").change(function () {
+
+    let $inputText = jquery_default()(this).val();
+
+    jquery_default()("#formSearchInput, #formSearchInputNav").val($inputText);
+});
 
 // record stores slider
 const sliderRecordStores = document.querySelector('#sliderRecordStores');
@@ -534,8 +493,8 @@ const btnReset = document.querySelector(".form-search-reset");
  * Clearable text inputs
  */
 
-const $inp = jquery_default()("#formSearchInput, #formSearchInputNavbar");
-const $inpNavbar = jquery_default()("#formSearchInputNavbar");
+const $inp = jquery_default()("#formSearchInput, #formSearchInputNav");
+const $inpNav = jquery_default()("#formSearchInputNav");
 const $cle = jquery_default()(".form-search-reset");
   
 $inp.on("input", function(){
@@ -546,10 +505,20 @@ $cle.on("touchstart click", function(e) {
     e.preventDefault();
     $inp.val("").trigger("input");
 });
+  
+// $inpNav.on("input", function(){
+//     $cle.toggle(!!this.value);
+// });
+
+// $cle.on("touchstart click", function(e) {
+//     e.preventDefault();
+//     $inpNav.val("").trigger("input");
+// });
 
 // toggle advanced search form on mobile
 jquery_default()("#btnOpenForm2").click(function() {
     jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
+    jquery_default()(".form-advanced-search-container").addClass("fade-in");
     jquery_default()(".form-advanced-overlay").fadeToggle();
     jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
     // $("html").toggleClass("advanced-search-form-open");
@@ -563,6 +532,24 @@ jquery_default()("#btnCloseForm, .form-advanced-overlay").click(function() {
     jquery_default()(".form-advanced-overlay").fadeToggle();
     jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
     jquery_default()("html").toggleClass("advanced-search-form-open");
+});
+
+jquery_default()(document).ready(function () {
+
+    let $windowW = window.innerWidth;
+
+    if ($windowW < 992) {
+        jquery_default()(".form-advanced-search-container").addClass("fade-in");
+    }
+})
+
+jquery_default()(window).resize(function () {
+    
+    let $windowW = window.innerWidth;
+
+    if ($windowW >= 992) {
+        jquery_default()(".form-advanced-search-container").removeClass("fade-in");
+    }
 });
 
 // stick advanced search to top when scrolling on mobile
@@ -626,10 +613,12 @@ const sectionTrustpilot = document.querySelector("#trustpilotReviews");
 const formSearchContainer = document.querySelector("#formSearchContainer");
 const formSearchContainerWrapper = document.querySelector(".form-search-container-wrapper");
 const formSearch = document.querySelector(".form-search");
+const formSearchSelect = document.querySelector("#formSearchSelect");
+const formSearchInput = document.querySelector("#formSearchInput");
+const formSearchBtn = document.querySelector("#formSearchBtn");
 const btnAdvancedSearch = document.querySelector("#btnOpenForm");
 const btnAdvancedSearchArrow = document.querySelector("#btnOpenForm svg");
 const titleContainer = document.querySelector(".title-container");
-const advancedSearchSelect = document.querySelector("#formSearchSelect");
 const navbar = document.querySelector(".navbar");
 
 const optionsTrusted = {
@@ -680,17 +669,9 @@ const observerFormSearch = new IntersectionObserver(function
                     
                     formSearchContainer.classList.add("form-search-sticky", "show-bg");
                     formSearch.classList.add("width-76", "form-search-sticky");
-                    // btnAdvancedSearch.classList.add("btn-sticky");
-                    // btnAdvancedSearchArrow.classList.add("dark-grey");
-                    // advancedSearchSelect.classList.add("no-border-radius");
-                    // advancedSearchInput.classList.add("no-border-radius");
                 } else {
                     formSearchContainer.classList.remove("form-search-sticky", "show-bg");
                     formSearch.classList.remove("width-76", "form-search-sticky");
-                    // btnAdvancedSearch.classList.remove("btn-sticky");
-                    // btnAdvancedSearchArrow.classList.remove("dark-grey");
-                    // advancedSearchSelect.classList.remove("no-border-radius");
-                    // advancedSearchInput.classList.remove("no-border-radius");
                 }
             } else {
                 formSearchContainer.classList.remove("form-search-sticky", "show-bg");
@@ -699,23 +680,36 @@ const observerFormSearch = new IntersectionObserver(function
         });
 }, {rootMargin: "-62px 0px 0px 0px"});
 
-// const observerFormSearchTop = new IntersectionObserver(function
-//     (entries, observer) {
-//         entries.forEach(entry => {
-            
-//             if (!entry.isIntersecting) {
-//                 formSearchContainer.classList.add("slide-in-place");
-//             } else {
-//                 formSearchContainer.classList.remove("slide-in-place");
-//             }
-//         });
-// }, {rootMargin: "100px 0px 0px 0px"});
+// observerFormSearch.observe(titleContainer);
 
-observerFormSearch.observe(titleContainer);
-// observerFormSearchTop.observe(titleContainer);
-// window.addEventListener("resize", function () {
-//     observerFormSearch.observe(titleContainer);
-// });
+function formSearchSticky() {
+
+    var $wScroll = jquery_default()(window).scrollTop();
+
+    if (window.innerWidth <= 767) {
+        if (jquery_default()("#hero").offset().top + 200 <= $wScroll) {
+            // console.log("intersecting 1");
+            
+            formSearchContainer.classList.add("form-search-sticky", "show-bg");
+            formSearchSelect.classList.add("form-sticky");
+            formSearchInput.classList.add("form-sticky");
+            formSearchBtn.classList.add("form-sticky");
+            // formSearch.classList.add("width-76", "form-search-sticky");
+        } else {
+            formSearchContainer.classList.remove("form-search-sticky", "show-bg");
+            formSearchSelect.classList.remove("form-sticky");
+            formSearchInput.classList.remove("form-sticky");
+            formSearchBtn.classList.remove("form-sticky");
+            // formSearch.classList.remove("width-76", "form-search-sticky");
+        }
+    } else {
+        formSearchContainer.classList.remove("form-search-sticky", "show-bg");
+        // formSearch.classList.remove("width-76", "form-search-sticky");
+    }
+}
+
+jquery_default()(window).scroll(formSearchSticky);
+jquery_default()(window).resize(formSearchSticky);
 
 // hide loader on window load
 const loader = document.querySelector(".loader-container");
