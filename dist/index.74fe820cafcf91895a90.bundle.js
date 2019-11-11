@@ -771,6 +771,7 @@ function formSearchSticky() {
     }
 }
 
+jquery_default()(document).ready(formSearchSticky);
 jquery_default()(window).scroll(formSearchSticky);
 jquery_default()(window).resize(formSearchSticky);
 
