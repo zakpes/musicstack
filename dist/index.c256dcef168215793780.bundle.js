@@ -236,17 +236,18 @@ function navbarShrink() {
         }
 
         // show navbar search form
-        if (jquery_default()("#hero").offset().top + 240 < $wScroll) {
+        if (jquery_default()("#hero").offset().top + 180 < $wScroll) {
             jquery_default()("#formSearchContainerNav").addClass("show-form");
-            // $("#formSearchContainer").addClass("hide-form");
+            jquery_default()("#formSearchContainer").addClass("hide-form");
         } else {
             jquery_default()("#formSearchContainerNav").removeClass("show-form");
-            // $("#formSearchContainer").removeClass("hide-form");
+            jquery_default()("#formSearchContainer").removeClass("hide-form");
         }
     } else {
         
         jquery_default()(".navbar").removeClass("navbar-shrink");
         jquery_default()("#formSearchContainerNav").removeClass("show-form");
+        jquery_default()("#formSearchContainer").removeClass("hide-form");
     }
 
     // show navbar search form
@@ -732,7 +733,7 @@ function formSearchSticky() {
     var $wScroll = jquery_default()(window).scrollTop();
 
     if (window.innerWidth < 499) {
-        if (jquery_default()("#hero").offset().top + 205 <= $wScroll) {
+        if (jquery_default()("#hero").offset().top + 208 <= $wScroll) {
             // console.log("intersecting 1");
             
             formSearchContainer.classList.add("form-search-sticky", "show-bg");
@@ -749,7 +750,7 @@ function formSearchSticky() {
         }
         
     } else if (window.innerWidth < 768) {
-        if (jquery_default()("#hero").offset().top + 247 <= $wScroll) {
+        if (jquery_default()("#hero").offset().top + 250 <= $wScroll) {
             // console.log("intersecting 1");
             
             formSearchContainer.classList.add("form-search-sticky", "show-bg");

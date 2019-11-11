@@ -689,6 +689,7 @@ select {
   height: 56px;
   transform: scaleY(1);
   opacity: 1;
+  transition: opacity 400ms;
 }
 
 #hero .form-search-container.hide-form {
@@ -2077,12 +2078,13 @@ select {
     height: auto;
     left: auto;
     right: auto;
+    box-shadow: none;
   }
   #hero .form-search-container {
     width: 690px;
   }
   #hero .form-search-container.form-search-sticky {
-    top: 51px;
+    top: 48px;
     height: 36px;
     width: 97%;
   }
@@ -2144,7 +2146,7 @@ select {
     height: 28px;
   }
   .navbar .nav-item .shopping-cart .items-in-cart {
-    top: -6px;
+    top: -4px;
   }
   .navbar .navbar-toggler {
     height: 33px;
@@ -2264,7 +2266,7 @@ select {
     margin-right: -4px;
   }
   .navbar {
-    padding: 7px 0 10px;
+    padding: 6px 0 8px;
   }
   .navbar .navbar-right {
     margin-left: auto;
