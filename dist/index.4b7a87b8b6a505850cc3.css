@@ -639,6 +639,7 @@ select {
 .navbar .form-search .btn-search:hover {
   background-color: #d7d7d7;
   background-color: #1242a4;
+  border: 1px solid #278bed;
 }
 
 .navbar .form-search .btn-search:focus {
@@ -876,9 +877,9 @@ select {
   margin-left: -55px;
   width: 56px;
   height: 56px;
-  border: 1px solid #c9c9c9;
+  border: 1px solid #278bed;
   padding: 0;
-  transition: background-color 150ms;
+  transition: background-color 150ms, border 150ms;
   background-color: #f1f1f1;
   background-color: #278bed;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 36 36' width='36px' height='36px' preserveAspectRatio='defer' shape-rendering='geometricPrecision'%3E%3Cg fill='%23676767'%3E%3Cpath d='M7.76,32.19l5.47-5.47A2.5,2.5,0,0,0,13.79,24L16,21.78a10.38,10.38,0,1,0-1.41-1.41l-2.26,2.26a2.5,2.5,0,0,0-2.68.56L4.23,28.65a2.5,2.5,0,0,0,3.54,3.54Zm9-12.49a8.4,8.4,0,1,1,11.88,0A8.41,8.41,0,0,1,16.72,19.69Z'/%3E%3C/g%3E%3C/svg%3E");
@@ -899,6 +900,7 @@ select {
 #hero .form-search .btn-search:hover {
   background-color: #d7d7d7;
   background-color: #1242a4;
+  border: 1px solid #1242a4;
 }
 
 #hero .form-search .btn-search:focus {
@@ -1769,6 +1771,25 @@ select {
   opacity: 0;
 }
 
+.navbar .fsc-test {
+  transform: scaleY(1) translateY(0);
+  opacity: 0;
+  transition: opacity 400ms;
+}
+
+.navbar .fsc-test.show-form {
+  opacity: 1;
+}
+
+.fsc-test {
+  transition: opacity 400ms;
+  opacity: 1;
+}
+
+.fsc-test.hide-form {
+  opacity: 0;
+}
+
 /* MEDIA QUERIES DESKTOP-FIRST
  * ==================================== */
 @media (min-width: 1200px) and (max-width: 1440px) {
@@ -1927,6 +1948,7 @@ select {
   }
   .navbar.navbar-shrink {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+    height: auto;
   }
   .navbar .navbar-toggler {
     height: 33px;
@@ -2001,6 +2023,9 @@ select {
   .navbar #navbarMobile ul li .select-currency {
     display: inline-block;
   }
+  .navbar .nav-item .shopping-cart .items-in-cart {
+    top: -6px;
+  }
   .navbar-nav {
     padding: 30px 0 30px 30px;
   }
@@ -2057,7 +2082,7 @@ select {
     width: 690px;
   }
   #hero .form-search-container.form-search-sticky {
-    top: 63px;
+    top: 51px;
     height: 36px;
     width: 97%;
   }
@@ -2119,7 +2144,6 @@ select {
     height: 28px;
   }
   .navbar .nav-item .shopping-cart .items-in-cart {
-    left: 18px;
     top: -6px;
   }
   .navbar .navbar-toggler {
@@ -2219,11 +2243,8 @@ select {
     max-width: 240px;
     flex: 1 1 180px;
   }
-}
-
-@media (min-width: 768px) and (max-width: 768px) {
-  .navbar .navbar-right {
-    margin-left: -1px;
+  .navbar .nav-item .nav-link-sign-in {
+    padding-left: 0;
   }
 }
 
@@ -2231,6 +2252,9 @@ select {
 @media (max-width: 767px) {
   .navbar.navbar-shrink {
     box-shadow: none;
+  }
+  .navbar #navbarMobile {
+    top: 46px;
   }
   #formSearchContainerNav {
     transform: scaleX(0);
@@ -2240,7 +2264,7 @@ select {
     margin-right: -4px;
   }
   .navbar {
-    padding: 13px 0 16px;
+    padding: 7px 0 10px;
   }
   .navbar .navbar-right {
     margin-left: auto;
@@ -2255,6 +2279,9 @@ select {
   #formSearchContainerNav {
     display: none;
   }
+  #hero {
+    margin-top: 50px;
+  }
   #hero .form-search-container {
     transition: transform 500ms;
     display: flex;
@@ -2267,7 +2294,7 @@ select {
   #hero .form-search-container::before {
     content: "";
     width: 100vw;
-    height: 44px;
+    height: 46px;
     background-color: #fff;
     display: block;
     position: fixed;
@@ -2328,6 +2355,7 @@ select {
     transition: height 200ms;
     transform-origin: top;
     text-align: center;
+    text-align-last: center;
   }
   #hero .form-search-container .form-search .form-search-select.form-sticky {
     height: 36px;

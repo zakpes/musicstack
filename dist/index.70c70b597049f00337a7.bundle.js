@@ -224,7 +224,8 @@ function navbarShrink() {
     var $window = jquery_default()(window);
     var $wScroll = $window.scrollTop();
     var $windowW = $window.width();
-console.log($wScroll);
+    
+    // console.log($wScroll);
 
     if (window.innerWidth > 767) {
         
@@ -467,11 +468,12 @@ var $sel = jquery_default()('#formSearchSelect, #formSearchSelectNav').on('chang
 
     } else {
         jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
+        jquery_default()(".form-advanced-search-container").addClass("fade-in");
         jquery_default()(".form-advanced-overlay").fadeToggle();
         jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
         jquery_default()("html").toggleClass("advanced-search-form-open");
         // reset
-        $sel.val( $sel.data('currVal'));        
+        $sel.val( $sel.data('currVal'));   
     }
 }).on('update', function(){
     jquery_default()(this).data('currVal', jquery_default()(this).val())
@@ -559,7 +561,7 @@ $cle.on("touchstart click", function(e) {
 // });
 
 // toggle advanced search form on mobile
-jquery_default()("#btnOpenForm1, #btnOpenForm2, #btnOpenForm3").click(function() {
+jquery_default()("#btnOpenForm1").click(function() {
     jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
     jquery_default()(".form-advanced-search-container").addClass("fade-in");
     jquery_default()(".form-advanced-overlay").fadeToggle();
@@ -730,7 +732,7 @@ function formSearchSticky() {
     var $wScroll = jquery_default()(window).scrollTop();
 
     if (window.innerWidth < 499) {
-        if (jquery_default()("#hero").offset().top + 193 <= $wScroll) {
+        if (jquery_default()("#hero").offset().top + 205 <= $wScroll) {
             // console.log("intersecting 1");
             
             formSearchContainer.classList.add("form-search-sticky", "show-bg");
@@ -747,7 +749,7 @@ function formSearchSticky() {
         }
         
     } else if (window.innerWidth < 768) {
-        if (jquery_default()("#hero").offset().top + 235 <= $wScroll) {
+        if (jquery_default()("#hero").offset().top + 247 <= $wScroll) {
             // console.log("intersecting 1");
             
             formSearchContainer.classList.add("form-search-sticky", "show-bg");
