@@ -2121,6 +2121,8 @@ select {
   .navbar .navbar-right ul .nav-item-sign-in {
     padding-top: 1px;
     margin-right: -4px;
+    display: inline;
+    vertical-align: text-bottom;
   }
   .navbar .nav-item {
     margin-bottom: 10px;
@@ -2139,14 +2141,14 @@ select {
     border: 2px solid transparent;
   }
   .navbar .nav-item .shopping-cart {
-    padding-top: 2px;
+    padding-top: 0px;
     padding-bottom: 0;
   }
   .navbar .nav-item .shopping-cart svg {
     height: 28px;
   }
   .navbar .nav-item .shopping-cart .items-in-cart {
-    top: -4px;
+    top: -5px;
   }
   .navbar .navbar-toggler {
     height: 33px;
@@ -2282,7 +2284,7 @@ select {
     display: none;
   }
   #hero {
-    margin-top: 50px;
+    margin-top: 47px;
   }
   #hero .form-search-container {
     transition: transform 500ms;
@@ -2296,7 +2298,7 @@ select {
   #hero .form-search-container::before {
     content: "";
     width: 101vw;
-    height: 46px;
+    height: 47px;
     background-color: #fff;
     display: block;
     position: fixed;
@@ -2304,8 +2306,7 @@ select {
     opacity: 0;
     margin-left: -1px;
     margin-right: auto;
-    box-shadow: 0 2px 4px #bfbfbf;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   #hero .form-search-container.show-bg::before {
     opacity: 1;
@@ -2610,11 +2611,9 @@ select {
 /* Custom, iPhone Retina */
 @media (max-width: 360px) {
   .navbar .navbar-brand .img-logo {
-    width: 130px;
     margin-right: 0;
   }
   .navbar .navbar-brand .img-logo-text-hover {
-    width: 130px;
     top: 6px;
   }
   #recordStores .slider-cell {
@@ -2627,6 +2626,14 @@ select {
 
 /* Custom, iPhone Retina */
 @media (max-width: 340px) {
+  .navbar .navbar-brand .img-logo {
+    width: 130px;
+    margin-right: 0;
+  }
+  .navbar .navbar-brand .img-logo-text-hover {
+    width: 130px;
+    top: 6px;
+  }
   #hero .form-search-container #formSearch {
     flex-wrap: nowrap;
   }
