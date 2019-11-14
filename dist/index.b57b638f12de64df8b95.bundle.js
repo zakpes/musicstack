@@ -353,6 +353,24 @@ jquery_default()(document).ready(setSearchSelectOptions);
 jquery_default()(window).resize(setSearchSelectOptions);
 // $("#formSearchSelect, #formSearchSelectNav").change(setSearchSelectOptions);
 
+// $("#formSearchSelect").change(function () {
+    
+//     if (window.innerWidth < 768) {
+//         if ($(this).val().length() == 5) {
+//             this.style.paddingLeft = 22;
+//             this.classList.add("monkey");
+            
+//         } else if (this.value.length == 6) {
+//             this.style.paddingLeft = 18;
+//             // this.classList.add("rabbit");
+//             $("#formSearchSelect").addClass("rabbit");
+//         } else if (this.value.length == 7) {
+//             this.style.paddingLeft = 5;
+//             this.classList.add("dog");
+//         }
+//     }
+// })
+
 // set search placeholder on load
 jquery_default()(document).ready(function() {
     
@@ -387,12 +405,11 @@ jquery_default()(document).ready(function() {
 });
 
 // change search select text and placeholder on change select option
-var $sel = jquery_default()('#formSearchSelect, #formSearchSelectNav').on('change', function(){
+var $sel = jquery_default()('#formSearchSelect').on('change', function(){
     if (jquery_default()(this).find("option:selected").hasClass("artist")) {
         // store new value        
         $sel.trigger('update');
-        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by artist");
-        jquery_default()('#formSearchSelectNav').find("option:selected").text("Artist Search");
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by artist");
 
         if (window.innerWidth < 768) {
             jquery_default()('#formSearchSelect').find("option:selected").text("Artist");
@@ -403,8 +420,7 @@ var $sel = jquery_default()('#formSearchSelect, #formSearchSelectNav').on('chang
     } else if (jquery_default()(this).find("option:selected").hasClass("title")) {
         // store new value        
         $sel.trigger('update');
-        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by title");
-        jquery_default()('#formSearchSelectNav').find("option:selected").text("Title Search");
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by title");
 
         if (window.innerWidth < 768) {
             jquery_default()('#formSearchSelect').find("option:selected").text("Title");
@@ -414,8 +430,7 @@ var $sel = jquery_default()('#formSearchSelect, #formSearchSelectNav').on('chang
     } else if (jquery_default()(this).find("option:selected").hasClass("label")) {
         // store new value        
         $sel.trigger('update');
-        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by label");
-        jquery_default()('#formSearchSelectNav').find("option:selected").text("Label Search");
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by label");
 
         if (window.innerWidth < 768) {
             jquery_default()('#formSearchSelect').find("option:selected").text("Label");
@@ -425,8 +440,7 @@ var $sel = jquery_default()('#formSearchSelect, #formSearchSelectNav').on('chang
     } else if (jquery_default()(this).find("option:selected").hasClass("catnum")) {
         // store new value        
         $sel.trigger('update');
-        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by cat num");
-        jquery_default()('#formSearchSelectNav').find("option:selected").text("Cat Num Search");
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by cat num");
 
         if (window.innerWidth < 768) {
             jquery_default()('#formSearchSelect').find("option:selected").text("Cat Num");
@@ -436,8 +450,7 @@ var $sel = jquery_default()('#formSearchSelect, #formSearchSelectNav').on('chang
     } else if (jquery_default()(this).find("option:selected").hasClass("barcode")) {
         // store new value        
         $sel.trigger('update');
-        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by barcode");
-        jquery_default()('#formSearchSelectNav').find("option:selected").text("Barcode Search");
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by barcode");
 
         if (window.innerWidth < 768) {
             jquery_default()('#formSearchSelect').find("option:selected").text("Barcode");
@@ -447,8 +460,7 @@ var $sel = jquery_default()('#formSearchSelect, #formSearchSelectNav').on('chang
     } else if (jquery_default()(this).find("option:selected").hasClass("genre")) {
         // store new value        
         $sel.trigger('update');
-        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by genre");
-        jquery_default()('#formSearchSelectNav').find("option:selected").text("Genre Search");
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by genre");
 
         if (window.innerWidth < 768) {
             jquery_default()('#formSearchSelect').find("option:selected").text("Genre");
@@ -458,8 +470,7 @@ var $sel = jquery_default()('#formSearchSelect, #formSearchSelectNav').on('chang
     } else if (jquery_default()(this).find("option:selected").hasClass("seller")) {
         // store new value        
         $sel.trigger('update');
-        jquery_default()("#formSearchInput, #formSearchInputNav").attr("placeholder", "Search by seller");
-        jquery_default()('#formSearchSelectNav').find("option:selected").text("Seller Search");
+        jquery_default()("#formSearchInput").attr("placeholder", "Search by seller");
 
         if (window.innerWidth < 768) {
             jquery_default()('#formSearchSelect').find("option:selected").text("Seller");
@@ -479,6 +490,204 @@ var $sel = jquery_default()('#formSearchSelect, #formSearchSelectNav').on('chang
 }).on('update', function(){
     jquery_default()(this).data('currVal', jquery_default()(this).val())
 }).trigger('update');
+
+// change search select text and placeholder on change select option on navbar form
+var $sel = jquery_default()('#formSearchSelectNav').on('change', function(){
+    if (jquery_default()(this).find("option:selected").hasClass("artist")) {
+        // store new value        
+        $sel.trigger('update');
+        jquery_default()("#formSearchInputNav").attr("placeholder", "Search by artist");
+        jquery_default()('#formSearchSelectNav').find("option:selected").text("Artist Search");
+        
+    } else if (jquery_default()(this).find("option:selected").hasClass("title")) {
+        // store new value        
+        $sel.trigger('update');
+        jquery_default()("#formSearchInputNav").attr("placeholder", "Search by title");
+        jquery_default()('#formSearchSelectNav').find("option:selected").text("Title Search");
+        
+    } else if (jquery_default()(this).find("option:selected").hasClass("label")) {
+        // store new value        
+        $sel.trigger('update');
+        jquery_default()("#formSearchInputNav").attr("placeholder", "Search by label");
+        jquery_default()('#formSearchSelectNav').find("option:selected").text("Label Search");
+        
+    } else if (jquery_default()(this).find("option:selected").hasClass("catnum")) {
+        // store new value        
+        $sel.trigger('update');
+        jquery_default()("#formSearchInputNav").attr("placeholder", "Search by cat num");
+        jquery_default()('#formSearchSelectNav').find("option:selected").text("Cat Num Search");
+        
+    } else if (jquery_default()(this).find("option:selected").hasClass("barcode")) {
+        // store new value        
+        $sel.trigger('update');
+        jquery_default()("#formSearchInputNav").attr("placeholder", "Search by barcode");
+        jquery_default()('#formSearchSelectNav').find("option:selected").text("Barcode Search");
+        
+    } else if (jquery_default()(this).find("option:selected").hasClass("genre")) {
+        // store new value        
+        $sel.trigger('update');
+        jquery_default()("#formSearchInputNav").attr("placeholder", "Search by genre");
+        jquery_default()('#formSearchSelectNav').find("option:selected").text("Genre Search");
+        
+    } else if (jquery_default()(this).find("option:selected").hasClass("seller")) {
+        // store new value        
+        $sel.trigger('update');
+        jquery_default()("#formSearchInputNav").attr("placeholder", "Search by seller");
+        jquery_default()('#formSearchSelectNav').find("option:selected").text("Seller Search");
+        
+
+    } else {
+        jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
+        jquery_default()(".form-advanced-search-container").addClass("fade-in");
+        jquery_default()(".form-advanced-overlay").fadeToggle();
+        jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
+        jquery_default()("html").toggleClass("advanced-search-form-open");
+        // reset
+        $sel.val( $sel.data('currVal'));   
+    }
+}).on('update', function(){
+    jquery_default()(this).data('currVal', jquery_default()(this).val())
+}).trigger('update');
+
+// center select text by adding padding based on text length
+function centerSelectTextNav() {
+
+    const $formSelectNav = jquery_default()("#formSearchSelectNav");
+    const $selectedOptionNav = jquery_default()("#formSearchSelectNav option:selected");
+
+    if ($selectedOptionNav.hasClass("artist") || $selectedOptionNav.hasClass("label")) {
+        $formSelectNav.css("padding-left", "20px");
+    } else if ($selectedOptionNav.hasClass("title")) {
+        $formSelectNav.css("padding-left", "22px");
+    } else if ($selectedOptionNav.hasClass("catnum")) {
+        $formSelectNav.css("padding-left", "6px");
+    } else if ($selectedOptionNav.hasClass("barcode")) {
+        $formSelecNavt.css("padding-left", "9px");
+    } else if ($selectedOptionNav.hasClass("genre")) {
+        $formSelectNav.css("padding-left", "16px");
+    } else if ($selectedOptionNav.hasClass("seller")) {
+        $formSelectNav.css("padding-left", "19px");
+    }
+}
+
+function centerSelectText() {
+
+    const $formSelectNav = jquery_default()("#formSearchSelectNav");
+    const $formSelect = jquery_default()("#formSearchSelect");
+    const $selectedOptionNav = jquery_default()("#formSearchSelectNav option:selected");
+    const $selectedOption = jquery_default()("#formSearchSelect option:selected");
+
+    if ($selectedOptionNav.hasClass("artist") || $selectedOptionNav.hasClass("label")) {
+        $formSelectNav.css("padding-left", "20px");
+    } else if ($selectedOptionNav.hasClass("title")) {
+        $formSelectNav.css("padding-left", "22px");
+    } else if ($selectedOptionNav.hasClass("catnum")) {
+        $formSelectNav.css("padding-left", "6px");
+    } else if ($selectedOptionNav.hasClass("barcode")) {
+        $formSelectNav.css("padding-left", "9px");
+    } else if ($selectedOptionNav.hasClass("genre")) {
+        $formSelectNav.css("padding-left", "16px");
+    } else if ($selectedOptionNav.hasClass("seller")) {
+        $formSelectNav.css("padding-left", "19px");
+    }
+
+    if ($formSelect.hasClass("form-sticky")) {
+        if (window.innerWidth < 768) {
+            if ($selectedOption.hasClass("artist") || $selectedOption.hasClass("label")) {
+                $formSelect.css("padding-left", "17px");
+            } else if ($selectedOption.hasClass("title")) {
+                $formSelect.css("padding-left", "19px");
+            } else if ($selectedOption.hasClass("catnum")) {
+                $formSelect.css("padding-left", "3px");
+            } else if ($selectedOption.hasClass("barcode")) {
+                $formSelect.css("padding-left", "6px");
+            } else if ($selectedOption.hasClass("genre")) {
+                $formSelect.css("padding-left", "10px");
+            } else if ($selectedOption.hasClass("seller")) {
+                $formSelect.css("padding-left", "16px");
+            }
+        }
+    } else {
+        if (window.innerWidth < 415) {
+            if ($selectedOption.hasClass("artist") || $selectedOption.hasClass("label")) {
+                $formSelect.css("padding-left", "14px");
+            } else if ($selectedOption.hasClass("title")) {
+                $formSelect.css("padding-left", "16px");
+            } else if ($selectedOption.hasClass("catnum")) {
+                $formSelect.css("padding-left", "0px");
+            } else if ($selectedOption.hasClass("barcode")) {
+                $formSelect.css("padding-left", "3px");
+            } else if ($selectedOption.hasClass("genre")) {
+                $formSelect.css("padding-left", "10px");
+            } else if ($selectedOption.hasClass("seller")) {
+                $formSelect.css("padding-left", "13px");
+            }
+        } else if (window.innerWidth < 481) {
+            if ($selectedOption.hasClass("artist") || $selectedOption.hasClass("label")) {
+                $formSelect.css("padding-left", "26px");
+            } else if ($selectedOption.hasClass("title")) {
+                $formSelect.css("padding-left", "28px");
+            } else if ($selectedOption.hasClass("catnum")) {
+                $formSelect.css("padding-left", "12px");
+            } else if ($selectedOption.hasClass("barcode")) {
+                $formSelect.css("padding-left", "15px");
+            } else if ($selectedOption.hasClass("genre")) {
+                $formSelect.css("padding-left", "22px");
+            } else if ($selectedOption.hasClass("seller")) {
+                $formSelect.css("padding-left", "25px");
+            }
+        } else if (window.innerWidth < 768) {
+            if ($selectedOption.hasClass("artist") || $selectedOption.hasClass("label")) {
+                $formSelect.css("padding-left", "34px");
+            } else if ($selectedOption.hasClass("title")) {
+                $formSelect.css("padding-left", "36px");
+            } else if ($selectedOption.hasClass("catnum")) {
+                $formSelect.css("padding-left", "20px");
+            } else if ($selectedOption.hasClass("barcode")) {
+                $formSelect.css("padding-left", "23px");
+            } else if ($selectedOption.hasClass("genre")) {
+                $formSelect.css("padding-left", "30px");
+            } else if ($selectedOption.hasClass("seller")) {
+                $formSelect.css("padding-left", "33px");
+            }
+        } else if (window.innerWidth < 992) {
+            if ($selectedOption.hasClass("artist") || $selectedOption.hasClass("label")) {
+                $formSelect.css("padding-left", "28px");
+            } else if ($selectedOption.hasClass("title")) {
+                $formSelect.css("padding-left", "32px");
+            } else if ($selectedOption.hasClass("catnum")) {
+                $formSelect.css("padding-left", "16px");
+            } else if ($selectedOption.hasClass("barcode")) {
+                $formSelect.css("padding-left", "19px");
+            } else if ($selectedOption.hasClass("genre")) {
+                $formSelect.css("padding-left", "24px");
+            } else if ($selectedOption.hasClass("seller")) {
+                $formSelect.css("padding-left", "27px");
+            }
+        } else if (window.innerWidth >= 992) {
+            if ($selectedOption.hasClass("artist") || $selectedOption.hasClass("label")) {
+                $formSelect.css("padding-left", "32px");
+            } else if ($selectedOption.hasClass("title")) {
+                $formSelect.css("padding-left", "36px");
+            } else if ($selectedOption.hasClass("catnum")) {
+                $formSelect.css("padding-left", "20px");
+            } else if ($selectedOption.hasClass("barcode")) {
+                $formSelect.css("padding-left", "23px");
+            } else if ($selectedOption.hasClass("genre")) {
+                $formSelect.css("padding-left", "28px");
+            } else if ($selectedOption.hasClass("seller")) {
+                $formSelect.css("padding-left", "31px");
+            }
+        }
+    }
+
+};
+
+jquery_default()(document).ready(centerSelectText);
+jquery_default()(window).resize(centerSelectText);
+jquery_default()(window).scroll(centerSelectText);
+jquery_default()("#formSearchSelectNav").change(centerSelectText);
+jquery_default()("#formSearchSelect").change(centerSelectText);
 
 // match input on both forms
 jquery_default()("#formSearchInput, #formSearchInputNav").change(function () {

@@ -553,6 +553,7 @@ select {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   line-height: 1;
+  padding-left: 0;
 }
 
 .navbar .form-search::placeholder {
@@ -808,7 +809,7 @@ select {
   background-size: 8px;
   background-color: rgba(255, 255, 255, 0);
   padding-left: 16px;
-  padding-left: 12px;
+  padding-left: 0px;
   border-radius: 4px 0 0 4px;
   line-height: 1;
 }
@@ -2247,8 +2248,9 @@ select {
     max-width: 240px;
     flex: 1 1 180px;
   }
-  .navbar .nav-item .nav-link-sign-in {
-    padding-left: 0;
+  .navbar .form-search-container {
+    margin-left: 22px;
+    margin-right: 3px;
   }
 }
 
@@ -2357,8 +2359,6 @@ select {
     padding-left: 0;
     transition: height 200ms;
     transform-origin: top;
-    text-align: center;
-    text-align-last: center;
   }
   #hero .form-search-container .form-search .form-search-select.form-sticky {
     height: 36px;
