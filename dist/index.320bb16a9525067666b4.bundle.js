@@ -148,14 +148,40 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push([24,1]);
+/******/ 	deferredModules.push([25,1]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 24:
+/***/ 22:
+/***/ (function(module, exports) {
+
+function SetCookie(cookieName,cookieValue,nDays) {
+ 
+    var today = new Date();
+    var expire = new Date();
+    if (nDays==null || nDays==0) nDays=1;
+    expire.setTime(today.getTime() + 86400*nDays);
+    if (cookieName == 'media' && eval(cookieValue)<200) {return;} 
+    document.cookie = cookieName+"="+escape(cookieValue)+"; expires="+expire.toGMTString()+"; path=/; domain=musicstack.com";
+
+    console.log(cookieName, cookieValue);
+}
+
+function setCookieCur(event) {
+    SetCookie('currency', this.options[this.selectedIndex].value, 9999);
+    window.location.reload();
+    return true;
+}
+
+document.querySelector("#js-selectCurrency1").addEventListener("change", setCookieCur);
+document.querySelector("#js-selectCurrency2").addEventListener("change", setCookieCur);
+
+/***/ }),
+
+/***/ 25:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -492,46 +518,46 @@ var $sel = jquery_default()('#formSearchSelect').on('change', function(){
 }).trigger('update');
 
 // change search select text and placeholder on change select option on navbar form
-var $sel = jquery_default()('#formSearchSelectNav').on('change', function(){
+var $selNav = jquery_default()('#formSearchSelectNav').on('change', function(){
     if (jquery_default()(this).find("option:selected").hasClass("artist")) {
         // store new value        
-        $sel.trigger('update');
+        $selNav.trigger('update');
         jquery_default()("#formSearchInputNav").attr("placeholder", "Search by artist");
         jquery_default()('#formSearchSelectNav').find("option:selected").text("Artist Search");
         
     } else if (jquery_default()(this).find("option:selected").hasClass("title")) {
         // store new value        
-        $sel.trigger('update');
+        $selNav.trigger('update');
         jquery_default()("#formSearchInputNav").attr("placeholder", "Search by title");
         jquery_default()('#formSearchSelectNav').find("option:selected").text("Title Search");
         
     } else if (jquery_default()(this).find("option:selected").hasClass("label")) {
         // store new value        
-        $sel.trigger('update');
+        $selNav.trigger('update');
         jquery_default()("#formSearchInputNav").attr("placeholder", "Search by label");
         jquery_default()('#formSearchSelectNav').find("option:selected").text("Label Search");
         
     } else if (jquery_default()(this).find("option:selected").hasClass("catnum")) {
         // store new value        
-        $sel.trigger('update');
+        $selNav.trigger('update');
         jquery_default()("#formSearchInputNav").attr("placeholder", "Search by cat num");
         jquery_default()('#formSearchSelectNav').find("option:selected").text("Cat Num Search");
         
     } else if (jquery_default()(this).find("option:selected").hasClass("barcode")) {
         // store new value        
-        $sel.trigger('update');
+        $selNav.trigger('update');
         jquery_default()("#formSearchInputNav").attr("placeholder", "Search by barcode");
         jquery_default()('#formSearchSelectNav').find("option:selected").text("Barcode Search");
         
     } else if (jquery_default()(this).find("option:selected").hasClass("genre")) {
         // store new value        
-        $sel.trigger('update');
+        $selNav.trigger('update');
         jquery_default()("#formSearchInputNav").attr("placeholder", "Search by genre");
         jquery_default()('#formSearchSelectNav').find("option:selected").text("Genre Search");
         
     } else if (jquery_default()(this).find("option:selected").hasClass("seller")) {
         // store new value        
-        $sel.trigger('update');
+        $selNav.trigger('update');
         jquery_default()("#formSearchInputNav").attr("placeholder", "Search by seller");
         jquery_default()('#formSearchSelectNav').find("option:selected").text("Seller Search");
         
@@ -543,7 +569,7 @@ var $sel = jquery_default()('#formSearchSelectNav').on('change', function(){
         jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
         jquery_default()("html").toggleClass("advanced-search-form-open");
         // reset
-        $sel.val( $sel.data('currVal'));   
+        $selNav.val( $selNav.data('currVal'));   
     }
 }).on('update', function(){
     jquery_default()(this).data('currVal', jquery_default()(this).val())
@@ -572,6 +598,7 @@ function centerSelectTextNav() {
 
 function centerSelectText() {
 
+    var $wScroll = jquery_default()(window).scrollTop();
     const $formSelectNav = jquery_default()("#formSearchSelectNav");
     const $formSelect = jquery_default()("#formSearchSelect");
     const $selectedOptionNav = jquery_default()("#formSearchSelectNav option:selected");
@@ -591,36 +618,39 @@ function centerSelectText() {
         $formSelectNav.css("padding-left", "19px");
     }
 
-    if ($formSelect.hasClass("form-sticky")) {
-        if (window.innerWidth < 768) {
+    if (window.innerWidth < 499 && (jquery_default()("#hero").offset().top + 208) <= $wScroll || window.innerWidth < 768 && (jquery_default()("#hero").offset().top + 250) <= $wScroll) {
+            console.log("YES");
+            
             if ($selectedOption.hasClass("artist") || $selectedOption.hasClass("label")) {
-                $formSelect.css("padding-left", "17px");
+                $formSelect.css("padding-left", "22px");
             } else if ($selectedOption.hasClass("title")) {
-                $formSelect.css("padding-left", "19px");
+                $formSelect.css("padding-left", "26px");
             } else if ($selectedOption.hasClass("catnum")) {
-                $formSelect.css("padding-left", "3px");
+                $formSelect.css("padding-left", "9px");
             } else if ($selectedOption.hasClass("barcode")) {
-                $formSelect.css("padding-left", "6px");
+                $formSelect.css("padding-left", "12px");
             } else if ($selectedOption.hasClass("genre")) {
-                $formSelect.css("padding-left", "10px");
+                $formSelect.css("padding-left", "20px");
             } else if ($selectedOption.hasClass("seller")) {
-                $formSelect.css("padding-left", "16px");
+                $formSelect.css("padding-left", "21px");
             }
-        }
+        
     } else {
+        console.log("NO");
+        
         if (window.innerWidth < 415) {
             if ($selectedOption.hasClass("artist") || $selectedOption.hasClass("label")) {
-                $formSelect.css("padding-left", "14px");
-            } else if ($selectedOption.hasClass("title")) {
                 $formSelect.css("padding-left", "16px");
+            } else if ($selectedOption.hasClass("title")) {
+                $formSelect.css("padding-left", "20px");
             } else if ($selectedOption.hasClass("catnum")) {
-                $formSelect.css("padding-left", "0px");
+                $formSelect.css("padding-left", "4px");
             } else if ($selectedOption.hasClass("barcode")) {
-                $formSelect.css("padding-left", "3px");
+                $formSelect.css("padding-left", "7px");
             } else if ($selectedOption.hasClass("genre")) {
-                $formSelect.css("padding-left", "10px");
+                $formSelect.css("padding-left", "14px");
             } else if ($selectedOption.hasClass("seller")) {
-                $formSelect.css("padding-left", "13px");
+                $formSelect.css("padding-left", "15px");
             }
         } else if (window.innerWidth < 481) {
             if ($selectedOption.hasClass("artist") || $selectedOption.hasClass("label")) {
@@ -984,6 +1014,14 @@ jquery_default()(document).ready(formSearchSticky);
 jquery_default()(window).scroll(formSearchSticky);
 jquery_default()(window).resize(formSearchSticky);
 
+// hide cookie banner
+const cookieBanner = document.querySelector(".cookie-banner");
+const cookieBannerBtn = document.querySelector(".cookie-banner-btn");
+
+cookieBannerBtn.addEventListener("click", function () {
+    cookieBanner.classList.add("slide-out");
+});
+
 // hide loader on window load
 const loader = document.querySelector(".loader-container");
 
@@ -994,7 +1032,11 @@ window.onload = function() {
         loader.style.display = "none";
     }, 500);
 };
+// EXTERNAL MODULE: ./src/js/cookie-cur.js
+var cookie_cur = __webpack_require__(22);
+
 // CONCATENATED MODULE: ./src/page-index/index.js
+
 
 
 

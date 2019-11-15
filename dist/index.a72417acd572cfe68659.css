@@ -284,7 +284,7 @@ select {
   right: 0;
   transition: height 200ms ease-in-out;
   z-index: 1031;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #homeHeader.navbar-shrink {
@@ -1750,6 +1750,55 @@ select {
   font-size: 16px;
 }
 
+.cookie-banner {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: transform 300ms;
+  transform: translateY(0);
+  z-index: 1;
+}
+
+.cookie-banner.slide-out {
+  transform: translateY(100%);
+}
+
+.cookie-banner .cookie-banner-inner {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  color: #fff;
+  padding: 30px 0;
+  flex-wrap: wrap;
+}
+
+.cookie-banner .cookie-banner-inner .cookie-banner-message {
+  flex: 4;
+}
+
+.cookie-banner .cookie-banner-inner .cookie-btn-container {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.cookie-banner .cookie-banner-inner .cookie-banner-btn {
+  background-color: #278bed;
+  height: 46px;
+  width: 100%;
+  max-width: 200px;
+  color: #fff;
+  background-color: #278bed;
+  font-family: "Avenir Heavy", sans-serif;
+  font-size: 18px;
+  transition: background-color 200ms;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.cookie-banner .cookie-banner-inner .cookie-banner-btn:hover {
+  background-color: #1242a4;
+}
+
 .loader-container {
   position: fixed;
   top: 0;
@@ -1949,7 +1998,7 @@ select {
     margin-right: 0;
   }
   .navbar.navbar-shrink {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: auto;
   }
   .navbar .navbar-toggler {
@@ -2209,6 +2258,8 @@ select {
     z-index: 9999;
     margin-top: 0;
     margin-left: 0;
+    padding: 16px 26px;
+    width: 240px;
     transform: translateX(-100%);
     transition: transform 300ms;
     overflow-x: hidden;
@@ -2495,6 +2546,18 @@ select {
   #footer .footer-social-container {
     margin-bottom: 24px;
   }
+  .cookie-banner .cookie-banner-inner {
+    padding: 20px 0;
+  }
+  .cookie-banner .cookie-banner-inner .cookie-banner-message {
+    text-align: center;
+  }
+  .cookie-banner .cookie-banner-inner .cookie-btn-container {
+    flex: 100%;
+    margin-top: 20px;
+    margin-left: 0;
+    text-align: center;
+  }
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -2571,6 +2634,7 @@ select {
   #hero .form-search-container .form-search .form-search-select {
     padding-left: 5px;
     padding-left: 0;
+    font-size: 15px;
   }
   #hero .form-search-container.form-search-sticky {
     width: 91%;
