@@ -1754,10 +1754,11 @@ select {
   position: fixed;
   width: 100%;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #fff;
   transition: transform 300ms;
   transform: translateY(0);
   z-index: 1;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cookie-banner.slide-out {
@@ -1775,6 +1776,7 @@ select {
 
 .cookie-banner .cookie-banner-inner .cookie-banner-message {
   flex: 4;
+  color: #404040;
 }
 
 .cookie-banner .cookie-banner-inner .cookie-btn-container {
@@ -1820,6 +1822,10 @@ select {
 
 .loader-container.hide-loader {
   opacity: 0;
+}
+
+.no-js .loader-container {
+  display: none;
 }
 
 .navbar .fsc-test {

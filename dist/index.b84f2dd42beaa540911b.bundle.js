@@ -879,7 +879,7 @@ document.addEventListener("DOMContentLoaded", createEmpty);
 
 function createEmpty() {
 
-    console.log("window loaded");
+    console.log("document loaded");
     
     for (let i = 0; i < 4; i++) {
         console.log("div created");
@@ -1025,13 +1025,15 @@ cookieBannerBtn.addEventListener("click", function () {
 // hide loader on window load
 const loader = document.querySelector(".loader-container");
 
-window.onload = function() {
+window.addEventListener("load", function() {
     loader.classList.add("hide-loader");
 
     setTimeout(function() {
         loader.style.display = "none";
     }, 500);
-};
+    console.log("window loaded!");
+    
+});
 // EXTERNAL MODULE: ./src/js/cookie-cur.js
 var cookie_cur = __webpack_require__(22);
 
