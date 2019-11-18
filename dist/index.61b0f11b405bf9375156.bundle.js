@@ -1020,17 +1020,25 @@ const cookieBannerBtn = document.querySelector(".cookie-banner-btn");
 
 cookieBannerBtn.addEventListener("click", function () {
     cookieBanner.classList.add("slide-out");
+
+    setTimeout(function() {
+        cookieBanner.style.display = "none";
+    }, 500);
 });
 
 // hide loader on window load
 const loader = document.querySelector(".loader-container");
 
 window.addEventListener("load", function() {
-    loader.classList.add("hide-loader");
+    // loader.classList.add("hide-loader");
+
+    setTimeout(function() {
+        loader.classList.add("hide-loader");
+    }, 3000);
 
     setTimeout(function() {
         loader.style.display = "none";
-    }, 500);
+    }, 3500);
     console.log("window loaded!");
     
 });
