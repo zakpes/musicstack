@@ -805,7 +805,7 @@ jquery_default()("#btnOpenForm1").click(function() {
     jquery_default()(".form-advanced-search-container").toggleClass("slide-in");
     jquery_default()(".form-advanced-search-container").addClass("fade-in");
     jquery_default()(".form-advanced-overlay").fadeToggle();
-    jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
+    // $(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
     // $("html").toggleClass("advanced-search-form-open");
     jquery_default()(".navbar-mobile-overlay").fadeToggle();
     jquery_default()('#navbarMobileToggle').children(".icon").toggleClass("menu").toggleClass("close");
@@ -1034,11 +1034,11 @@ window.addEventListener("load", function() {
 
     setTimeout(function() {
         loader.classList.add("hide-loader");
-    }, 3000);
+    }, 2500);
 
     setTimeout(function() {
         loader.style.display = "none";
-    }, 3500);
+    }, 3000);
     console.log("window loaded!");
     
 });

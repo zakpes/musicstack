@@ -1217,6 +1217,7 @@ select {
   height: 30px;
   line-height: 1;
   font-size: 14px;
+  font-size: 16px !important;
   margin-bottom: 8px;
 }
 
@@ -1759,7 +1760,6 @@ select {
   transform: translateY(0);
   z-index: 1;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-  display: none;
 }
 
 .cookie-banner.slide-out {
@@ -1817,7 +1817,6 @@ select {
   z-index: 9999;
   opacity: 1;
   transition: opacity 500ms;
-  display: none;
 }
 
 .loader-container .img-logo-loader {
