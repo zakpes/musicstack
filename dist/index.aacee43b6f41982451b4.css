@@ -1801,6 +1801,10 @@ select {
   background-color: #1242a4;
 }
 
+.no-js .cookie-banner {
+  display: none;
+}
+
 .loader-container {
   position: fixed;
   top: 0;

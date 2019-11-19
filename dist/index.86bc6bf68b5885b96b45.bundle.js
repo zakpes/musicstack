@@ -1026,14 +1026,14 @@ jquery_default()(window).resize(formSearchSticky);
 //     }, 500);
 // });
 
-var $cookieBanner = jquery_default()(".cookie-banner");
-var $cookieBannerBtn = jquery_default()(".cookie-banner-btn");
+// var $cookieBanner = $(".cookie-banner");
+// var $cookieBannerBtn = $(".cookie-banner-btn");
 
-$cookieBannerBtn.click(function () {
-    $cookieBanner.addClass("slide-out");
+jquery_default()(".cookie-banner-btn").click(function () {
+    jquery_default()(".cookie-banner").addClass("slide-out");
 
     setTimeout(function() {
-        $cookieBanner.css("display", "none");
+        jquery_default()(".cookie-banner").css("display", "none");
     }, 500);
 });
 
