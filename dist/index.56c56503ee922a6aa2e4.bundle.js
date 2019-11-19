@@ -155,32 +155,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ 22:
-/***/ (function(module, exports) {
-
-function SetCookie(cookieName,cookieValue,nDays) {
- 
-    var today = new Date();
-    var expire = new Date();
-    if (nDays==null || nDays==0) nDays=1;
-    expire.setTime(today.getTime() + 86400*nDays);
-    if (cookieName == 'media' && eval(cookieValue)<200) {return;} 
-    document.cookie = cookieName+"="+escape(cookieValue)+"; expires="+expire.toGMTString()+"; path=/; domain=musicstack.com";
-
-    console.log(cookieName, cookieValue);
-}
-
-function setCookieCur(event) {
-    SetCookie('currency', this.options[this.selectedIndex].value, 9999);
-    window.location.reload();
-    return true;
-}
-
-document.querySelector("#js-selectCurrency1").addEventListener("change", setCookieCur);
-document.querySelector("#js-selectCurrency2").addEventListener("change", setCookieCur);
-
-/***/ }),
-
 /***/ 25:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -190,12 +164,15 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./src/page-index/index.scss
 var page_index = __webpack_require__(7);
 
+// EXTERNAL MODULE: ./src/js/cookie.js
+var cookie = __webpack_require__(8);
+
 // EXTERNAL MODULE: ./node_modules/jquery/dist/jquery.js
 var jquery = __webpack_require__(0);
 var jquery_default = /*#__PURE__*/__webpack_require__.n(jquery);
 
 // EXTERNAL MODULE: ./node_modules/bootstrap/dist/js/bootstrap.js
-var bootstrap = __webpack_require__(8);
+var bootstrap = __webpack_require__(9);
 
 // EXTERNAL MODULE: ./node_modules/flickity/js/index.js
 var js = __webpack_require__(5);
@@ -267,17 +244,7 @@ const $selectMobile = jquery_default()(".form-search-select-mobile");
 //     }, 500);
 // });
 
-// hide cookie banner
-const cookieBanner = document.querySelector(".cookie-banner");
-const cookieBannerBtn = document.querySelector(".cookie-banner-btn");
 
-cookieBannerBtn.addEventListener("click", function () {
-    cookieBanner.classList.add("slide-out");
-
-    setTimeout(function() {
-        cookieBanner.style.display = "none";
-    }, 500);
-});
 
 // var $cookieBanner = $(".cookie-banner");
 // var $cookieBannerBtn = $(".cookie-banner-btn");
@@ -1049,9 +1016,6 @@ const observerFormSearch = new IntersectionObserver(function
 
 // observerFormSearch.observe(titleContainer);
 
-// EXTERNAL MODULE: ./src/js/cookie-cur.js
-var cookie_cur = __webpack_require__(22);
-
 // CONCATENATED MODULE: ./src/page-index/index.js
 
 
@@ -1063,6 +1027,62 @@ var cookie_cur = __webpack_require__(22);
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ 8:
+/***/ (function(module, exports) {
+
+// set currency cookie
+function SetCookie(cookieName,cookieValue,nDays) {
+ 
+    var today = new Date();
+    var expire = new Date();
+    if (nDays==null || nDays==0) nDays=1;
+    expire.setTime(today.getTime() + 86400*nDays);
+    if (cookieName == 'media' && eval(cookieValue)<200) {return;} 
+    document.cookie = cookieName+"="+escape(cookieValue)+"; expires="+expire.toGMTString()+"; path=/; domain=musicstack.com";
+
+    console.log(cookieName, cookieValue);
+}
+
+function setCookieCur(event) {
+    SetCookie('currency', this.options[this.selectedIndex].value, 9999);
+    window.location.reload();
+    return true;
+}
+
+document.querySelector("#js-selectCurrency1").addEventListener("change", setCookieCur);
+document.querySelector("#js-selectCurrency2").addEventListener("change", setCookieCur);
+
+// set consent cookie and hide cookie banner
+const cookieBanner = document.querySelector(".cookie-banner");
+const cookieBannerBtn = document.querySelector(".cookie-banner-btn");
+
+(function() {
+	if (!localStorage.getItem('cookieconsent')) {
+
+        console.log("cookie is not here");
+        cookieBanner.classList.remove("hide-banner");
+		
+		cookieBannerBtn.onclick = function(e) {
+
+			e.preventDefault();
+            cookieBanner.classList.add("slide-out");
+
+            setTimeout(function() {
+                cookieBanner.style.display = "none";
+            }, 500);
+
+            localStorage.setItem('cookieconsent', true);
+            console.log("cookie set!");
+            
+		};
+	} else {
+        console.log("cookie is here");
+        
+    }
+})();
 
 /***/ })
 
