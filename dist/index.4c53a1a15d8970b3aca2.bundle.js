@@ -308,7 +308,13 @@ navbarBrand.addEventListener("mouseleave", function() {
     
     logoImg.style.opacity = "0";
 });
+jquery_default()(".cookie-banner-btn").click(function () {
+    jquery_default()(".cookie-banner").addClass("slide-out");
 
+    setTimeout(function() {
+        jquery_default()(".cookie-banner").css("display", "none");
+    }, 500);
+});
 // navbar toggle hamburger btn
 jquery_default()('#navbarMobileToggle').click(function(){
     jquery_default()(this).toggleClass("navbar-mobile-closed");
@@ -1029,13 +1035,7 @@ jquery_default()(window).resize(formSearchSticky);
 // var $cookieBanner = $(".cookie-banner");
 // var $cookieBannerBtn = $(".cookie-banner-btn");
 
-jquery_default()(".cookie-banner-btn").click(function () {
-    jquery_default()(".cookie-banner").addClass("slide-out");
 
-    setTimeout(function() {
-        jquery_default()(".cookie-banner").css("display", "none");
-    }, 500);
-});
 
 // hide loader on window load
 const loader = document.querySelector(".loader-container");
