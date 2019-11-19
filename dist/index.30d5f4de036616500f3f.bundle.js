@@ -244,6 +244,30 @@ const $selectMobile = jquery_default()(".form-search-select-mobile");
     }, {passive: false});
 })();
 
+// hide cookie banner
+// $(".cookie-banner-btn").click(function () {
+//     $(".cookie-banner").addClass("slide-out");
+
+//     setTimeout(function() {
+//         $(".cookie-banner").css("display", "none");
+//     }, 500);
+// });
+
+// hide cookie banner
+const cookieBanner = document.querySelector(".cookie-banner");
+const cookieBannerBtn = document.querySelector(".cookie-banner-btn");
+
+cookieBannerBtn.addEventListener("click", function () {
+    cookieBanner.classList.add("slide-out");
+
+    setTimeout(function() {
+        cookieBanner.style.display = "none";
+    }, 500);
+});
+
+// var $cookieBanner = $(".cookie-banner");
+// var $cookieBannerBtn = $(".cookie-banner-btn");
+
 // change navbar height on scroll
 function navbarShrink() {
 
@@ -308,13 +332,7 @@ navbarBrand.addEventListener("mouseleave", function() {
     
     logoImg.style.opacity = "0";
 });
-jquery_default()(".cookie-banner-btn").click(function () {
-    jquery_default()(".cookie-banner").addClass("slide-out");
 
-    setTimeout(function() {
-        jquery_default()(".cookie-banner").css("display", "none");
-    }, 500);
-});
 // navbar toggle hamburger btn
 jquery_default()('#navbarMobileToggle').click(function(){
     jquery_default()(this).toggleClass("navbar-mobile-closed");
@@ -827,18 +845,14 @@ jquery_default()("#btnCloseForm, .form-advanced-overlay").click(function() {
 
 jquery_default()(document).ready(function () {
 
-    let $windowW = window.innerWidth;
-
-    if ($windowW < 992) {
+    if (window.innerWidth < 992) {
         jquery_default()(".form-advanced-search-container").addClass("fade-in");
     }
 })
 
 jquery_default()(window).resize(function () {
     
-    let $windowW = window.innerWidth;
-
-    if ($windowW >= 992) {
+    if (window.innerWidth >= 992) {
         jquery_default()(".form-advanced-search-container").removeClass("fade-in");
     }
 });
@@ -1020,20 +1034,6 @@ jquery_default()(document).ready(formSearchSticky);
 jquery_default()(window).scroll(formSearchSticky);
 jquery_default()(window).resize(formSearchSticky);
 
-// hide cookie banner
-// const cookieBanner = document.querySelector(".cookie-banner");
-// const cookieBannerBtn = document.querySelector(".cookie-banner-btn");
-
-// cookieBannerBtn.addEventListener("click", function () {
-//     cookieBanner.classList.add("slide-out");
-
-//     setTimeout(function() {
-//         cookieBanner.style.display = "none";
-//     }, 500);
-// });
-
-// var $cookieBanner = $(".cookie-banner");
-// var $cookieBannerBtn = $(".cookie-banner-btn");
 
 
 
