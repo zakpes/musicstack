@@ -1029,9 +1029,21 @@ cookieBannerBtn.addEventListener("click", function () {
 // hide loader on window load
 const loader = document.querySelector(".loader-container");
 
-window.addEventListener("load", function() {
-    // loader.classList.add("hide-loader");
+// window.addEventListener("load", function() {
+//     // loader.classList.add("hide-loader");
 
+//     setTimeout(function() {
+//         loader.classList.add("hide-loader");
+//     }, 2500);
+
+//     setTimeout(function() {
+//         loader.style.display = "none";
+//     }, 3000);
+//     console.log("window loaded!");
+    
+// });
+
+function hideLoader() {
     setTimeout(function() {
         loader.classList.add("hide-loader");
     }, 2500);
@@ -1040,8 +1052,9 @@ window.addEventListener("load", function() {
         loader.style.display = "none";
     }, 3000);
     console.log("window loaded!");
-    
-});
+}
+
+hideLoader();
 // EXTERNAL MODULE: ./src/js/cookie-cur.js
 var cookie_cur = __webpack_require__(22);
 
