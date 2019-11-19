@@ -244,6 +244,20 @@ const $selectMobile = jquery_default()(".form-search-select-mobile");
     }, {passive: false});
 })();
 
+// hide loader
+// function hideLoader() {
+//     setTimeout(function() {
+//         loader.classList.add("hide-loader");
+//     }, 3000);
+
+//     setTimeout(function() {
+//         loader.style.display = "none";
+//     }, 3500);
+//     console.log("window loaded!");
+// }
+
+hideLoader();
+
 // hide cookie banner
 // $(".cookie-banner-btn").click(function () {
 //     $(".cookie-banner").addClass("slide-out");
@@ -910,6 +924,54 @@ function createEmpty() {
     }
 }
 
+// search form sticky on scroll
+function formSearchSticky() {
+
+    var $wScroll = jquery_default()(window).scrollTop();
+
+    if (window.innerWidth < 499) {
+        if (jquery_default()("#hero").offset().top + 208 <= $wScroll) {
+            // console.log("intersecting 1");
+            
+            formSearchContainer.classList.add("form-search-sticky", "show-bg");
+            formSearchSelect.classList.add("form-sticky");
+            formSearchInput.classList.add("form-sticky");
+            formSearchBtn.classList.add("form-sticky");
+            // formSearch.classList.add("width-76", "form-search-sticky");
+        } else {
+            formSearchContainer.classList.remove("form-search-sticky", "show-bg");
+            formSearchSelect.classList.remove("form-sticky");
+            formSearchInput.classList.remove("form-sticky");
+            formSearchBtn.classList.remove("form-sticky");
+            // formSearch.classList.remove("width-76", "form-search-sticky");
+        }
+        
+    } else if (window.innerWidth < 768) {
+        if (jquery_default()("#hero").offset().top + 250 <= $wScroll) {
+            // console.log("intersecting 1");
+            
+            formSearchContainer.classList.add("form-search-sticky", "show-bg");
+            formSearchSelect.classList.add("form-sticky");
+            formSearchInput.classList.add("form-sticky");
+            formSearchBtn.classList.add("form-sticky");
+            // formSearch.classList.add("width-76", "form-search-sticky");
+        } else {
+            formSearchContainer.classList.remove("form-search-sticky", "show-bg");
+            formSearchSelect.classList.remove("form-sticky");
+            formSearchInput.classList.remove("form-sticky");
+            formSearchBtn.classList.remove("form-sticky");
+            // formSearch.classList.remove("width-76", "form-search-sticky");
+        }
+    } else {
+        formSearchContainer.classList.remove("form-search-sticky", "show-bg");
+        // formSearch.classList.remove("width-76", "form-search-sticky");
+    }
+}
+
+jquery_default()(document).ready(formSearchSticky);
+jquery_default()(window).scroll(formSearchSticky);
+jquery_default()(window).resize(formSearchSticky);
+
 // intersection observer animations
 const sectionTrusted = document.querySelector("#trusted");
 const trustedTitle = document.querySelector(".trusted-title");
@@ -987,85 +1049,6 @@ const observerFormSearch = new IntersectionObserver(function
 
 // observerFormSearch.observe(titleContainer);
 
-function formSearchSticky() {
-
-    var $wScroll = jquery_default()(window).scrollTop();
-
-    if (window.innerWidth < 499) {
-        if (jquery_default()("#hero").offset().top + 208 <= $wScroll) {
-            // console.log("intersecting 1");
-            
-            formSearchContainer.classList.add("form-search-sticky", "show-bg");
-            formSearchSelect.classList.add("form-sticky");
-            formSearchInput.classList.add("form-sticky");
-            formSearchBtn.classList.add("form-sticky");
-            // formSearch.classList.add("width-76", "form-search-sticky");
-        } else {
-            formSearchContainer.classList.remove("form-search-sticky", "show-bg");
-            formSearchSelect.classList.remove("form-sticky");
-            formSearchInput.classList.remove("form-sticky");
-            formSearchBtn.classList.remove("form-sticky");
-            // formSearch.classList.remove("width-76", "form-search-sticky");
-        }
-        
-    } else if (window.innerWidth < 768) {
-        if (jquery_default()("#hero").offset().top + 250 <= $wScroll) {
-            // console.log("intersecting 1");
-            
-            formSearchContainer.classList.add("form-search-sticky", "show-bg");
-            formSearchSelect.classList.add("form-sticky");
-            formSearchInput.classList.add("form-sticky");
-            formSearchBtn.classList.add("form-sticky");
-            // formSearch.classList.add("width-76", "form-search-sticky");
-        } else {
-            formSearchContainer.classList.remove("form-search-sticky", "show-bg");
-            formSearchSelect.classList.remove("form-sticky");
-            formSearchInput.classList.remove("form-sticky");
-            formSearchBtn.classList.remove("form-sticky");
-            // formSearch.classList.remove("width-76", "form-search-sticky");
-        }
-    } else {
-        formSearchContainer.classList.remove("form-search-sticky", "show-bg");
-        // formSearch.classList.remove("width-76", "form-search-sticky");
-    }
-}
-
-jquery_default()(document).ready(formSearchSticky);
-jquery_default()(window).scroll(formSearchSticky);
-jquery_default()(window).resize(formSearchSticky);
-
-
-
-
-// hide loader on window load
-const loader = document.querySelector(".loader-container");
-
-// window.addEventListener("load", function() {
-//     // loader.classList.add("hide-loader");
-
-//     setTimeout(function() {
-//         loader.classList.add("hide-loader");
-//     }, 2500);
-
-//     setTimeout(function() {
-//         loader.style.display = "none";
-//     }, 3000);
-//     console.log("window loaded!");
-    
-// });
-
-function hideLoader() {
-    setTimeout(function() {
-        loader.classList.add("hide-loader");
-    }, 3000);
-
-    setTimeout(function() {
-        loader.style.display = "none";
-    }, 3500);
-    console.log("window loaded!");
-}
-
-hideLoader();
 // EXTERNAL MODULE: ./src/js/cookie-cur.js
 var cookie_cur = __webpack_require__(22);
 
