@@ -1217,7 +1217,6 @@ select {
   height: 30px;
   line-height: 1;
   font-size: 14px;
-  font-size: 16px !important;
   margin-bottom: 8px;
 }
 
@@ -2478,6 +2477,9 @@ select {
   #hero .title-container .title {
     font-size: 40px;
     text-align: center;
+  }
+  #main .form-advanced-search-labels .form-control {
+    font-size: 16px !important;
   }
   #recordStores {
     padding-top: 20px;

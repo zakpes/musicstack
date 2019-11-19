@@ -1015,14 +1015,25 @@ jquery_default()(window).scroll(formSearchSticky);
 jquery_default()(window).resize(formSearchSticky);
 
 // hide cookie banner
-const cookieBanner = document.querySelector(".cookie-banner");
-const cookieBannerBtn = document.querySelector(".cookie-banner-btn");
+// const cookieBanner = document.querySelector(".cookie-banner");
+// const cookieBannerBtn = document.querySelector(".cookie-banner-btn");
 
-cookieBannerBtn.addEventListener("click", function () {
-    cookieBanner.classList.add("slide-out");
+// cookieBannerBtn.addEventListener("click", function () {
+//     cookieBanner.classList.add("slide-out");
+
+//     setTimeout(function() {
+//         cookieBanner.style.display = "none";
+//     }, 500);
+// });
+
+var $cookieBanner = jquery_default()(".cookie-banner");
+var $cookieBannerBtn = jquery_default()(".cookie-banner-btn");
+
+$cookieBannerBtn.click(function () {
+    $cookieBanner.addClass("slide-out");
 
     setTimeout(function() {
-        cookieBanner.style.display = "none";
+        $cookieBanner.css("display", "none");
     }, 500);
 });
 
@@ -1046,11 +1057,11 @@ const loader = document.querySelector(".loader-container");
 function hideLoader() {
     setTimeout(function() {
         loader.classList.add("hide-loader");
-    }, 2500);
+    }, 3000);
 
     setTimeout(function() {
         loader.style.display = "none";
-    }, 3000);
+    }, 3500);
     console.log("window loaded!");
 }
 
