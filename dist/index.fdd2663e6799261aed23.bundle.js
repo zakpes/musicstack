@@ -256,7 +256,7 @@ const $selectMobile = jquery_default()(".form-search-select-mobile");
 //     console.log("window loaded!");
 // }
 
-hideLoader();
+// hideLoader();
 
 // hide cookie banner
 // $(".cookie-banner-btn").click(function () {
