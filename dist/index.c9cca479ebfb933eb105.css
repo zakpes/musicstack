@@ -537,6 +537,7 @@ select {
 .navbar .form-search .form-search-select:focus,
 .navbar .form-search .form-search-input:focus {
   box-shadow: 0 0 10px #1a88ff;
+  box-shadow: 0 0 5px #80bdff;
 }
 
 .navbar .form-search .form-search-select {
@@ -554,6 +555,7 @@ select {
   border-bottom-right-radius: 0;
   line-height: 1;
   padding-left: 0;
+  z-index: 1;
 }
 
 .navbar .form-search::placeholder {
@@ -570,6 +572,18 @@ select {
   margin-left: -1px;
   flex: 1 1 140px;
   position: relative;
+}
+
+.navbar .form-search .form-search-input:-webkit-autofill,
+.navbar .form-search .form-search-input:-webkit-autofill:hover {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+.navbar .form-search .form-search-input:-webkit-autofill:focus,
+.navbar .form-search .form-search-input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 5px #80bdff, 0 0 0px 1000px #fff inset;
 }
 
 .navbar .form-search .form-search-reset {
@@ -690,11 +704,12 @@ select {
   height: 56px;
   transform: scaleY(1);
   opacity: 1;
-  transition: opacity 400ms;
+  transition: opacity 400ms, z-index 400ms;
 }
 
 #hero .form-search-container.hide-form {
   opacity: 0;
+  z-index: -1;
 }
 
 #hero .form-search-container .advanced-search-link {
@@ -812,6 +827,7 @@ select {
   padding-left: 0px;
   border-radius: 4px 0 0 4px;
   line-height: 1;
+  z-index: 1;
 }
 
 #hero .form-search::placeholder {
@@ -2434,6 +2450,9 @@ select {
     height: 36px;
     width: 94px;
   }
+  #hero .form-search-container .form-search .form-search-select.form-sticky:focus {
+    box-shadow: 0 0 5px #80bdff;
+  }
   #hero .form-search-container .form-search .form-search-input {
     padding-right: 98px;
     transition: height 200ms;
@@ -2443,6 +2462,9 @@ select {
     height: 36px;
     padding-right: 0;
     flex: 1 1 140px;
+  }
+  #hero .form-search-container .form-search .form-search-input.form-sticky:focus {
+    box-shadow: 0 0 5px #80bdff;
   }
   #hero .form-search-container .form-search .btn-search {
     transition: all 200ms;
