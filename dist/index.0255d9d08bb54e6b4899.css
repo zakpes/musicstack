@@ -681,6 +681,7 @@ select {
 * ==================================== */
 #hero {
   background: url(imgs/hero-bg.99450979322bdf6e69a7edf342861de2.png) center center no-repeat;
+  background: url(imgs/hero-bg-optimized.b16666448aa19f9187e89a2d2428abfc.png) center center no-repeat;
   background-size: cover;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -2573,6 +2574,9 @@ select {
     margin-bottom: 8px;
     margin-right: 100%;
   }
+  #trustpilotReviews .slider-cell .trustpilot-review:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+  }
   #footer {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -2721,9 +2725,6 @@ select {
 @media (max-width: 360px) {
   .navbar .navbar-brand .img-logo {
     margin-right: 0;
-  }
-  .navbar .navbar-brand .img-logo-text-hover {
-    top: 6px;
   }
   #recordStores .slider-cell {
     width: 70%;
