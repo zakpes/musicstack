@@ -221,19 +221,7 @@ const $selectMobile = jquery_default()(".form-search-select-mobile");
     }, {passive: false});
 })();
 
-// hide loader
-// function hideLoader() {
-//     setTimeout(function() {
-//         loader.classList.add("hide-loader");
-//     }, 3000);
 
-//     setTimeout(function() {
-//         loader.style.display = "none";
-//     }, 3500);
-//     console.log("window loaded!");
-// }
-
-// hideLoader();
 
 // hide cookie banner
 // $(".cookie-banner-btn").click(function () {

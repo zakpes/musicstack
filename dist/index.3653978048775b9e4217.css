@@ -578,12 +578,14 @@ select {
 .navbar .form-search .form-search-input:-webkit-autofill:hover {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  box-shadow: 0 0 0px 1000px #fff inset;
 }
 
 .navbar .form-search .form-search-input:-webkit-autofill:focus,
 .navbar .form-search .form-search-input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-box-shadow: 0 0 5px #80bdff, 0 0 0px 1000px #fff inset;
+  box-shadow: 0 0 5px #80bdff, 0 0 0px 1000px #fff inset;
 }
 
 .navbar .form-search .form-search-reset {
@@ -1842,7 +1844,6 @@ select {
   z-index: 9999;
   opacity: 1;
   transition: opacity 500ms;
-  display: none;
 }
 
 .loader-container .img-logo-loader {
