@@ -148,14 +148,14 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push([25,1]);
+/******/ 	deferredModules.push([24,1]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 25:
+/***/ 24:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -164,15 +164,12 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./src/page-index/index.scss
 var page_index = __webpack_require__(7);
 
-// EXTERNAL MODULE: ./src/js/cookie.js
-var cookie = __webpack_require__(8);
-
 // EXTERNAL MODULE: ./node_modules/jquery/dist/jquery.js
 var jquery = __webpack_require__(0);
 var jquery_default = /*#__PURE__*/__webpack_require__.n(jquery);
 
 // EXTERNAL MODULE: ./node_modules/bootstrap/dist/js/bootstrap.js
-var bootstrap = __webpack_require__(9);
+var bootstrap = __webpack_require__(8);
 
 // EXTERNAL MODULE: ./node_modules/flickity/js/index.js
 var js = __webpack_require__(5);
@@ -303,28 +300,25 @@ navbarBrand.addEventListener("mouseleave", function() {
 });
 
 // navbar toggle hamburger btn
-jquery_default()('#navbarMobileToggle').click(function(){
-    jquery_default()(this).toggleClass("navbar-mobile-closed");
-    jquery_default()(this).children(".icon")
-        .toggleClass('menu')
-        .toggleClass('close');
+// $('#navbarMobileToggle').click(function(){
+//     $(this).toggleClass("navbar-mobile-closed");
+//     $(this).children(".icon")
+//         .toggleClass('menu')
+//         .toggleClass('close');
 
-    jquery_default()("#navbarMobile").toggleClass("slide-in");
-    jquery_default()(".navbar-mobile-overlay").fadeToggle();
-    jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
-        // .css({position: "fixed", top: '-' + $(window).scrollTop() + 'px'});
-        // console.log(window.scrollY + 'px');
-    jquery_default()("html").toggleClass("advanced-search-form-open");
-});
+//     $("#navbarMobile").toggleClass("slide-in");
+//     $(".navbar-mobile-overlay").fadeToggle();
+//     $(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
+//     $("html").toggleClass("advanced-search-form-open");
+// });
 
-jquery_default()(".navbar-mobile-overlay").click(function() {
-    jquery_default()(this).fadeToggle();
-    jquery_default()('#navbarMobileToggle').children(".icon").toggleClass("menu").toggleClass("close");
-    jquery_default()("#navbarMobile").toggleClass("slide-in");
-    jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
-    // .css({position: "", top: ""});
-    jquery_default()("html").toggleClass("advanced-search-form-open");
-});
+// $(".navbar-mobile-overlay").click(function() {
+//     $(this).fadeToggle();
+//     $('#navbarMobileToggle').children(".icon").toggleClass("menu").toggleClass("close");
+//     $("#navbarMobile").toggleClass("slide-in");
+//     $(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
+//     $("html").toggleClass("advanced-search-form-open");
+// });
 
 // change select bg on hover
 jquery_default()("#formSearchSelect").hover(function () {
@@ -928,86 +922,14 @@ jquery_default()(window).scroll(formSearchSticky);
 jquery_default()(window).resize(formSearchSticky);
 
 // intersection observer animations
-const sectionTrusted = document.querySelector("#trusted");
-const trustedTitle = document.querySelector(".trusted-title");
-const trustedText = document.querySelector(".trusted-text");
-const sectionTrustpilot = document.querySelector("#trustpilotReviews");
-const formSearchContainer = document.querySelector("#formSearchContainer");
-const formSearchContainerWrapper = document.querySelector(".form-search-container-wrapper");
-const formSearch = document.querySelector(".form-search");
-const formSearchSelect = document.querySelector("#formSearchSelect");
-const formSearchInput = document.querySelector("#formSearchInput");
-const formSearchBtn = document.querySelector("#formSearchBtn");
-const btnAdvancedSearch = document.querySelector("#btnOpenForm");
-const btnAdvancedSearchArrow = document.querySelector("#btnOpenForm svg");
-const titleContainer = document.querySelector(".title-container");
-const navbar = document.querySelector(".navbar");
 
-const optionsTrusted = {
-    threshold: 0.5, // 0 to 1
-    // rootMargin: "-100px 100px 100px 100px"
-};
-
-const observerTrusted = new IntersectionObserver(function
-    (entries, observer) {
-        entries.forEach(entry => {
-
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                console.log(entry.target + "trusted observed");
-                entry.target.classList.toggle("fade-in");
-                trustedTitle.classList.toggle("slide-in");
-                trustedText.classList.toggle("slide-in");
-                observer.unobserve(entry.target);
-            }
-        });
-}, optionsTrusted);
-
-const observerTrustpilot = new IntersectionObserver(function
-    (entries, observer) {
-        entries.forEach(entry => {
-
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                console.log(entry.target + "trustpilot observed");
-                sliderTrustpilot.classList.toggle("scale-up");
-                observer.unobserve(entry.target);
-            }
-        });
-}, optionsTrusted);
-
-observerTrusted.observe(sectionTrusted);
-observerTrustpilot.observe(sectionTrustpilot);
-
-const observerFormSearch = new IntersectionObserver(function
-    (entries, observer) {
-        entries.forEach(entry => {
-            
-            if (window.innerWidth <= 1199) {
-                if (!entry.isIntersecting) {
-                    // console.log("intersecting 1");
-                    
-                    formSearchContainer.classList.add("form-search-sticky", "show-bg");
-                    formSearch.classList.add("width-76", "form-search-sticky");
-                } else {
-                    formSearchContainer.classList.remove("form-search-sticky", "show-bg");
-                    formSearch.classList.remove("width-76", "form-search-sticky");
-                }
-            } else {
-                formSearchContainer.classList.remove("form-search-sticky", "show-bg");
-                formSearch.classList.remove("width-76", "form-search-sticky");
-            }
-        });
-}, {rootMargin: "-62px 0px 0px 0px"});
 
 // observerFormSearch.observe(titleContainer);
 
 
 // CONCATENATED MODULE: ./src/page-index/index.js
 
-
+// import "../js/cookie";
 
 // import "../js/find";
 
@@ -1017,88 +939,6 @@ const observerFormSearch = new IntersectionObserver(function
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ 8:
-/***/ (function(module, exports) {
-
-
-var c; // set cur frm cookie
-for (var ca = document.cookie.split(/;\s*/), i = ca.length - 1; i >= 0; i--) {
-    if (!ca[i].indexOf('currency=')) {c=ca[i].replace('currency=', '');break}
-    
-}
-console.log("c is "+c);
-
-var e = document.getElementById("js-selectCurrency1");
-var f = document.getElementById("js-selectCurrency2");
-
-for ( var i = 0; i < e.length; i++ ) {
- if ( e.options[i].value == c ) {
-          
-      e.options[i].selected=true;break;
- }
-}
-
-for ( var i = 0; i < f.length; i++ ) {
- if ( f.options[i].value == c ) {
-          
-      f.options[i].selected=true;break;
- }
-}
-
-// set currency cookie
-function SetCookie(cookieName,cookieValue,nDays) {
- 
-    var today = new Date();
-    var expire = new Date();
-    if (nDays==null || nDays==0) nDays=1;
-    expire.setTime(today.getTime() + 86400*nDays);
-    if (cookieName == 'media' && eval(cookieValue)<200) {return;} 
-    // document.cookie = cookieName+"="+escape(cookieValue)+"; expires="+expire.toGMTString()+"; path=/; domain=musicstack.com";
-    document.cookie = cookieName+"="+escape(cookieValue)+"; expires="+expire.toGMTString();
-
-    console.log(cookieName, cookieValue);
-}
-
-function setCookieCur(event) {
-    SetCookie('currency', this.options[this.selectedIndex].value, 9999);
-    window.location.reload();
-    return true;
-}
-
-document.querySelector("#js-selectCurrency1").addEventListener("change", setCookieCur);
-document.querySelector("#js-selectCurrency2").addEventListener("change", setCookieCur);
-
-// set consent cookie and hide cookie banner
-const cookieBanner = document.querySelector(".cookie-banner");
-const cookieBannerBtn = document.querySelector(".cookie-banner-btn");
-
-(function() {
-	if (!localStorage.getItem('cookieconsent')) {
-
-        console.log("cookie is not here");
-        cookieBanner.classList.remove("hide-banner");
-		
-		cookieBannerBtn.onclick = function(e) {
-
-			e.preventDefault();
-            cookieBanner.classList.add("slide-out");
-
-            setTimeout(function() {
-                cookieBanner.style.display = "none";
-            }, 500);
-
-            localStorage.setItem('cookieconsent', true);
-            console.log("cookie set!");
-            
-		};
-	} else {
-        console.log("cookie is here");
-        
-    }
-})();
 
 /***/ })
 
