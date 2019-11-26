@@ -176,6 +176,10 @@ var js = __webpack_require__(5);
 var js_default = /*#__PURE__*/__webpack_require__.n(js);
 
 // CONCATENATED MODULE: ./src/js/main.js
+jquery_default()(document).ready(function(){
+    alert("We accessed the Javascript");
+});
+
 
 
 
