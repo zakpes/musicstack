@@ -1802,11 +1802,13 @@ select {
 .cookie-banner .cookie-banner-inner .cookie-banner-message {
   flex: 4;
   color: #404040;
+  display: block;
 }
 
 .cookie-banner .cookie-banner-inner .cookie-btn-container {
   flex: 1;
   margin-left: 10px;
+  display: block;
 }
 
 .cookie-banner .cookie-banner-inner .cookie-banner-btn {
@@ -2597,15 +2599,18 @@ select {
   }
   .cookie-banner .cookie-banner-inner {
     padding: 20px 0;
+    width: 100%;
   }
   .cookie-banner .cookie-banner-inner .cookie-banner-message {
     text-align: center;
+    width: 100%;
   }
   .cookie-banner .cookie-banner-inner .cookie-btn-container {
     flex: 100%;
     margin-top: 20px;
     margin-left: 0;
     text-align: center;
+    width: 100%;
   }
 }
 
