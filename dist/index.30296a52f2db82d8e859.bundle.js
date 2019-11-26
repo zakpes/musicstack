@@ -180,8 +180,29 @@ var js_default = /*#__PURE__*/__webpack_require__.n(js);
 
 
 
-const $selectDesktop = jquery_default()(".form-search-select-desktop");
-const $selectMobile = jquery_default()(".form-search-select-mobile");
+// const $selectDesktop = $(".form-search-select-desktop");
+// const $selectMobile = $(".form-search-select-mobile");
+
+// navbar toggle hamburger btn
+jquery_default()('#navbarMobileToggle').click(function(){
+    jquery_default()(this).toggleClass("navbar-mobile-closed");
+    jquery_default()(this).children(".icon")
+        .toggleClass('menu')
+        .toggleClass('close');
+
+    jquery_default()("#navbarMobile").toggleClass("slide-in");
+    jquery_default()(".navbar-mobile-overlay").fadeToggle();
+    jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
+    jquery_default()("html").toggleClass("advanced-search-form-open");
+});
+
+jquery_default()(".navbar-mobile-overlay").click(function() {
+    jquery_default()(this).fadeToggle();
+    jquery_default()('#navbarMobileToggle').children(".icon").toggleClass("menu").toggleClass("close");
+    jquery_default()("#navbarMobile").toggleClass("slide-in");
+    jquery_default()(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
+    jquery_default()("html").toggleClass("advanced-search-form-open");
+});
 
 // flickity fix for iOS
 (function() {
@@ -298,27 +319,6 @@ navbarBrand.addEventListener("mouseleave", function() {
     
     logoImg.style.opacity = "0";
 });
-
-// navbar toggle hamburger btn
-// $('#navbarMobileToggle').click(function(){
-//     $(this).toggleClass("navbar-mobile-closed");
-//     $(this).children(".icon")
-//         .toggleClass('menu')
-//         .toggleClass('close');
-
-//     $("#navbarMobile").toggleClass("slide-in");
-//     $(".navbar-mobile-overlay").fadeToggle();
-//     $(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
-//     $("html").toggleClass("advanced-search-form-open");
-// });
-
-// $(".navbar-mobile-overlay").click(function() {
-//     $(this).fadeToggle();
-//     $('#navbarMobileToggle').children(".icon").toggleClass("menu").toggleClass("close");
-//     $("#navbarMobile").toggleClass("slide-in");
-//     $(".no-scroll-body-wrapper").toggleClass("advanced-search-form-open");
-//     $("html").toggleClass("advanced-search-form-open");
-// });
 
 // change select bg on hover
 jquery_default()("#formSearchSelect").hover(function () {
