@@ -2756,7 +2756,7 @@ select {
 }
 
 /* Custom, iPhone Retina */
-@media (max-width: 340px) {
+@media (max-width: 356px) {
   .navbar .navbar-brand .img-logo {
     width: 130px;
     margin-right: 0;
