@@ -512,6 +512,13 @@ select {
   margin-bottom: 0;
   position: relative;
   flex-wrap: nowrap;
+  border-radius: 4px;
+  transition: box-shadow 150ms ease-in-out;
+}
+
+.navbar .form-search.borders {
+  box-shadow: 0 0 10px #1a88ff;
+  box-shadow: 0 0 5px #80bdff;
 }
 
 .navbar .form-search .form-search-select-bg {
@@ -536,8 +543,8 @@ select {
 
 .navbar .form-search .form-search-select:focus,
 .navbar .form-search .form-search-input:focus {
-  box-shadow: 0 0 10px #1a88ff;
-  box-shadow: 0 0 5px #80bdff;
+  box-shadow: none;
+  border: 1px solid #ced4da;
 }
 
 .navbar .form-search .form-search-select {
@@ -790,6 +797,12 @@ select {
   width: 100%;
   margin-bottom: 10px;
   height: 100%;
+  border-radius: 4px;
+  transition: box-shadow 150ms ease-in-out;
+}
+
+#hero .form-search.borders {
+  box-shadow: 0 0 10px #1a88ff;
 }
 
 #hero .form-search .form-search-select,
@@ -799,7 +812,8 @@ select {
 
 #hero .form-search .form-search-select:focus,
 #hero .form-search .form-search-input:focus {
-  box-shadow: 0 0 10px #1a88ff;
+  box-shadow: none;
+  border: 1px solid #ced4da;
 }
 
 #hero .form-search .form-search-select-bg {
@@ -2419,6 +2433,9 @@ select {
   #hero .form-search-container.form-search-sticky {
     width: 96%;
   }
+  #hero .form-search-container.form-search-sticky .form-search.borders {
+    box-shadow: 0 0 5px #80bdff;
+  }
   #hero .form-search-container.form-search-sticky .form-search-select-bg {
     width: 97px;
   }
@@ -2455,7 +2472,7 @@ select {
     width: 94px;
   }
   #hero .form-search-container .form-search .form-search-select.form-sticky:focus {
-    box-shadow: 0 0 5px #80bdff;
+    box-shadow: none;
   }
   #hero .form-search-container .form-search .form-search-input {
     padding-right: 98px;
@@ -2468,7 +2485,7 @@ select {
     flex: 1 1 140px;
   }
   #hero .form-search-container .form-search .form-search-input.form-sticky:focus {
-    box-shadow: 0 0 5px #80bdff;
+    box-shadow: none;
   }
   #hero .form-search-container .form-search .btn-search {
     transition: all 200ms;
@@ -2688,7 +2705,6 @@ select {
   #hero .form-search-container .form-search .form-search-select {
     padding-left: 5px;
     padding-left: 0;
-    font-size: 15px;
   }
   #hero .form-search-container.form-search-sticky {
     width: 91%;

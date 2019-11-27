@@ -230,7 +230,39 @@ jquery_default()(".navbar-mobile-overlay").click(function () {
   }, {
     passive: false
   });
-})(); // hide cookie banner
+})(); // search form border on input focus
+
+
+var formSearchMain = document.querySelector("#formSearch");
+var formSearchInputMain = document.querySelector("#formSearchInput");
+var formSearchSelectMain = document.querySelector("#formSearchSelect");
+var formSearchNav = document.querySelector("#formSearchNav");
+var formSearchInputNav = document.querySelector("#formSearchInputNav");
+var formSearchSelectNav = document.querySelector("#formSearchSelectNav");
+formSearchInputMain.addEventListener("focus", function () {
+  formSearchMain.classList.add("borders");
+});
+formSearchInputMain.addEventListener("blur", function () {
+  formSearchMain.classList.remove("borders");
+});
+formSearchSelectMain.addEventListener("focus", function () {
+  formSearchMain.classList.add("borders");
+});
+formSearchSelectMain.addEventListener("blur", function () {
+  formSearchMain.classList.remove("borders");
+});
+formSearchInputNav.addEventListener("focus", function () {
+  formSearchNav.classList.add("borders");
+});
+formSearchInputNav.addEventListener("blur", function () {
+  formSearchNav.classList.remove("borders");
+});
+formSearchSelectNav.addEventListener("focus", function () {
+  formSearchNav.classList.add("borders");
+});
+formSearchSelectNav.addEventListener("blur", function () {
+  formSearchNav.classList.remove("borders");
+}); // hide cookie banner
 // $(".cookie-banner-btn").click(function () {
 //     $(".cookie-banner").addClass("slide-out");
 //     setTimeout(function() {
@@ -240,7 +272,6 @@ jquery_default()(".navbar-mobile-overlay").click(function () {
 // var $cookieBanner = $(".cookie-banner");
 // var $cookieBannerBtn = $(".cookie-banner-btn");
 // change navbar height on scroll
-
 
 function navbarShrink() {
   var $window = jquery_default()(window);
@@ -828,10 +859,6 @@ jquery_default()(document).ready(formSearchSticky);
 jquery_default()(window).scroll(formSearchSticky);
 jquery_default()(window).resize(formSearchSticky); // intersection observer animations
 
-var sectionTrusted = document.querySelector("#trusted");
-var trustedTitle = document.querySelector(".trusted-title");
-var trustedText = document.querySelector(".trusted-text");
-var sectionTrustpilot = document.querySelector("#trustpilotReviews");
 var formSearchContainer = document.querySelector("#formSearchContainer");
 var formSearchContainerWrapper = document.querySelector(".form-search-container-wrapper");
 var formSearch = document.querySelector(".form-search");
@@ -841,38 +868,77 @@ var formSearchBtn = document.querySelector("#formSearchBtn");
 var btnAdvancedSearch = document.querySelector("#btnOpenForm");
 var btnAdvancedSearchArrow = document.querySelector("#btnOpenForm svg");
 var titleContainer = document.querySelector(".title-container");
-var navbar = document.querySelector(".navbar");
-var optionsTrusted = {
-  threshold: 0.5 // 0 to 1
-  // rootMargin: "-100px 100px 100px 100px"
+var navbar = document.querySelector(".navbar"); // const optionsTrusted = {
+//     threshold: 0.5
+// };
+// const observerTrusted = new IntersectionObserver(function
+//     (entries, observer) {
+//         entries.forEach(entry => {
+//             if (!entry.isIntersecting) {
+//                 return;
+//             } else {
+//                 console.log(entry.target + "trusted observed");
+//                 entry.target.classList.toggle("fade-in");
+//                 trustedTitle.classList.toggle("slide-in");
+//                 trustedText.classList.toggle("slide-in");
+//                 observer.unobserve(entry.target);
+//             }
+//         });
+// }, optionsTrusted);
+// const observerTrustpilot = new IntersectionObserver(function
+//     (entries, observer) {
+//         entries.forEach(entry => {
+//             if (!entry.isIntersecting) {
+//                 return;
+//             } else {
+//                 console.log(entry.target + "trustpilot observed");
+//                 sliderTrustpilot.classList.toggle("scale-up");
+//                 observer.unobserve(entry.target);
+//             }
+//         });
+// }, optionsTrusted);
+// detect if element is in viewport
 
-};
-var observerTrusted = new IntersectionObserver(function (entries, observer) {
-  entries.forEach(function (entry) {
-    if (!entry.isIntersecting) {
-      return;
-    } else {
-      console.log(entry.target + "trusted observed");
-      entry.target.classList.toggle("fade-in");
-      trustedTitle.classList.toggle("slide-in");
-      trustedText.classList.toggle("slide-in");
-      observer.unobserve(entry.target);
-    }
-  });
-}, optionsTrusted);
-var observerTrustpilot = new IntersectionObserver(function (entries, observer) {
-  entries.forEach(function (entry) {
-    if (!entry.isIntersecting) {
-      return;
-    } else {
-      console.log(entry.target + "trustpilot observed");
-      sliderTrustpilot.classList.toggle("scale-up");
-      observer.unobserve(entry.target);
-    }
-  });
-}, optionsTrusted);
-observerTrusted.observe(sectionTrusted);
-observerTrustpilot.observe(sectionTrustpilot);
+var isElementXPercentInViewport = function isElementXPercentInViewport(el, percentVisible) {
+  var rect = el.getBoundingClientRect(),
+      windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  return !(Math.floor(100 - (rect.top >= 0 ? 0 : rect.top) / +-(rect.height / 1) * 100) < percentVisible || Math.floor(100 - (rect.bottom - windowHeight) / rect.height * 100) < percentVisible);
+}; // section trusted slide in
+
+
+var sectionTrusted = document.querySelector("#trusted");
+var trustedTitle = document.querySelector(".trusted-title");
+var trustedText = document.querySelector(".trusted-text");
+
+function trustedSlideIn() {
+  if (isElementXPercentInViewport(sectionTrusted, 50)) {
+    console.log("trusted observed");
+    sectionTrusted.classList.add("fade-in");
+    trustedTitle.classList.add("slide-in");
+    trustedText.classList.add("slide-in");
+  }
+} // slider trustpilot show
+
+
+var sectionTrustpilot = document.querySelector("#trustpilotReviews");
+
+function trustpilotShow() {
+  if (isElementXPercentInViewport(sectionTrustpilot, 50)) {
+    console.log("trustpilot observed");
+    sliderTrustpilot.classList.add("scale-up");
+  }
+}
+
+jquery_default()(document).ready(function () {
+  trustedSlideIn();
+  trustpilotShow();
+});
+jquery_default()(window).scroll(function () {
+  trustedSlideIn();
+  trustpilotShow();
+}); // observerTrusted.observe(sectionTrusted);
+// observerTrustpilot.observe(sectionTrustpilot);
+
 var observerFormSearch = new IntersectionObserver(function (entries, observer) {
   entries.forEach(function (entry) {
     if (window.innerWidth <= 1199) {
