@@ -135,6 +135,27 @@ select {
   position: relative;
   margin-right: 0px;
   min-width: 255px;
+  background-position: -167px 0;
+  transition: background-position .5s ease-in-out;
+}
+
+.navbar-brand:hover {
+  background-position: 120px 0;
+}
+
+.navbar-brand::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle farthest-side at 0 0, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.4) 90%, rgba(255, 255, 255, 0) 100%);
+  background-repeat: no-repeat;
+  background-position: inherit;
+  -webkit-mask: url(imgs/musicstack-logo.0d9472fd0d2475bbce7579e35e623f42.gif) center;
+  mask: url(imgs/musicstack-logo.0d9472fd0d2475bbce7579e35e623f42.gif) center;
 }
 
 .icon {
@@ -355,6 +376,8 @@ select {
 
 .navbar .navbar-brand .img-logo-record {
   width: 52px;
+  position: relative;
+  z-index: 1;
 }
 
 .navbar .navbar-brand:hover .img-logo-record {
@@ -367,6 +390,7 @@ select {
   top: 16px;
   opacity: 0;
   transition: opacity 500ms 500ms;
+  display: none;
 }
 
 @keyframes recordSpin {

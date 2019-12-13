@@ -316,15 +316,15 @@ function navbarShrink() {
 ;
 jquery_default()(window).scroll(navbarShrink);
 jquery_default()(window).resize(navbarShrink); // navbar brand hover
-
-var navbarBrand = document.querySelector(".navbar-brand");
-var logoImg = document.querySelector(".img-logo-text-hover");
-navbarBrand.addEventListener("mouseenter", function () {
-  logoImg.style.opacity = "1";
-});
-navbarBrand.addEventListener("mouseleave", function () {
-  logoImg.style.opacity = "0";
-}); // change select bg on hover
+// const navbarBrand = document.querySelector(".navbar-brand");
+// const logoImg = document.querySelector(".img-logo-text-hover")
+// navbarBrand.addEventListener("mouseenter", function () {
+//     logoImg.style.opacity = "1";
+// });
+// navbarBrand.addEventListener("mouseleave", function () {
+//     logoImg.style.opacity = "0";
+// });
+// change select bg on hover
 
 jquery_default()("#formSearchSelect").hover(function () {
   if (jquery_default()(this).is(":focus")) {
