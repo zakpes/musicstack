@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" class="site-main">
+
+<head>
+
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Buy Rare Vinyl Records, LPs and CDs">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>MusicStack</title>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="indexBody">
+
+    <!-- <div class="no-scroll-body-wrapper"> -->
+
+    <div class="form-advanced-overlay"></div>
+
+    ${require('../template-parts/navbar.html')}
+    
+        
+    <!-- SECTION hero-->
+    <section id="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title-container">
+                        <h1 class="title">the best <span class="text-bold">vinyl records and cd marketplace</span> available on internet.</h1>
+                    </div>
+                    <div class="form-search-container-wrapper">
+                        <div id="formSearchContainer" class="form-search-container">
+                            
+                            <form id="formSearch" class="form-inline form-search" action="https://www.musicstack.com/show.cgi" method="get" autocomplete="off">
+                            
+                                <div class="form-search-select-bg"></div>
+
+                                <select id="formSearchSelect" name="search_type" class="form-control form-search-select form-search-select-desktop">
+                                    
+                                    <option class="artist" value="artist">Artist</option>
+                                    <option class="title" value="title">Title</option>
+                                    <option class="label" value="label">Label</option>
+                                    <option class="catnum" value="release_id">Cat Num</option>
+                                    <option class="barcode" value="barcode">Barcode</option>
+                                    <option class="genre" value="genre">Genre</option>
+                                    <option class="seller" value="seller">Seller</option>
+                                    <option class="d-block d-lg-none advanced" value="advanced" id="btnOpenForm3"></option>
+                                </select>
+                                <input id="formSearchInput" class="form-control form-search-input" type="text" name="find" placeholder="">
+                                <input id="find_focus" type="hidden" name="find_focus" value="0">
+                                <!-- <input class="form-control form-search-reset" type="reset" name="Reset" value="x" placeholder=""> -->
+                                <i class="clearable__clear form-search-reset">&times;</i>
+                                <button id="formSearchBtn" class="btn btn-search" type="submit" name="button" value="Search">
+                                    <!-- <img class="img-fluid img-search" src='../img/icons/search.svg' alt='Search Icon'> -->
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="26.271" height="27.211" viewBox="0 0 26.271 27.211"><path class="a" d="M26.856,24.785l-6.476-6.736a10.982,10.982,0,1,0-8.409,3.924,10.869,10.869,0,0,0,6.294-1.988l6.525,6.787a1.433,1.433,0,1,0,2.065-1.987ZM11.97,2.866a8.12,8.12,0,1,1-8.12,8.12A8.13,8.13,0,0,1,11.97,2.866Z" transform="translate(-0.984 0)"/></!-->
+                                        
+                                </button>
+                            </form>
+                            <!-- <button id="btnOpenForm" class="btn advanced-search-link d-block d-lg-none">Advanced <span class="no-wrap">search 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18.108" height="15.04" viewBox="0 0 18.108 15.04"><g transform="translate(0 -41.674)"><g transform="translate(0 41.674)"><path class="a" d="M1.018,47.774l-.028.006H13.106L9.3,43.963a1,1,0,0,1,0-1.406l.593-.593a.991.991,0,0,1,1.4,0l6.529,6.529a1,1,0,0,1,0,1.4l-6.529,6.529a.992.992,0,0,1-1.4,0L9.3,55.832a.981.981,0,0,1-.289-.7.951.951,0,0,1,.289-.686l3.852-3.839H1a1.026,1.026,0,0,1-1-1.016v-.839A1.006,1.006,0,0,1,1.018,47.774Z" transform="translate(0 -41.674)"/></g></g></svg>
+                                </span>
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#hero -->
+
+
+    <!-- SECTION recordStores -->
+    <section id="recordStores">
+        <div class="container-fluid container-main">
+            <div class="row">
+                <div class="col-12">
+                    <div class="record-stores-title-container d-flex">
+                        <h3 class="record-stores-title mr-auto">Featured record stores</h3>
+                        <a href="#" class="see-all-link ml-auto">See All 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18.108" height="15.04" viewBox="0 0 18.108 15.04">
+                                <g transform="translate(0 -41.674)">
+                                    <g transform="translate(0 41.674)">
+                                        <path class="a" d="M1.018,47.774l-.028.006H13.106L9.3,43.963a1,1,0,0,1,0-1.406l.593-.593a.991.991,0,0,1,1.4,0l6.529,6.529a1,1,0,0,1,0,1.4l-6.529,6.529a.992.992,0,0,1-1.4,0L9.3,55.832a.981.981,0,0,1-.289-.7.951.951,0,0,1,.289-.686l3.852-3.839H1a1.026,1.026,0,0,1-1-1.016v-.839A1.006,1.006,0,0,1,1.018,47.774Z" transform="translate(0 -41.674)"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+
+            <div class="row">
+                <div class="col-12 flex-wrapper-record-stores">
+                    <div id="sliderRecordStores" class="container-flex-record-stores">
+                        <div class="slider-cell">
+                            <a href="#">
+                                <div class="record-store" style="background-image: url('${require(`../img/slider/record-store-1.png`)}');">
+                                    <div class="record-store-info">
+                                        <h5 class="record-store-name">Andy Grey Records Production Company</h5>
+                                        <div class="d-flex">
+                                            <h5 class="record-store-country mr-auto">Germany</h5>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="slider-cell">
+                            <a href="#">
+                                <div class="record-store" style="background-image: url('${require(`../img/slider/record-store-2.png`)}');">
+                                    <div class="record-store-info">
+                                        <h5 class="record-store-name">Andy Grey Records Production Company</h5>
+                                        <div class="d-flex">
+                                            <h5 class="record-store-country mr-auto">Germany</h5>
+
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="slider-cell">
+                            <a href="#">
+                                <div class="record-store" style="background-image: url('${require(`../img/slider/record-store-3.png`)}');">
+                                    <div class="record-store-info">
+                                        <h5 class="record-store-name">Andy Grey Records</h5>
+                                        <div class="d-flex">
+                                            <h5 class="record-store-country mr-auto">Germany</h5>
+
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="slider-cell">
+                            <a href="#">
+                                <div class="record-store" style="background-image: url('${require(`../img/slider/record-store-4.png`)}');">
+                                    <div class="record-store-info">
+                                        <h5 class="record-store-name">Andy Grey Records</h5>
+                                        <div class="d-flex">
+                                            <h5 class="record-store-country mr-auto">Germany</h5>
+
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="slider-cell">
+                            <a href="#">
+                                <div class="record-store" style="background-image: url('${require(`../img/slider/record-store-1.png`)}');">
+                                    <!-- <img class="img-fluid" src='../img/slider/record-store-1.png' alt=''> -->
+                                    
+                                    <div class="record-store-info">
+                                        <h5 class="record-store-name">Andy Grey Records</h5>
+                                        <div class="d-flex">
+                                            <h5 class="record-store-country mr-auto">Germany</h5>
+
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="slider-cell">
+                            <a href="#">
+                                <div class="record-store" style="background-image: url('${require(`../img/listed/038d7b4d4a1dc9591357a2fd9260e07d@2x.png`)}');">
+                                    <div class="record-store-info">
+                                        <h5 class="record-store-name">Andy Grey Records</h5>
+                                        <div class="d-flex">
+                                            <h5 class="record-store-country mr-auto">Germany</h5>
+                                            <!-- <h5 class="card-title record-store-items ml-auto"><span class="number-of-items">16,894</span> items</h5> -->
+
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.container -->
+    </section><!-- /#recordStores -->
+
+
+    <!-- SECTION main -->
+    <section id="main">
+        <div class="container-fluid container-main">
+            <div class="row flex-wrapper">
+                <div class="flex-container flex-container-1">
+                    <div class="form-advanced-search-container">
+                        <div class="btn-x-container d-block d-lg-none">
+                            <button id="btnCloseForm" class="btn btn-x" type="button" name="button"><div class="icon close"></div></button>
+                        </div>
+                        <div class="listed-title-container">
+                            <h3 class="listed-title">Advanced search</h3>
+                        </div>
+                        <!-- <form id="formAdvancedSearch" class="form-advanced-search" action="">
+                            <select class="form-control" name="formats" id="selectFormat">
+                                <option value="all-formats">All Formats</option>
+                                <option value="format-1">Format 1</option>
+                                <option value="format-2">Format 2</option>
+                            </select>
+                            <input class="form-control" type="text" name="artist" id="inputArtist" placeholder="Artist">
+                            <input class="form-control" type="text" name="title" id="inputTitle" placeholder="Title">
+                            <input class="form-control" type="text" name="label" id="inputLabel" placeholder="Label">
+                            <input class="form-control" type="text" name="catnum" id="inputCatNum" placeholder="Cat Num">
+                            <input class="form-control" type="text" name="barcode" id="inputBarcode" placeholder="Barcode">
+                            <input class="form-control" type="text" name="genre" id="inputGenre" placeholder="Genre">
+                            <input class="form-control" type="text" name="country" id="inputCountry" placeholder="Country">
+
+                            <div class="form-group">
+                                <label for="inputSeller">Seller</label>
+                                <input type="text" class="form-control" id="inputSeller" placeholder="Seller Name">
+                                <select class="form-control" name="sellers-coutries" id="sellersCountries">
+                                    <option value="all-sellers-countries">All Sellers Countries</option>
+                                    <option value="usa">USA</option>
+                                    <option value="united-kingdom">United Kingdom</option>
+                                </select>
+                                <select class="form-control" name="sellers-coutries" id="sellersCountries">
+                                    <option value="all-sellers-countries">All Sellers Rating</option>
+                                    <option value="five-stars">Five Stars</option>
+                                    <option value="four-stars">Four Stars</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group price-container">
+                                <label for="priceInput">Price</label>
+
+                                <div class="price-container d-flex justify-content-space-between">
+                                    <input class="form-control price" id="priceInputMin" type="text" name="min-price" placeholder="$50">
+                                    <span class="price-to mr-auto ml-auto">to</span>
+                                    <input class="form-control price" id="priceInputMax" type="text" name="max-price" placeholder="$500">
+
+                                </div>
+                            </div>
+
+                            <button class="btn btn-advanced-search" type="submit" name="btn-advanced-search">Search</button>
+                        </form> -->
+                        <form id="formAdvancedSearch" class="form-advanced-search form-advanced-search-labels" action="https://www.musicstack.com/show.cgi" method="get">
+                            <div class="form-group">
+                                <label class="label-small" for="selectFormat">Format</label>
+                                <select class="form-control" name="formats" id="selectFormat">
+                                    <option value="" selected>All
+                                    <option value="">---------------------
+                                    <option value="248">All Vinyl Formats
+                                    <option value="250">All CD Formats
+                                    <option value="">---------------------
+                                    <option value="243">Vinyl - LP
+                                    <option value="247">Vinyl - 45 & 7&quot;
+                                    <option value="235">Vinyl - EP
+                                    <option value="246">Vinyl - 10&quot;
+                                    <option value="245">Vinyl - 12&quot;
+                                    <option value="244">Vinyl - 78
+                                    <option value="">---------------------
+                                    <option value="249">CD Single
+                                    <option value="241">Cassette
+                                    <option value="240">Video & DVD
+                                    <option value="239">Book
+                                    <option value="238">Clothing
+                                    <option value="237">Memorabilia & Misc.
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputArtist">Artist</label>
+                                <input class="form-control" type="text" name="find" id="inputArtist" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputTitle">Title</label>
+                                <input class="form-control" type="text" name="t" id="inputTitle" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputLabel">Label</label>
+                                <input class="form-control" type="text" name="label" id="inputLabel" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputCatNum">Cat Num</label>
+                                <input class="form-control" type="text" name="release_id" id="inputCatNum" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputBarcode">Barcode</label>
+                                <input class="form-control" type="text" name="barcode" id="inputBarcode" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputGenre">Genre</label>
+                                <input class="form-control" type="text" name="genre" id="inputGenre" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputCountry">Country</label>
+                                <input class="form-control" type="text" name="country" id="inputCountry" placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Seller</label>
+                                <div class="form-group">
+                                    <label class="label-small" for="inputSellerName">Seller Name</label>
+                                    <input type="text" class="form-control" name="seller_search" id="inputSellerName" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="label-small" for="inputSellersCountry">Sellers Country</label>
+                                    <select class="form-control" name="sellers-country" id="inputSellersCountry">
+                                        <option value="">
+                                        <option value="">-----------------------------
+                                        <option value="Europe">Europe
+                                        <option value="North America">North America
+                                        <option value="South America">South America
+                                        <option value="Oceania">Oceania
+                                        <option value="Asia">Asia
+                                        <option value="Africa">Africa
+                                        <option value="">-----------------------------
+                                        <option value="US">United States
+                                        <option value="GB">United Kingdom
+                                        <option value="AU">Australia
+                                        <option value="CA">Canada
+                                        <option value="FR">France
+                                        <option value="DE">Germany
+                                        <option value="IT">Italy
+                                        <option value="JP">Japan
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label-small" for="inputSellersRating">Sellers Rating</label>
+                                    <select class="form-control" name="rate" id="inputSellersRating">
+                                        <option value="0">All</option>
+                                        <option value="1">1 star or better</option>
+                                        <option value="2">2 star or better</option>
+                                        <option value="3">3 star or better</option>
+                                        <option value="4">4 star or better</option>
+                                        <option value="5">5 star</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group price-container">
+                                <label>Price</label>
+
+                                <div class="price-container d-flex justify-content-space-between">
+                                    <input class="form-control price" id="priceInputMin" type="text" name="price_min" placeholder="$50" aria-label="Minimum price">
+                                    <span class="price-to mr-auto ml-auto">to</span>
+                                    <input class="form-control price" id="priceInputMax" type="text" name="price_max" placeholder="$500" aria-label="Maximum price">
+
+                                </div>
+                            </div>
+
+                            <button class="btn btn-advanced-search" type="submit" name="search" value="Search" alt="Search">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="flex-container flex-container-2">
+                    <div class="row">
+                        <!-- <div class="col-12">
+                            <div class="listed-title-container">
+                                <h3 class="listed-title">Just listed</h3>
+                            </div> -->
+                        <!-- </div> -->
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="listed-title-container main">
+                                <h3 class="listed-title">Just listed</h3>
+                            </div>
+                            <div class="listed-record-container">
+                                
+                                <div class="listed-record">
+                                    <div class="listed-record-inner">
+                                        <a href="#">
+                                            <div class="listed-record-img" style="background-image: url('${require(`../img/listed/listed-1.png`)}')">
+                                            </div>
+
+                                            <div class="listed-record-info">
+                                                <h5 class="card-title artist">Andy Grey Records Production Company</h5>
+                                                <h5 class="card-title title">Thing Of The Past / Try This At Home (Acoustic) (LP, Compilation, Stereo)</h5>
+                                                <h5 class="card-title description">2009, Vinyl (7", 33&frac13; RPM, Red)</h5>
+                                                <h5 class="card-title price">$<span class="price-amount">12.99</span></h5>
+                                            </div>
+                                        </a>
+                                            
+                                    </div>
+                                </div>
+                                
+                                <div class="listed-record">
+                                    <div class="listed-record-inner listed-record-inner-shadow-test">
+                                        <a href="#">
+                                            <div class="listed-record-img" style="background-image: url('${require(`../img/listed/listed-2.png`)}')">
+                                            </div>
+
+                                            <div class="listed-record-info">
+                                                <h5 class="card-title artist">Andy Grey Records Production Company</h5>
+                                                <h5 class="card-title title">Thing Of The Past</h5>
+                                                <h5 class="card-title description">2009, Vinyl (7", 33&frac13; RPM, Red)</h5>
+                                                <h5 class="card-title price">$<span class="price-amount">12.99</span></h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="listed-record">
+                                    <div class="listed-record-inner">
+                                        <a href="#">
+                                            <div class="listed-record-img" style="background-image: url('${require(`../img/listed/listed-3.png`)}')">
+                                            </div>
+
+                                            <div class="listed-record-info">
+                                                <h5 class="card-title artist">Andy Grey Records</h5>
+                                                <h5 class="card-title title">Thing Of The Past / Try This At Home (Acoustic)</h5>
+                                                <h5 class="card-title description">2009, Vinyl (7", 33&frac13; RPM, Red)</h5>
+                                                <h5 class="card-title price">$<span class="price-amount">12.99</span></h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="listed-record">
+                                    <div class="listed-record-inner">
+                                        <a href="#">
+                                            <div class="listed-record-img" style="background-image: url('${require(`../img/listed/listed-4.png`)}')">
+                                            </div>
+
+                                            <div class="listed-record-info">
+                                                <h5 class="card-title artist">Andy Grey Records Production Company</h5>
+                                                <h5 class="card-title title">Thing Of The Past / Try This At Home (Acoustic)</h5>
+                                                <h5 class="card-title description">2009, Vinyl (7", 33&frac13; RPM, Red)</h5>
+                                                <h5 class="card-title price">$<span class="price-amount">12.99</span></h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="listed-record">
+                                    <div class="listed-record-inner">
+                                        <a href="#">
+                                            <div class="listed-record-img" style="background-image: url('${require(`../img/listed/listed-5.png`)}')">
+                                            </div>
+
+                                            <div class="listed-record-info">
+                                                <h5 class="card-title artist">Andy Grey Records Production Company</h5>
+                                                <h5 class="card-title title">Thing Of The Past / Try This At Home (Acoustic)</h5>
+                                                <h5 class="card-title description">2009, Vinyl (7", 33&frac13; RPM, Red)</h5>
+                                                <h5 class="card-title price">$<span class="price-amount">12.99</span></h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="listed-record">
+                                    <div class="listed-record-inner">
+                                        <a href="#">
+                                            <div class="listed-record-img" style="background-image: url('${require(`../img/listed/listed-6.png`)}')">
+                                            </div>
+
+                                            <div class="listed-record-info">
+                                                <h5 class="card-title artist">Andy Grey Records Production Company</h5>
+                                                <h5 class="card-title title">Thing Of The Past / Try This At Home (Acoustic)</h5>
+                                                <h5 class="card-title description">2009, Vinyl (7", 33&frac13; RPM, Red)</h5>
+                                                <h5 class="card-title price">$<span class="price-amount">12.99</span></h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="listed-record">
+                                    <div class="listed-record-inner">
+                                        <a href="#">
+                                            <div class="listed-record-img" style="background-image: url('${require(`../img/listed/listed-7.png`)}')">
+                                            </div>
+
+                                            <div class="listed-record-info">
+                                                <h5 class="card-title artist">Andy Grey Records Production Company</h5>
+                                                <h5 class="card-title title">Thing Of The Past / Try This At Home (Acoustic)</h5>
+                                                <h5 class="card-title description">2009, Vinyl (7", 33&frac13; RPM, Red)</h5>
+                                                <h5 class="card-title price">$<span class="price-amount">12.99</span></h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="listed-record">
+                                    <div class="listed-record-inner">
+                                        <a href="#">
+                                            <div class="listed-record-img" style="background-image: url('${require(`../img/listed/listed-8.png`)}')">
+                                            </div>
+
+                                            <div class="listed-record-info">
+                                                <h5 class="card-title artist">Andy Grey Records Production Company</h5>
+                                                <h5 class="card-title title">Thing Of The Past / Try This At Home (Acoustic)</h5>
+                                                <h5 class="card-title description">2009, Vinyl (7", 33&frac13; RPM, Red)</h5>
+                                                <h5 class="card-title price">$<span class="price-amount">12.99</span></h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="listed-record">
+                                    <div class="listed-record-inner">
+                                        <a href="#">
+                                            <div class="listed-record-img" style="background-image: url('${require(`../img/listed/listed-9.png`)}')">
+                                            </div>
+
+                                            <div class="listed-record-info">
+                                                <h5 class="card-title artist">Andy Grey Records Production Company</h5>
+                                                <h5 class="card-title title">Thing Of The Past / Try This At Home (Acoustic)</h5>
+                                                <h5 class="card-title description">2009, Vinyl (7", 33&frac13; RPM, Red)</h5>
+                                                <h5 class="card-title price">$<span class="price-amount">12.99</span></h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="listed-record">
+                                    <div class="listed-record-inner">
+                                        <a href="#">
+                                            <div class="listed-record-img" style="background-image: url('${require(`../img/listed/listed-10.png`)}')">
+                                            </div>
+
+                                            <div class="listed-record-info">
+                                                <h5 class="card-title artist">Andy Grey Records Production Company</h5>
+                                                <h5 class="card-title title">Thing Of The Past / Try This At Home (Acoustic)</h5>
+                                                <h5 class="card-title description">2009, Vinyl (7", 33&frac13; RPM, Red)</h5>
+                                                <h5 class="card-title price">$<span class="price-amount">12.99</span></h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="see-all-link-container d-flex">
+                                <a href="#" class="see-all-link next-link m-auto next-link-2">View More 
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#main -->
+
+
+    <!-- SECTION trusted -->
+    <section id="trusted">
+        <div class="container-fluid container-main">
+            <div class="row">
+                <div class="col-12">
+                    <div class="trusted-container">
+                        <h1 class="trusted-title">Trusted by record collectors for 22 years</h1>
+                        <p class="trusted-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil porro nisi at neque perspiciatis recusandae aperiam libero nulla veniam, excepturi error est explicabo illum obcaecati quis enim vero. Libero, distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quisquam quibusdam quos nihil a? Aspernatur a doloribus, nihil vel minima molestias! Quia distinctio earum nulla iusto sed atque aliquam.</p>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#trusted -->
+
+
+    <!-- SECTION trustpilot -->
+    <section id="trustpilotReviews">
+        <div class="container-fluid container-main">
+            <div class="row">
+                <div class="col-12">
+                    <div class="trustpilot-header">
+                        <div class="see-all-link-container d-flex">
+                            <img class="img-fluid img-trustpilot-logo" src='../img/trustpilot-logo.png' alt='Trustpilot logo'>
+                            <img class="img-fluid img-trustpilot-5-stars" src='../img/trustpilot-4-5-stars.svg' alt='Five stars'>
+                            <h5 class="trustpilot-rating">TrustScore <span class="trustpilot-score">4.8</span><a href="https://www.trustpilot.com/review/musicstack.com" class="trustpilot-reviews-link"><span>267</span> reviews</a></h5>
+                            <!-- <a href="#" class="see-all-link ml-auto">See All 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18.108" height="15.04" viewBox="0 0 18.108 15.04"><g transform="translate(0 -41.674)"><g transform="translate(0 41.674)"><path class="a" d="M1.018,47.774l-.028.006H13.106L9.3,43.963a1,1,0,0,1,0-1.406l.593-.593a.991.991,0,0,1,1.4,0l6.529,6.529a1,1,0,0,1,0,1.4l-6.529,6.529a.992.992,0,0,1-1.4,0L9.3,55.832a.981.981,0,0,1-.289-.7.951.951,0,0,1,.289-.686l3.852-3.839H1a1.026,1.026,0,0,1-1-1.016v-.839A1.006,1.006,0,0,1,1.018,47.774Z" transform="translate(0 -41.674)"/></g></g></svg>
+
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-12">
+                    <div id="sliderTrustpilot">
+                        <div class="slider-cell">
+                            <div class="trustpilot-review">
+                                <img class="img-fluid img-trustpilot-5-stars" src='../img/trustpilot-5-stars.png' alt='Five stars'>
+                                <p class="review-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat asperiores aspernatur eius! Quos alias officia sint assumenda sequi quo, labore consectetur maxime animi saepe iure porro temporibus nisi, quibusdam unde.</p>
+                                <h6 class="reviewer">Rich Morris</h6>
+                            </div>
+                        </div>
+                        <div class="slider-cell">
+                            <div class="trustpilot-review">
+                                <img class="img-fluid img-trustpilot-5-stars" src='../img/trustpilot-5-stars.png' alt='Five stars'>
+                                <p class="review-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat asperiores aspernatur eius! Quos alias officia sint assumenda sequi quo, labore consectetur maxime animi saepe iure porro temporibus nisi, quibusdam unde.</p>
+                                <h6 class="reviewer">Rich Morris</h6>
+                            </div>
+                        </div>
+                        <div class="slider-cell">
+                            <div class="trustpilot-review">
+                                <img class="img-fluid img-trustpilot-5-stars" src='../img/trustpilot-5-stars.png' alt='Five stars'>
+                                <p class="review-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat asperiores aspernatur eius! Quos alias officia sint assumenda sequi quo, labore consectetur maxime animi saepe iure porro temporibus nisi, quibusdam unde.</p>
+                                <h6 class="reviewer">Rich Morris</h6>
+                            </div>
+                        </div>
+                        <div class="slider-cell">
+                            <div class="trustpilot-review">
+                                <img class="img-fluid img-trustpilot-5-stars" src='../img/trustpilot-5-stars.png' alt='Five stars'>
+                                <p class="review-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat asperiores aspernatur eius! Quos alias officia sint assumenda sequi quo, labore consectetur maxime animi saepe iure porro temporibus nisi, quibusdam unde.</p>
+                                <h6 class="reviewer">Rich Morris</h6>
+                            </div>
+                        </div>
+                        <div class="slider-cell">
+                            <div class="trustpilot-review">
+                                <img class="img-fluid img-trustpilot-5-stars" src='../img/trustpilot-5-stars.png' alt='Five stars'>
+                                <p class="review-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat asperiores aspernatur eius! Quos alias officia sint assumenda sequi quo, labore consectetur maxime animi saepe iure porro temporibus nisi, quibusdam unde.</p>
+                                <h6 class="reviewer">Rich Morris</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#trustPilot -->
+
+    ${require('../template-parts/footer.html')}
+
+    <!-- <div class="cookie-banner hide-banner">
+        <div class="container-fluid container-main">
+            <div class="row">
+                <div class="col-12">
+                    <div class="cookie-banner-inner">
+                        <p class="cookie-banner-message">We use cookies on this website to ensure the best possible user experience. By clicking 'I agree' or continue to use this website by navigating to another page you are agreeing to our use of cookies. Find out more in our <a href="https://www.musicstack.com/terms/">Terms of service</a> and <a href="https://www.musicstack.com/privacy/">Privacy policy</a></p>
+                        <div class="cookie-btn-container">
+                            <button class="btn cookie-banner-btn" type="button" name="button">I agree</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="cookie-banner hide-banner">
+        <div class="container-fluid container-main">
+            <div class="row">
+                <div class="col-12 col-md-9">
+                    <div class="cookie-banner-inner">
+                        <p class="cookie-banner-message">We use cookies on this website to ensure the best possible user experience. By clicking 'I agree' or continue to use this website by navigating to another page you are agreeing to our use of cookies. Find out more in our <a href="https://www.musicstack.com/terms/">Terms of service</a> and <a href="https://www.musicstack.com/privacy/">Privacy policy</a></p>
+                        
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="cookie-banner-inner">
+                        <div class="cookie-btn-container">
+                            <button class="btn cookie-banner-btn" type="button" name="button">I agree</button>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="websiteLoader" class="loader-container">
+        <img class="img-fluid img-logo-loader" src="../img/icons/vinyl-record.svg" alt="Logo">
+    </div>
+
+    <script>
+        // hide loader
+        var loader = document.getElementById("websiteLoader");
+        
+        function hideLoader() {
+            setTimeout(function() {
+                loader.classList.add("hide-loader");
+            }, 2000);
+
+            setTimeout(function() {
+                loader.style.display = "none";
+            }, 2500);
+            console.log("window loaded!");
+        }
+
+        hideLoader();
+
+    </script>
+    <!-- </div> -->
+</body>
+
+</html>
