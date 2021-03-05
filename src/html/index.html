@@ -19,7 +19,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<link href="https://www.musicstack.com/dist/vendorCSS.6ae963c5afd3c54fd60d.css" rel="stylesheet"><link href="https://www.musicstack.com/dist/vendor.da0419103d505feae445.css" rel="stylesheet"><link href="https://www.musicstack.com/dist/index.87043250909c93076c4d.css" rel="stylesheet"></head>
+</head>
 
 <body id="indexBody">
 
@@ -29,506 +29,7 @@
     <div class="form-advanced-overlay"></div>
     <!-- navbar start -->
     <script type="text/javascript" src="https://www.musicstack.com/ajax/find_new3.js?x=#random#"></script>
-    <!-- HEADER -->
-<header id="homeHeader">
-    <link rel="stylesheet" href="https://www.musicstack.com/ajax/find_new3.css">
-    </link>
-    <script type="text/javascript" src="https://www.musicstack.com/ajax/find_new3_header.js?x=#random#"></script>
-
-    <div class="container-fluid container-main">
-
-        <div class="navbar-mobile-overlay">
-
-        </div>
-
-        <!--  NAVBAR  -->
-        <nav class="navbar navbar-expand-xl fixed-top justify-content-start">
-
-            <!-- <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            
-            <div class="menu icon"></div>
-        </button> -->
-
-            <button id="navbarMobileToggle" class="navbar-toggler navbar-light navbar-mobile-closed" type="button"
-                aria-expanded="false" aria-label="Toggle navigation">
-
-                <div class="menu icon"></div>
-                <h6 class="navbar-toggler-text-menu d-none">Menu</h6>
-            </button>
-
-            <a class="navbar-brand" href="https://www.musicstack.com">
-                <img class="img-fluid img-logo img-logo-record d-none d-xl-inline-block"
-                    src="https://www.musicstack.com/dist/imgs/vinyl-record.13a864b8904674651babda9a40a115cc.svg" alt="Logo">
-                <img class="img-fluid img-logo img-logo-text" src="https://www.musicstack.com/dist/imgs/musicstack-logo.0d9472fd0d2475bbce7579e35e623f42.gif" alt="Logo">
-                <img class="img-fluid img-logo img-logo-text-hover" src="https://www.musicstack.com/dist/imgs/musicstack-logo-hover.d3b5f8d75161dafb02e8b1435c7ce6b5.gif" alt="Logo">
-            </a>
-
-            <!-- NAVBAR SEARCH FORM -->
-            <div id="formSearchContainerNav" class="form-search-container">
-
-                <div class="form-search-resizer">
-
-                    <form name=search id="formSearchNav" class="form-inline form-search"
-                        action="https://www.musicstack.com/show1.cgi" method="get">
-
-                        <div class="form-search-select-bg"></div>
-
-                        <select name="search_type" id="formSearchSelectNav"
-                            class="form-control form-search-select form-search-select-desktop">
-
-                            <option class="artist" value="artist">Artist</option>
-                            <option class="title" value="title">Title</option>
-                            <option class="label" value="label">Label</option>
-                            <option class="catnum" value="release_id">Cat Num</option>
-                            <option class="barcode" value="barcode">Barcode</option>
-                            <option class="genre" value="genre">Genre</option>
-                            <option class="seller" value="seller">Seller</option>
-                            <option class="d-block d-lg-none advanced" value="advanced" id="btnOpenForm2"></option>
-                        </select>
-                        <input id="formSearchInputNav" class="form-control form-search-input" type="text" name="find"
-                            placeholder="" onfocus="flipNav(1)" onblur="flipNav(0)"
-                            onkeydown="formSearchInputNavKeyDown()">
-                        <input id="find_focus_nav" type="hidden" name="find_focus_nav" value="0">
-                        <!-- <input class="form-control form-search-reset" type="reset" name="Reset" value="x" placeholder=""> -->
-                        <i class="clearable__clear form-search-reset">&times;</i>
-                        <button class="btn btn-search" type="submit" name="button" value="Search">
-                            <!-- <img class="img-fluid img-search" src='../img/icons/search.svg' alt='Search Icon'> -->
-                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="26.271" height="27.211" viewBox="0 0 26.271 27.211"><path class="a" d="M26.856,24.785l-6.476-6.736a10.982,10.982,0,1,0-8.409,3.924,10.869,10.869,0,0,0,6.294-1.988l6.525,6.787a1.433,1.433,0,1,0,2.065-1.987ZM11.97,2.866a8.12,8.12,0,1,1-8.12,8.12A8.13,8.13,0,0,1,11.97,2.866Z" transform="translate(-0.984 0)"/></!-->
-
-                        </button>
-                    </form>
-                    <!-- <button id="btnOpenForm" class="btn advanced-search-link d-block d-lg-none">Advanced <span class="no-wrap">search 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18.108" height="15.04" viewBox="0 0 18.108 15.04"><g transform="translate(0 -41.674)"><g transform="translate(0 41.674)"><path class="a" d="M1.018,47.774l-.028.006H13.106L9.3,43.963a1,1,0,0,1,0-1.406l.593-.593a.991.991,0,0,1,1.4,0l6.529,6.529a1,1,0,0,1,0,1.4l-6.529,6.529a.992.992,0,0,1-1.4,0L9.3,55.832a.981.981,0,0,1-.289-.7.951.951,0,0,1,.289-.686l3.852-3.839H1a1.026,1.026,0,0,1-1-1.016v-.839A1.006,1.006,0,0,1,1.018,47.774Z" transform="translate(0 -41.674)"/></g></g></svg>
-                    </span>
-                </button> -->
-                </div>
-            </div>
-
-            <div class="collapse navbar-collapse navbar-main-fixed-width" id="navbarSupportedContent">
-                <ul class="navbar-nav align-items-xl-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.musicstack.com/login.cgi">Register<span
-                                class="sr-only">(current)Register</span></a>
-                    </li>
-                    <li class="nav-item d-none d-xl-block">
-                        <a class="nav-link nav-link-sign-in" href="https://www.musicstack.com/login.cgi">Sign In<span
-                                class="sr-only">(current)Sign In</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.musicstack.com/wishlist/">Wish List<span
-                                class="sr-only">(current)Wish List</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <select name=cur id="js-selectCurrency1" class="form-control select-currency">
-                            <option value="USD">$ USD</option>
-                            <option value="EUR">€ EUR</option>
-                            <option value="GBP">£ GBP</option>
-                            <option value="AUD">$ AUD</option>
-                            <option value="CAD">$ CAD</option>
-                            <option value="JPY">¥ JPY</option>
-                            <option value="---">---</option>
-                            <option value="AED">AED</option>
-                            <option value="AFN">AFN</option>
-                            <option value="ALL">ALL</option>
-                            <option value="AMD">AMD</option>
-                            <option value="ANG">ANG</option>
-                            <option value="AOA">AOA</option>
-                            <option value="ARS">ARS</option>
-                            <option value="AUD">AUD</option>
-                            <option value="AWG">AWG</option>
-                            <option value="AZN">AZN</option>
-                            <option value="BAM">BAM</option>
-                            <option value="BBD">BBD</option>
-                            <option value="BDT">BDT</option>
-                            <option value="BGN">BGN</option>
-                            <option value="BHD">BHD</option>
-                            <option value="BIF">BIF</option>
-                            <option value="BMD">BMD</option>
-                            <option value="BND">BND</option>
-                            <option value="BOB">BOB</option>
-                            <option value="BRL">BRL</option>
-                            <option value="BSD">BSD</option>
-                            <option value="BTN">BTN</option>
-                            <option value="BWP">BWP</option>
-                            <option value="BYR">BYR</option>
-                            <option value="BZD">BZD</option>
-                            <option value="CAD">CAD</option>
-                            <option value="CDF">CDF</option>
-                            <option value="CHF">CHF</option>
-                            <option value="CLP">CLP</option>
-                            <option value="CNY">CNY</option>
-                            <option value="COP">COP</option>
-                            <option value="CRC">CRC</option>
-                            <option value="CUC">CUC</option>
-                            <option value="CUP">CUP</option>
-                            <option value="CVE">CVE</option>
-                            <option value="CZK">CZK</option>
-                            <option value="DJF">DJF</option>
-                            <option value="DKK">DKK</option>
-                            <option value="DOP">DOP</option>
-                            <option value="DZD">DZD</option>
-                            <option value="EGP">EGP</option>
-                            <option value="ERN">ERN</option>
-                            <option value="ETB">ETB</option>
-                            <option value="EUR">EUR</option>
-                            <option value="FJD">FJD</option>
-                            <option value="FKP">FKP</option>
-                            <option value="GBP">GBP</option>
-                            <option value="GEL">GEL</option>
-                            <option value="GGP">GGP</option>
-                            <option value="GHS">GHS</option>
-                            <option value="GIP">GIP</option>
-                            <option value="GMD">GMD</option>
-                            <option value="GNF">GNF</option>
-                            <option value="GTQ">GTQ</option>
-                            <option value="GYD">GYD</option>
-                            <option value="HKD">HKD</option>
-                            <option value="HNL">HNL</option>
-                            <option value="HRK">HRK</option>
-                            <option value="HTG">HTG</option>
-                            <option value="HUF">HUF</option>
-                            <option value="IDR">IDR</option>
-                            <option value="ILS">ILS</option>
-                            <option value="IMP">IMP</option>
-                            <option value="INR">INR</option>
-                            <option value="IQD">IQD</option>
-                            <option value="IRR">IRR</option>
-                            <option value="ISK">ISK</option>
-                            <option value="JEP">JEP</option>
-                            <option value="JMD">JMD</option>
-                            <option value="JOD">JOD</option>
-                            <option value="JPY">JPY</option>
-                            <option value="KES">KES</option>
-                            <option value="KGS">KGS</option>
-                            <option value="KHR">KHR</option>
-                            <option value="KMF">KMF</option>
-                            <option value="KPW">KPW</option>
-                            <option value="KRW">KRW</option>
-                            <option value="KWD">KWD</option>
-                            <option value="KYD">KYD</option>
-                            <option value="KZT">KZT</option>
-                            <option value="LAK">LAK</option>
-                            <option value="LBP">LBP</option>
-                            <option value="LKR">LKR</option>
-                            <option value="LRD">LRD</option>
-                            <option value="LSL">LSL</option>
-                            <option value="LYD">LYD</option>
-                            <option value="MAD">MAD</option>
-                            <option value="MDL">MDL</option>
-                            <option value="MGA">MGA</option>
-                            <option value="MKD">MKD</option>
-                            <option value="MMK">MMK</option>
-                            <option value="MNT">MNT</option>
-                            <option value="MOP">MOP</option>
-                            <option value="MRO">MRO</option>
-                            <option value="MUR">MUR</option>
-                            <option value="MVR">MVR</option>
-                            <option value="MWK">MWK</option>
-                            <option value="MXN">MXN</option>
-                            <option value="MYR">MYR</option>
-                            <option value="MZN">MZN</option>
-                            <option value="NAD">NAD</option>
-                            <option value="NGN">NGN</option>
-                            <option value="NIO">NIO</option>
-                            <option value="NOK">NOK</option>
-                            <option value="NPR">NPR</option>
-                            <option value="NZD">NZD</option>
-                            <option value="OMR">OMR</option>
-                            <option value="PAB">PAB</option>
-                            <option value="PEN">PEN</option>
-                            <option value="PGK">PGK</option>
-                            <option value="PHP">PHP</option>
-                            <option value="PKR">PKR</option>
-                            <option value="PLN">PLN</option>
-                            <option value="PYG">PYG</option>
-                            <option value="QAR">QAR</option>
-                            <option value="RON">RON</option>
-                            <option value="RSD">RSD</option>
-                            <option value="RUB">RUB</option>
-                            <option value="RWF">RWF</option>
-                            <option value="SAR">SAR</option>
-                            <option value="SBD">SBD</option>
-                            <option value="SCR">SCR</option>
-                            <option value="SDG">SDG</option>
-                            <option value="SEK">SEK</option>
-                            <option value="SGD">SGD</option>
-                            <option value="SHP">SHP</option>
-                            <option value="SLL">SLL</option>
-                            <option value="SOS">SOS</option>
-                            <option value="SPL">SPL</option>
-                            <option value="SRD">SRD</option>
-                            <option value="STD">STD</option>
-                            <option value="SVC">SVC</option>
-                            <option value="SYP">SYP</option>
-                            <option value="SZL">SZL</option>
-                            <option value="THB">THB</option>
-                            <option value="TJS">TJS</option>
-                            <option value="TMT">TMT</option>
-                            <option value="TND">TND</option>
-                            <option value="TRY">TRY</option>
-                            <option value="TTD">TTD</option>
-                            <option value="TVD">TVD</option>
-                            <option value="TWD">TWD</option>
-                            <option value="TZS">TZS</option>
-                            <option value="UAH">UAH</option>
-                            <option value="UGX">UGX</option>
-                            <option value="USD">USD</option>
-                            <option value="UYU">UYU</option>
-                            <option value="UZS">UZS</option>
-                            <option value="VEF">VEF</option>
-                            <option value="VND">VND</option>
-                            <option value="VUV">VUV</option>
-                            <option value="WST">WST</option>
-                            <option value="XCD">XCD</option>
-                            <option value="XOF">XOF</option>
-                            <option value="XPF">XPF</option>
-                            <option value="YER">YER</option>
-                            <option value="ZAR">ZAR</option>
-                            <option value="ZWD">ZWD</option>
-                        </select>
-                    </li>
-                    <li class="nav-item d-block d-xl-none">
-                        <a class="nav-link" href="https://www.musicstack.com/sell/">Sell Your Music<span
-                                class="sr-only">(current)Sell your music</span></a>
-                    </li>
-                    <li class="nav-item d-block d-xl-none">
-                        <a class="nav-link" href="https://www.musicstack.com/faq/">Help & FAQs<span
-                                class="sr-only">(current)Help</span></a>
-                    </li>
-                    <li class="nav-item d-block d-xl-none">
-                        <a class="nav-link" href="https://www.musicstack.com/contact/">Contact<span
-                                class="sr-only">(current)Contact</span></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-right d-inline-block">
-                <ul>
-                    <li class="nav-item d-block d-xl-none nav-item-sign-in">
-                        <a class="nav-link nav-link-sign-in" href="https://www.musicstack.com/login.cgi">Sign In<span
-                                class="sr-only">(current)Sign In</span></a>
-                    </li>
-                    <li class="nav-item nav-item-shopping-cart">
-                        <a class="nav-link shopping-cart" href="https://www.musicstack.com/cart.cgi">
-                            <!-- <img class="img-fluid img-cart" src="../img/icons/cart.svg" alt="Shopping Cart"> -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
-                                <path class="a"
-                                    d="M9.3,24.8a3.1,3.1,0,1,0,3.1,3.1A3.109,3.109,0,0,0,9.3,24.8ZM0,0V3.1H3.1L8.68,14.88,6.51,18.6a5.507,5.507,0,0,0-.31,1.55,3.109,3.109,0,0,0,3.1,3.1H27.9v-3.1H9.92a.333.333,0,0,1-.31-.31v-.155l1.4-2.635h11.47A2.827,2.827,0,0,0,25.11,15.5L30.69,5.425A.853.853,0,0,0,31,4.65,1.464,1.464,0,0,0,29.45,3.1H6.51L5.115,0ZM24.8,24.8a3.1,3.1,0,1,0,3.1,3.1A3.109,3.109,0,0,0,24.8,24.8Z" />
-                            </svg>
-                            <span class="items-in-cart" id=items-in-cart></span><span class="sr-only">(current)Shopping
-                                Cart<span>
-                        </a>
-
-                    </li>
-                </ul>
-            </div>
-
-            <div class="navbar-mobile-custom d-block d-xl-none" id="navbarMobile">
-                <ul class="navbar-nav ml-md-auto align-items-xl-center">
-                    <li class="nav-item d-block d-xl-none">
-                        <a class="nav-link nav-link-advanced" id="btnOpenForm1">Advanced search<span
-                                class="sr-only">(current)Advanced search</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.musicstack.com/login.cgi">Register<span
-                                class="sr-only">(current)Register</span></a>
-                    </li>
-                    <li class="nav-item d-none d-xl-block">
-                        <a class="nav-link nav-link-sign-in" href="https://www.musicstack.com/login.cgi">Sign In<span
-                                class="sr-only">(current)Sign In</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.musicstack.com/wishlist/">Wish List<span
-                                class="sr-only">(current)Wish List</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <label for="js-selectCurrency2" class="currency-label">Currency</label>
-                        <select name=cur id="js-selectCurrency2" class="form-control select-currency">
-                            <option value="USD">$ USD</option>
-                            <option value="EUR">€ EUR</option>
-                            <option value="GBP">£ GBP</option>
-                            <option value="AUD">$ AUD</option>
-                            <option value="CAD">$ CAD</option>
-                            <option value="JPY">¥ JPY</option>
-                            <option value="---">---</option>
-                            <option value="AED">AED</option>
-                            <option value="AFN">AFN</option>
-                            <option value="ALL">ALL</option>
-                            <option value="AMD">AMD</option>
-                            <option value="ANG">ANG</option>
-                            <option value="AOA">AOA</option>
-                            <option value="ARS">ARS</option>
-                            <option value="AUD">AUD</option>
-                            <option value="AWG">AWG</option>
-                            <option value="AZN">AZN</option>
-                            <option value="BAM">BAM</option>
-                            <option value="BBD">BBD</option>
-                            <option value="BDT">BDT</option>
-                            <option value="BGN">BGN</option>
-                            <option value="BHD">BHD</option>
-                            <option value="BIF">BIF</option>
-                            <option value="BMD">BMD</option>
-                            <option value="BND">BND</option>
-                            <option value="BOB">BOB</option>
-                            <option value="BRL">BRL</option>
-                            <option value="BSD">BSD</option>
-                            <option value="BTN">BTN</option>
-                            <option value="BWP">BWP</option>
-                            <option value="BYR">BYR</option>
-                            <option value="BZD">BZD</option>
-                            <option value="CAD">CAD</option>
-                            <option value="CDF">CDF</option>
-                            <option value="CHF">CHF</option>
-                            <option value="CLP">CLP</option>
-                            <option value="CNY">CNY</option>
-                            <option value="COP">COP</option>
-                            <option value="CRC">CRC</option>
-                            <option value="CUC">CUC</option>
-                            <option value="CUP">CUP</option>
-                            <option value="CVE">CVE</option>
-                            <option value="CZK">CZK</option>
-                            <option value="DJF">DJF</option>
-                            <option value="DKK">DKK</option>
-                            <option value="DOP">DOP</option>
-                            <option value="DZD">DZD</option>
-                            <option value="EGP">EGP</option>
-                            <option value="ERN">ERN</option>
-                            <option value="ETB">ETB</option>
-                            <option value="EUR">EUR</option>
-                            <option value="FJD">FJD</option>
-                            <option value="FKP">FKP</option>
-                            <option value="GBP">GBP</option>
-                            <option value="GEL">GEL</option>
-                            <option value="GGP">GGP</option>
-                            <option value="GHS">GHS</option>
-                            <option value="GIP">GIP</option>
-                            <option value="GMD">GMD</option>
-                            <option value="GNF">GNF</option>
-                            <option value="GTQ">GTQ</option>
-                            <option value="GYD">GYD</option>
-                            <option value="HKD">HKD</option>
-                            <option value="HNL">HNL</option>
-                            <option value="HRK">HRK</option>
-                            <option value="HTG">HTG</option>
-                            <option value="HUF">HUF</option>
-                            <option value="IDR">IDR</option>
-                            <option value="ILS">ILS</option>
-                            <option value="IMP">IMP</option>
-                            <option value="INR">INR</option>
-                            <option value="IQD">IQD</option>
-                            <option value="IRR">IRR</option>
-                            <option value="ISK">ISK</option>
-                            <option value="JEP">JEP</option>
-                            <option value="JMD">JMD</option>
-                            <option value="JOD">JOD</option>
-                            <option value="JPY">JPY</option>
-                            <option value="KES">KES</option>
-                            <option value="KGS">KGS</option>
-                            <option value="KHR">KHR</option>
-                            <option value="KMF">KMF</option>
-                            <option value="KPW">KPW</option>
-                            <option value="KRW">KRW</option>
-                            <option value="KWD">KWD</option>
-                            <option value="KYD">KYD</option>
-                            <option value="KZT">KZT</option>
-                            <option value="LAK">LAK</option>
-                            <option value="LBP">LBP</option>
-                            <option value="LKR">LKR</option>
-                            <option value="LRD">LRD</option>
-                            <option value="LSL">LSL</option>
-                            <option value="LYD">LYD</option>
-                            <option value="MAD">MAD</option>
-                            <option value="MDL">MDL</option>
-                            <option value="MGA">MGA</option>
-                            <option value="MKD">MKD</option>
-                            <option value="MMK">MMK</option>
-                            <option value="MNT">MNT</option>
-                            <option value="MOP">MOP</option>
-                            <option value="MRO">MRO</option>
-                            <option value="MUR">MUR</option>
-                            <option value="MVR">MVR</option>
-                            <option value="MWK">MWK</option>
-                            <option value="MXN">MXN</option>
-                            <option value="MYR">MYR</option>
-                            <option value="MZN">MZN</option>
-                            <option value="NAD">NAD</option>
-                            <option value="NGN">NGN</option>
-                            <option value="NIO">NIO</option>
-                            <option value="NOK">NOK</option>
-                            <option value="NPR">NPR</option>
-                            <option value="NZD">NZD</option>
-                            <option value="OMR">OMR</option>
-                            <option value="PAB">PAB</option>
-                            <option value="PEN">PEN</option>
-                            <option value="PGK">PGK</option>
-                            <option value="PHP">PHP</option>
-                            <option value="PKR">PKR</option>
-                            <option value="PLN">PLN</option>
-                            <option value="PYG">PYG</option>
-                            <option value="QAR">QAR</option>
-                            <option value="RON">RON</option>
-                            <option value="RSD">RSD</option>
-                            <option value="RUB">RUB</option>
-                            <option value="RWF">RWF</option>
-                            <option value="SAR">SAR</option>
-                            <option value="SBD">SBD</option>
-                            <option value="SCR">SCR</option>
-                            <option value="SDG">SDG</option>
-                            <option value="SEK">SEK</option>
-                            <option value="SGD">SGD</option>
-                            <option value="SHP">SHP</option>
-                            <option value="SLL">SLL</option>
-                            <option value="SOS">SOS</option>
-                            <option value="SPL">SPL</option>
-                            <option value="SRD">SRD</option>
-                            <option value="STD">STD</option>
-                            <option value="SVC">SVC</option>
-                            <option value="SYP">SYP</option>
-                            <option value="SZL">SZL</option>
-                            <option value="THB">THB</option>
-                            <option value="TJS">TJS</option>
-                            <option value="TMT">TMT</option>
-                            <option value="TND">TND</option>
-                            <option value="TRY">TRY</option>
-                            <option value="TTD">TTD</option>
-                            <option value="TVD">TVD</option>
-                            <option value="TWD">TWD</option>
-                            <option value="TZS">TZS</option>
-                            <option value="UAH">UAH</option>
-                            <option value="UGX">UGX</option>
-                            <option value="USD">USD</option>
-                            <option value="UYU">UYU</option>
-                            <option value="UZS">UZS</option>
-                            <option value="VEF">VEF</option>
-                            <option value="VND">VND</option>
-                            <option value="VUV">VUV</option>
-                            <option value="WST">WST</option>
-                            <option value="XCD">XCD</option>
-                            <option value="XOF">XOF</option>
-                            <option value="XPF">XPF</option>
-                            <option value="YER">YER</option>
-                            <option value="ZAR">ZAR</option>
-                            <option value="ZWD">ZWD</option>
-                        </select>
-                    </li>
-                    <li class="nav-item d-block d-xl-none">
-                        <a class="nav-link" href="https://www.musicstack.com/sell/">Sell Your Music<span
-                                class="sr-only">(current)Sell your music</span></a>
-                    </li>
-                    <li class="nav-item d-block d-xl-none">
-                        <a class="nav-link" href="https://www.musicstack.com/faq/">Help & FAQs<span
-                                class="sr-only">(current)Help</span></a>
-                    </li>
-                    <li class="nav-item d-block d-xl-none">
-                        <a class="nav-link" href="https://www.musicstack.com/contact/">Contact<span
-                                class="sr-only">(current)Contact</span></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-    </div><!-- /.container -->
-
-</header>
+    ${require('./header.html')}
 
 
     <!-- SECTION hero-->
@@ -617,7 +118,7 @@
                         <div class="slider-cell">
                             <a href="#">
                                 <div class="record-store"
-                                    style="background-image: url('https://www.musicstack.com/dist/imgs/record-store-1.b4ceec016f903fa9ab575d3cb7e80dc8.png');">
+                                    style="background-image: url('${require(`../img/slider/record-store-1.png`)}');">
                                     <div class="record-store-info">
                                         <h5 class="record-store-name">Dxxxxnv-Grey Records Production Company</h5>
                                         <div class="d-flex">
@@ -632,7 +133,7 @@
                         <div class="slider-cell">
                             <a href="#">
                                 <div class="record-store"
-                                    style="background-image: url('https://www.musicstack.com/dist/imgs/record-store-2.6437ba6258946556dbbf48b0f624b278.png');">
+                                    style="background-image: url('${require(`../img/slider/record-store-2.png`)}');">
                                     <div class="record-store-info">
                                         <h5 class="record-store-name">Andy Grey Records Production Company</h5>
                                         <div class="d-flex">
@@ -648,7 +149,7 @@
                         <div class="slider-cell">
                             <a href="#">
                                 <div class="record-store"
-                                    style="background-image: url('https://www.musicstack.com/dist/imgs/record-store-3.3152f83e7a8ecd8172a1189170a28566.png');">
+                                    style="background-image: url('${require(`../img/slider/record-store-3.png`)}');">
                                     <div class="record-store-info">
                                         <h5 class="record-store-name">Andy Grey Records</h5>
                                         <div class="d-flex">
@@ -664,7 +165,7 @@
                         <div class="slider-cell">
                             <a href="#">
                                 <div class="record-store"
-                                    style="background-image: url('https://www.musicstack.com/dist/imgs/record-store-4.e6b2ee05e77e0c6c72d6e98656def97f.png');">
+                                    style="background-image: url('${require(`../img/slider/record-store-4.png`)}');">
                                     <div class="record-store-info">
                                         <h5 class="record-store-name">Andy Grey Records</h5>
                                         <div class="d-flex">
@@ -680,7 +181,7 @@
                         <div class="slider-cell">
                             <a href="#">
                                 <div class="record-store"
-                                    style="background-image: url('https://www.musicstack.com/dist/imgs/record-store-1.b4ceec016f903fa9ab575d3cb7e80dc8.png');">
+                                    style="background-image: url('${require(`../img/slider/record-store-1.png`)}');">
                                     <!-- <img class="img-fluid" src='../img/slider/record-store-1.png' alt=''> -->
 
                                     <div class="record-store-info">
@@ -698,7 +199,7 @@
                         <div class="slider-cell">
                             <a href="#">
                                 <div class="record-store"
-                                    style="background-image: url('https://www.musicstack.com/dist/imgs/038d7b4d4a1dc9591357a2fd9260e07d@2x.4a7df96b58704a05c57bf8047675663f.png');">
+                                    style="background-image: url('${require(`../img/listed/038d7b4d4a1dc9591357a2fd9260e07d@2x.png`)}');">
                                     <div class="record-store-info">
                                         <h5 class="record-store-name">Andy Grey Records</h5>
                                         <div class="d-flex">
@@ -917,7 +418,7 @@
                                     <div class="listed-record-inner">
                                         <a href="#">
                                             <div class="listed-record-img"
-                                                style="background-image: url('https://www.musicstack.com/dist/imgs/listed-1.ad4ef8e4c079a689316be13f078f0ca5.png')">
+                                                style="background-image: url('${require(`../img/listed/listed-1.png`)}')">
                                             </div>
 
                                             <div class="listed-record-info">
@@ -938,7 +439,7 @@
                                     <div class="listed-record-inner listed-record-inner-shadow-test">
                                         <a href="#">
                                             <div class="listed-record-img"
-                                                style="background-image: url('https://www.musicstack.com/dist/imgs/listed-2.4c6cdc1344e7db5f196247f8d538d562.png')">
+                                                style="background-image: url('${require(`../img/listed/listed-2.png`)}')">
                                             </div>
 
                                             <div class="listed-record-info">
@@ -957,7 +458,7 @@
                                     <div class="listed-record-inner">
                                         <a href="#">
                                             <div class="listed-record-img"
-                                                style="background-image: url('https://www.musicstack.com/dist/imgs/listed-3.cef901a329547fa6c46f62e8d9c98ab4.png')">
+                                                style="background-image: url('${require(`../img/listed/listed-3.png`)}')">
                                             </div>
 
                                             <div class="listed-record-info">
@@ -977,7 +478,7 @@
                                     <div class="listed-record-inner">
                                         <a href="#">
                                             <div class="listed-record-img"
-                                                style="background-image: url('https://www.musicstack.com/dist/imgs/listed-4.ebfc49ecf0af000ccc9cbb7d8d149571.png')">
+                                                style="background-image: url('${require(`../img/listed/listed-4.png`)}')">
                                             </div>
 
                                             <div class="listed-record-info">
@@ -997,7 +498,7 @@
                                     <div class="listed-record-inner">
                                         <a href="#">
                                             <div class="listed-record-img"
-                                                style="background-image: url('https://www.musicstack.com/dist/imgs/listed-5.febf0e38d72412feb60118d4506cdfe3.png')">
+                                                style="background-image: url('${require(`../img/listed/listed-5.png`)}')">
                                             </div>
 
                                             <div class="listed-record-info">
@@ -1017,7 +518,7 @@
                                     <div class="listed-record-inner">
                                         <a href="#">
                                             <div class="listed-record-img"
-                                                style="background-image: url('https://www.musicstack.com/dist/imgs/listed-6.763a9a24a0289334f7760dbeb9c917ff.png')">
+                                                style="background-image: url('${require(`../img/listed/listed-6.png`)}')">
                                             </div>
 
                                             <div class="listed-record-info">
@@ -1037,7 +538,7 @@
                                     <div class="listed-record-inner">
                                         <a href="#">
                                             <div class="listed-record-img"
-                                                style="background-image: url('https://www.musicstack.com/dist/imgs/listed-7.70ea37f268819c026117868c591b2c18.png')">
+                                                style="background-image: url('${require(`../img/listed/listed-7.png`)}')">
                                             </div>
 
                                             <div class="listed-record-info">
@@ -1057,7 +558,7 @@
                                     <div class="listed-record-inner">
                                         <a href="#">
                                             <div class="listed-record-img"
-                                                style="background-image: url('https://www.musicstack.com/dist/imgs/listed-8.ab088abda889e2af20defdf1fb8c8988.png')">
+                                                style="background-image: url('${require(`../img/listed/listed-8.png`)}')">
                                             </div>
 
                                             <div class="listed-record-info">
@@ -1077,7 +578,7 @@
                                     <div class="listed-record-inner">
                                         <a href="#">
                                             <div class="listed-record-img"
-                                                style="background-image: url('https://www.musicstack.com/dist/imgs/listed-9.8275b0faf16417b0c420f648fa4c422f.png')">
+                                                style="background-image: url('${require(`../img/listed/listed-9.png`)}')">
                                             </div>
 
                                             <div class="listed-record-info">
@@ -1097,7 +598,7 @@
                                     <div class="listed-record-inner">
                                         <a href="#">
                                             <div class="listed-record-img"
-                                                style="background-image: url('https://www.musicstack.com/dist/imgs/listed-10.704db14b5392a246c627755cfb6c90b8.png')">
+                                                style="background-image: url('${require(`../img/listed/listed-10.png`)}')">
                                             </div>
 
                                             <div class="listed-record-info">
@@ -1167,9 +668,9 @@
                                 href="https://www.sitejabber.com/reviews/musicstack.com">SiteJabber</a>
 
                             <!--
-                            <img class="img-fluid img-trustpilot-logo" src='https://www.musicstack.com/dist/imgs/trustpilot-logo.c2c216441f84e22ce3f13985f8c49304.png'
+                            <img class="img-fluid img-trustpilot-logo" src='../img/trustpilot-logo.png'
                                 alt='Trustpilot logo'>
-                            <img class="img-fluid img-trustpilot-5-stars" src='https://www.musicstack.com/dist/imgs/trustpilot-4-5-stars.ff9b3ad0188828ef847bcfbc1b68877c.svg'
+                            <img class="img-fluid img-trustpilot-5-stars" src='../img/trustpilot-4-5-stars.svg'
                                 alt='Five stars'>
                             <h5 class="trustpilot-rating">TrustScore <span class="trustpilot-score">4.8</span><a
                                     href="https://www.trustpilot.com/review/musicstack.com"
@@ -1189,7 +690,7 @@
                         <!--start-replace #reviews#-->
                         <div class="slider-cell">
                             <div class="trustpilot-review">
-                                <img class="img-fluid img-trustpilot-5-stars" src="https://www.musicstack.com/dist/imgs/5-stars-yellow.55700a2efba46d734e9dae5b4f3ad6db.png"
+                                <img class="img-fluid img-trustpilot-5-stars" src="../img/5-stars-yellow.png"
                                     alt="Five stars">
                                 <p class="review-text">Item as described, courteous seller, very good communication and
                                     prompt delivery</p>
@@ -1198,7 +699,7 @@
                         </div>
                         <div class="slider-cell">
                             <div class="trustpilot-review">
-                                <img class="img-fluid img-trustpilot-5-stars" src="https://www.musicstack.com/dist/imgs/trustpilot-5-stars.d7d9325b7ddf05531c7e065a47d3e79a.png"
+                                <img class="img-fluid img-trustpilot-5-stars" src="../img/trustpilot-5-stars.png"
                                     alt="Five stars">
                                 <p class="review-text">Been out shopping and was shocked to find that the cd had arrived
                                     so so quick. Good packaging very impressed.</p>
@@ -1207,7 +708,7 @@
                         </div>
                         <div class="slider-cell">
                             <div class="trustpilot-review">
-                                <img class="img-fluid img-trustpilot-5-stars" src="https://www.musicstack.com/dist/imgs/trustpilot-5-stars.d7d9325b7ddf05531c7e065a47d3e79a.png"
+                                <img class="img-fluid img-trustpilot-5-stars" src="../img/trustpilot-5-stars.png"
                                     alt="Five stars">
                                 <p class="review-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
                                     asperiores aspernatur eius! Quos alias officia sint assumenda sequi quo, labore
@@ -1217,7 +718,7 @@
                         </div>
                         <div class="slider-cell">
                             <div class="trustpilot-review">
-                                <img class="img-fluid img-trustpilot-5-stars" src="https://www.musicstack.com/dist/imgs/trustpilot-5-stars.d7d9325b7ddf05531c7e065a47d3e79a.png"
+                                <img class="img-fluid img-trustpilot-5-stars" src="../img/trustpilot-5-stars.png"
                                     alt="Five stars">
                                 <p class="review-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
                                     asperiores aspernatur eius! Quos alias officia sint assumenda sequi quo, labore
@@ -1227,7 +728,7 @@
                         </div>
                         <div class="slider-cell">
                             <div class="trustpilot-review">
-                                <img class="img-fluid img-trustpilot-5-stars" src="https://www.musicstack.com/dist/imgs/trustpilot-5-stars.d7d9325b7ddf05531c7e065a47d3e79a.png"
+                                <img class="img-fluid img-trustpilot-5-stars" src="../img/trustpilot-5-stars.png"
                                     alt="Five stars">
                                 <p class="review-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
                                     asperiores aspernatur eius! Quos alias officia sint assumenda sequi quo, labore
@@ -1242,121 +743,7 @@
         </div><!-- /.container -->
     </section><!-- /#trustPilot -->
 
-    <!-- FOOTER -->
-<footer id="footer">
-
-    <div class="container">
-        <div class="row">
-
-            <div class="col-12">
-                <div class="footer-links-container">
-                    <ul class="footer-links d-flex justify-content-center">
-                        <li>
-                            <a href="https://www.musicstack.com/sell/">Sell Your Records</a>
-                        </li>
-                        <li>
-                            <a href="https://www.musicstack.com/terms/">Terms of Use</a>
-                        </li>
-                        <li>
-                            <a href="https://www.musicstack.com/privacy/">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="https://www.musicstack.com/about/">About</a>
-                        </li>
-                        <li>
-                            <a href="https://www.musicstack.com/faq/">Help</a>
-                        </li>
-                        <li>
-                            <a href="https://www.musicstack.com/contact/">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div><!-- /.row -->
-
-        <div class="row">
-            <div class="col-12">
-                <div class="footer-social-container">
-                    <ul class="footer-links footer-social-links d-flex justify-content-center">
-                        <li>
-                            <a href="https://www.facebook.com/musicstack"><svg version='1.1'
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink='http://www.w3.org/1999/xlink'
-                                    width="45.087" height="45.087" viewBox="0 0 45.087 45.087">
-                                    <circle fill="#3b5998" class="a" cx="22.543" cy="22.543" r="22.543"
-                                        transform="translate(0 0)" />
-                                    <path fill="#fff" class="b"
-                                        d="M50.828,36.443H46.805V51.18H40.711V36.443h-2.9V31.264h2.9V27.913c0-2.4,1.138-6.15,6.149-6.15l4.514.019v5.027H48.1a1.241,1.241,0,0,0-1.293,1.412v3.048H51.36Z"
-                                        transform="translate(-22.617 -13.017)" />
-                                </svg></a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/musicstack" class="instagram-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="45.248" height="45.248"
-                                    viewBox="0 0 45.248 45.248">
-                                    <defs>
-                                        <style>
-                                            .instagram-gradient {
-                                                fill: url(#a);
-                                            }
-                                        </style>
-                                        <linearGradient id="a" x1="1.082" y1="-0.174" x2="-0.26" y2="1.425"
-                                            gradientUnits="objectBoundingBox">
-                                            <stop offset="0" stop-color="#e09b3d" />
-                                            <stop offset="0.293" stop-color="#c74c4d" />
-                                            <stop offset="0.6" stop-color="#c21975" />
-                                            <stop offset="1" stop-color="#7024c4" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path class="instagram-gradient"
-                                        d="M41.149,23.88H27.663a3.908,3.908,0,0,0-3.9,3.9V41.27a3.909,3.909,0,0,0,3.9,3.9H41.149a3.909,3.909,0,0,0,3.9-3.9V27.784A3.908,3.908,0,0,0,41.149,23.88ZM34.406,41.537a7.01,7.01,0,1,1,7.01-7.01A7.018,7.018,0,0,1,34.406,41.537Zm7.236-12.571A1.659,1.659,0,1,1,43.3,27.308,1.661,1.661,0,0,1,41.641,28.966Z"
-                                        transform="translate(-11.782 -11.842)" />
-                                    <path class="instagram-gradient"
-                                        d="M40.9,36.971a4.048,4.048,0,1,0,4.048,4.047A4.053,4.053,0,0,0,40.9,36.971Z"
-                                        transform="translate(-18.273 -18.333)" />
-                                    <path class="instagram-gradient"
-                                        d="M22.624,0A22.624,22.624,0,1,0,45.248,22.624,22.625,22.625,0,0,0,22.624,0ZM36.233,29.428a6.873,6.873,0,0,1-6.866,6.866H15.881a6.874,6.874,0,0,1-6.866-6.866V15.942a6.874,6.874,0,0,1,6.866-6.866H29.367a6.874,6.874,0,0,1,6.866,6.866Z" />
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.twitter.com/musicstack">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="44.965" height="44.965"
-                                    viewBox="0 0 44.965 44.965">
-                                    <g transform="translate(-0.001)">
-                                        <circle fill="#55acee" class="a" cx="22.482" cy="22.482" r="22.482"
-                                            transform="translate(0.001 0)" />
-                                        <g transform="translate(10.061 13.637)">
-                                            <path fill="#fff" class="b"
-                                                d="M51.3,36.548a10.722,10.722,0,0,1-3.087.845,5.389,5.389,0,0,0,2.363-2.973,10.758,10.758,0,0,1-3.413,1.3A5.378,5.378,0,0,0,38,40.627a15.255,15.255,0,0,1-11.077-5.616,5.38,5.38,0,0,0,1.663,7.175,5.336,5.336,0,0,1-2.434-.673c0,.023,0,.046,0,.068a5.377,5.377,0,0,0,4.311,5.269,5.395,5.395,0,0,1-2.427.093,5.38,5.38,0,0,0,5.02,3.732A10.848,10.848,0,0,1,25.1,52.9,15.283,15.283,0,0,0,48.63,40.024c0-.233-.005-.465-.016-.695A10.9,10.9,0,0,0,51.3,36.548Z"
-                                                transform="translate(-25.103 -34.028)" />
-                                        </g>
-                                    </g>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.pinterest.com/musicstack">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="44.965" height="44.965"
-                                    viewBox="0 0 44.965 44.965">
-                                    <path fill="#c8232c" class="a"
-                                        d="M22.482,0A22.482,22.482,0,1,1,0,22.483,22.483,22.483,0,0,1,22.482,0Z" />
-                                    <path fill="#fff" class="b"
-                                        d="M84.79,63.781c-7.922,0-11.914,5.5-11.914,10.085,0,2.777,1.085,5.247,3.415,6.167a.577.577,0,0,0,.835-.4l.34-1.3a.766.766,0,0,0-.239-.9,4.554,4.554,0,0,1-1.1-3.166c0-4.079,3.152-7.731,8.208-7.731,4.478,0,6.937,2.649,6.937,6.186,0,4.654-2.127,8.583-5.286,8.583a2.523,2.523,0,0,1-2.63-3.111c.5-2.043,1.473-4.251,1.473-5.727a2.19,2.19,0,0,0-2.25-2.424c-1.783,0-3.215,1.786-3.215,4.179a6.037,6.037,0,0,0,.533,2.555l-2.146,8.8a17.573,17.573,0,0,0-.049,6.134.225.225,0,0,0,.4.093,17.112,17.112,0,0,0,3.01-5.285c.205-.718,1.173-4.438,1.173-4.438a4.819,4.819,0,0,0,4.072,2.014c5.358,0,8.994-4.731,8.994-11.063C95.344,68.241,91.157,63.781,84.79,63.781Z"
-                                        transform="translate(-61.628 -53.936)" />
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-copyright-container">
-                    <h5 class="footer-copyright">&copy; <span id="current-year">2021</span> MusicStack, LLC</h5>
-                </div>
-            </div>
-        </div>
-    </div><!-- /.container -->
-
-</footer><!-- /footer -->
+    ${require("./footer.html")}
 
     <!-- <div class="cookie-banner hide-banner">
         <div class="container-fluid container-main">
@@ -1401,7 +788,7 @@
     </div>
 
     <div id="websiteLoader" class="loader-container">
-        <img class="img-fluid img-logo-loader" src="https://www.musicstack.com/dist/imgs/vinyl-record.13a864b8904674651babda9a40a115cc.svg" alt="Logo">
+        <img class="img-fluid img-logo-loader" src="../img/icons/vinyl-record.svg" alt="Logo">
     </div>
 
     <script>
@@ -1423,6 +810,6 @@
 
     </script>
     <!-- </div> -->
-<script type="text/javascript" src="https://www.musicstack.com/dist/vendor.303613255fd959e1df33.bundle.js"></script><script type="text/javascript" src="https://www.musicstack.com/dist/index.06cb70b9e66f21541783.bundle.js"></script></body>
+</body>
 
 </html>

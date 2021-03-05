@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" class="site-main">
+
+<head>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Buy Rare Vinyl Records, LPs and CDs">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <!--start-replace #google_site_tag#-->
+    <!--stop-replace-->
+
+    <!--start-replace #meta#-->
+    <!--stop-replace-->
+
+    <!--start-replace #canonical#-->
+    <!--stop-replace-->
+
+    <title>MusicStack</title>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--start-replace #lazyload#-->
+    <!--stop-replace-->
+
+    <!--start-replace #shieldsquare#-->
+    <!--stop-replace-->
+</head>
+
+<body id="indexBody">
+
+    <!-- <div class="no-scroll-body-wrapper"> -->
+
+    <div class="form-advanced-overlay"></div>
+
+    ${require('./header.html')}
+
+
+    <!-- SECTION hero-->
+    <section id="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-search-container-wrapper">
+                        <div id="formSearchContainer" class="form-search-container form-search-sticky show-bg">
+
+                            <form id="formSearch" class="form-inline form-search"
+                                action="https://www.musicstack.com/show1.cgi" method="get" autocomplete="off">
+
+                                <div class="form-search-select-bg"></div>
+
+                                <select id="formSearchSelect" name="search_type"
+                                    class="form-control form-search-select form-search-select-desktop form-sticky">
+
+                                    <option class="artist" value="artist">Artist</option>
+                                    <option class="title" value="title">Title</option>
+                                    <option class="label" value="label">Label</option>
+                                    <option class="catnum" value="release_id">Cat Num</option>
+                                    <option class="barcode" value="barcode">Barcode</option>
+                                    <option class="genre" value="genre">Genre</option>
+                                    <option class="seller" value="seller">Seller</option>
+                                    <option class="d-block d-lg-none advanced" value="advanced" id="btnOpenForm3">
+                                    </option>
+                                </select>
+                                <input id="formSearchInput" class="form-control form-search-input form-sticky"
+                                    type="text" name="find" placeholder="">
+                                <input id="find_focus" type="hidden" name="find_focus" value="0">
+                                <!-- <input class="form-control form-search-reset" type="reset" name="Reset" value="x" placeholder=""> -->
+                                <i class="clearable__clear form-search-reset">&times;</i>
+                                <button id="formSearchBtn" class="btn btn-search form-sticky" type="submit"
+                                    name="button" value="Search">
+                                    <!-- <img class="img-fluid img-search" src='../img/icons/search.svg' alt='Search Icon'> -->
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="26.271" height="27.211" viewBox="0 0 26.271 27.211"><path class="a" d="M26.856,24.785l-6.476-6.736a10.982,10.982,0,1,0-8.409,3.924,10.869,10.869,0,0,0,6.294-1.988l6.525,6.787a1.433,1.433,0,1,0,2.065-1.987ZM11.97,2.866a8.12,8.12,0,1,1-8.12,8.12A8.13,8.13,0,0,1,11.97,2.866Z" transform="translate(-0.984 0)"/></!-->
+                                </button>
+                            </form>
+                            <!-- <button id="btnOpenForm" class="btn advanced-search-link d-block d-lg-none">Advanced <span class="no-wrap">search 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18.108" height="15.04" viewBox="0 0 18.108 15.04"><g transform="translate(0 -41.674)"><g transform="translate(0 41.674)"><path class="a" d="M1.018,47.774l-.028.006H13.106L9.3,43.963a1,1,0,0,1,0-1.406l.593-.593a.991.991,0,0,1,1.4,0l6.529,6.529a1,1,0,0,1,0,1.4l-6.529,6.529a.992.992,0,0,1-1.4,0L9.3,55.832a.981.981,0,0,1-.289-.7.951.951,0,0,1,.289-.686l3.852-3.839H1a1.026,1.026,0,0,1-1-1.016v-.839A1.006,1.006,0,0,1,1.018,47.774Z" transform="translate(0 -41.674)"/></g></g></svg>
+                                </span>
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+
+        <div class="container-fluid container-main">
+            <div class="artist-info-container">
+
+                <div class="row">
+                    <!-- artist text wrapping artist img -->
+                    <div class="col-12" #left_padding#>
+
+                        <h1 class="artist-info-title order-1">
+                            <!--start-replace #artist_title#-->
+                            U2 Vinyl-Records and CDs
+                            <!--stop-replace-->
+                        </h1>
+
+                        <!-- <p class="artist-info-text">
+                        <input type="checkbox" class="read-more-state" id="post-1">
+                        Due to their uncanny ability to change with the times, U2 have managed to stay alive as the majority of their '80s counterparts have disappeared. The evolution of their music is ongoing, and each new record seems to bring a never-before encountered style to the band's oeuvre.<span class="read-more-target"> From the jangly Post-Punk of their earliest records to the genre-exploding extravaganza that marked their hyper-rhythmic re-entry into the post-Nirvana world, the quartet has provided an utterly original sound and a rarely matched depth of feeling every time. The band continues to produce emotionally stunning music, injecting everything from countrified pedal steel, gurgling Techno sounds and processed hip-hop beats into their particular brand of Euro-rock.In 2000, U2 showed a spectacular return to form with the release of All That You Can't Leave Behind. Singles such as "It's a Beautiful Day," "Stuck In A Moment...," "Walk On" and "Elevation" helped redefine the band's sound once again, with All That You Can't Leave Behind going platinum three times over. Original players in the post-rock sound, U2 came full circle in 2004, when they released How To Dismantle An Atomic Bomb. Ironically, the album was released in the midst of a trendy resurgence of post-punk, cementing U2's place as pioneers of the sound. Fittingly, U2 was inducted into the Rock and Roll Hall of Fame in 2005.</span>
+                        <label for="post-1" class="read-more-trigger"></label>
+                    </p> -->
+
+                        <!--start-replace #artist_description#-->
+                        <p class="artist-info-text" id="artistInfoText">
+                            Due to their uncanny ability to change with the times, U2 have managed to stay alive as the
+                            majority of their '80s counterparts have disappeared. The evolution of their music is
+                            ongoing, and each new record seems to bring a never-before encountered style to the band's
+                            oeuvre. From the jangly Post-Punk of their earliest records to the genre-exploding
+                            extravaganza that marked their hyper-rhythmic re-entry into the post-Nirvana world, the
+                            quartet has provided an utterly original sound and a rarely matched depth of feeling every
+                            time. The band contin ues to produce emotionally stunning music, injecting everything from
+                            countrified pedal steel, gurgling Techno sounds and processed hip-hop beats into their
+                            particular brnand of Euro-rock.In 2000, U2 s howed a spectacula r return to form with the
+                            release of All That You Can't Leave Behind. Singles such as "It's a Beautiful Day," "Stuck
+                            In A Moment...," "Walk O n" and "El evation" helped redefine the band's sound once again,
+                            with
+                            All That You Can't Leave Behind going platinum three times over. Original players in the
+                            post-rock sound, U2 came k full cir cle in 2004, when they released How To Dismantle An
+                            Atomic
+                            Bomb. Ironically, the album walkkksn relea sed in the midst of a trendy resurgence of
+                            post-punk,
+                            cementing U2's place as pioneers of the sound. Fittingly, U2 was inducted into the Rock and
+                            Roll Hall of Fame in 2005.
+                        </p>
+                        <!--stop-replace-->
+                    </div>
+                </div><!-- /.row -->
+
+                <!--<div class="row">
+                    <div class="col-12" #left_padding1#>
+                    </div>
+                </div>
+            -->
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section><!-- /#hero -->
+
+    <!-- SECTION main -->
+    <section id="main">
+        <div class="container-fluid container-main">
+            <div class="row flex-wrapper">
+                <div class="flex-container flex-container-1">
+                    <div class="form-advanced-search-container">
+                        <div class="btn-x-container d-block d-lg-none">
+                            <button id="btnCloseForm" class="btn btn-x" type="button" name="button">
+                                <div class="icon close"></div>
+                            </button>
+                        </div>
+                        <div class="listed-title-container">
+                            <h3 class="listed-title">Advanced search</h3>
+                        </div>
+                        <form id="formAdvancedSearch" class="form-advanced-search form-advanced-search-labels"
+                            action="https://www.musicstack.com/show1.cgi" method="get">
+
+                            <div class="form-group">
+                                <label class="label-small" for="selectFormat">Format</label>
+                                <select class="form-control" name="media" id="selectFormat">
+                                    <option value="all" selected>All Formats
+                                    <option value="all">---------------------
+                                    <option value="248">Vinyl Only
+                                    <option value="250">CDs Only
+                                    <option value="all">---------------------
+                                    <option value="243">Vinyl - LP
+                                    <option value="247">Vinyl - 45 & 7&quot;
+                                    <option value="235">Vinyl - EP
+                                    <option value="246">Vinyl - 10&quot;
+                                    <option value="245">Vinyl - 12&quot;
+                                    <option value="244">Vinyl - 78
+                                    <option value="all">---------------------
+                                    <option value="249">CD Single
+                                    <option value="241">Cassette
+                                    <option value="240">Video & DVD
+                                    <option value="239">Book
+                                    <option value="238">Clothing
+                                    <option value="237">Memorabilia & Misc.
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label-small" for="inputArtist">Artist</label>
+                                <input class="form-control" type="text" name="find" id="inputArtist" placeholder=""
+                                    value="#$find_orig#">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputTitle">Title</label>
+                                <input class="form-control" type="text" name="t" id="inputTitle" placeholder=""
+                                    value="#$t_orig#">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputLabel">Label</label>
+                                <input class="form-control" type="text" name="label" id="inputLabel" placeholder=""
+                                    value='#$label_orig#'>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputCatNum">Cat Num</label>
+                                <input class="form-control" type="text" name="release_id" id="inputCatNum"
+                                    placeholder="" value="#$release_id_orig#">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label-small" for="inputCountry">Country</label>
+                                <input class="form-control" type="text" name="country" id="inputCountry" placeholder=""
+                                    value="#$country_orig#">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label-small" for="inputBarcode">Barcode</label>
+                                <input class="form-control" type="text" name="barcode" id="inputBarcode" placeholder=""
+                                    value="#$barcode_orig#">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputGenre">Genre</label>
+                                <input class="form-control" type="text" name="genre" id="inputGenre" placeholder=""
+                                    value="#$genre_orig#">
+                            </div>
+
+                            <label>Seller Filter</label>
+                            <div class="form-group">
+                                <label class="label-small" for="inputSellersCountry">Location</label>
+                                <select class="form-control" name="seller_country" id="inputSellersCountry">
+                                    <option value="all">All Countries
+                                    <option value="all">-----------------------------
+                                    <option value="Europe">Europe
+                                    <option value="North America">North America
+                                    <option value="South America">South America
+                                    <option value="Oceania">Oceania
+                                    <option value="Asia">Asia
+                                    <option value="Africa">Africa
+                                    <option value="all">-----------------------------
+                                    <option value="US">United States
+                                    <option value="GB">United Kingdom
+                                    <option value="AU">Australia
+                                    <option value="CA">Canada
+                                    <option value="FR">France
+                                    <option value="DE">Germany
+                                    <option value="IT">Italy
+                                    <option value="JP">Japan
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputSellersRating">Rating</label>
+                                <select class="form-control" name="rate" id="inputSellersRating">
+                                    <option value="all">All Ratings</option>
+                                    <option value="1">1 star or better</option>
+                                    <option value="2">2 star or better</option>
+                                    <option value="3">3 star or better</option>
+                                    <option value="4">4 star or better</option>
+                                    <option value="5">5 star only</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-small" for="inputSellerName">Name</label>
+                                <input type="text" class="form-control" name="seller_search" id="inputSellerName"
+                                    placeholder="" value="#$seller_search#">
+                            </div>
+
+                            <label>Price</label>
+                            <div class="form-group price-container">
+                                <div class="price-container d-flex justify-content-space-between">
+                                    <input class="form-control price" id="priceInputMin" type="text" name="price_min"
+                                        placeholder="" aria-label="Minimum price" value="">
+                                    <span class="price-to mr-auto ml-auto">to</span>
+                                    <input class="form-control price" id="priceInputMax" type="text" name="price_max"
+                                        placeholder="" aria-label="Maximum price" value="">
+                                </div>
+                            </div>
+                            <input type=hidden name=search_button_pressed value=1>
+                            <button class="btn btn-advanced-search" type="submit" name="search" value="Search"
+                                alt="Search">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="flex-container flex-container-2">
+
+                </div><!-- /.flex-container -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#main -->
+
+
+    ${require('./footer.html')}
+
+
+    <div class="cookie-banner hide-banner">
+        <div class="container-fluid container-main">
+            <div class="row">
+                <div class="col-12 col-md-9">
+                    <div class="cookie-banner-inner">
+                        <p class="cookie-banner-message">We use cookies on this website to ensure the best possible user
+                            experience. By clicking 'I agree' or continue to use this website by navigating to another
+                            page you are agreeing to our use of cookies. Find out more in our <a
+                                href="https://www.musicstack.com/terms/">Terms of service</a> and <a
+                                href="https://www.musicstack.com/privacy/">Privacy policy</a></p>
+
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="cookie-banner-inner">
+                        <div class="cookie-btn-container">
+                            <button class="btn cookie-banner-btn" type="button" name="button">I agree</button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="websiteLoader" class="loader-container">
+        <img class="img-fluid img-logo-loader" src="../img/icons/vinyl-record.svg" alt="Logo">
+    </div>
+
+    <script>
+        // hide loader
+        var loader = document.getElementById("websiteLoader");
+
+        function hideLoader() {
+            setTimeout(function () {
+                loader.classList.add("hide-loader");
+            }, 2000);
+
+            setTimeout(function () {
+                loader.style.display = "none";
+            }, 2500);
+            console.log("window loaded!");
+        }
+
+        hideLoader();
+
+    </script>
+    <!-- </div> -->
+</body>
+
+</html>

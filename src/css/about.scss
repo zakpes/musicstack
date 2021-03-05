@@ -1,0 +1,61 @@
+// @import "~lightgallery/dist/css/lightgallery.min.css";
+@import "./results-general.scss";
+@import "./results-responsive.scss";
+
+#main {
+
+       // .container-main {
+       //     width: 96%;
+       // }
+   
+       .form-advanced-search-container {
+           position: fixed;
+           display: block;
+           top: 0;
+           left: 0;
+           background-color: #fff;
+           z-index: 9999;
+           margin-top: 0;
+           margin-left: 0;
+           padding: 16px 26px;
+           width: 240px;
+           transform: translateX(-100%);
+           transition: transform 300ms;
+           overflow-x: hidden;
+           overflow-y: auto;
+           height: 100%;
+           border-radius: 0;
+           opacity: 0;
+
+           .btn-advanced-search {
+               margin-bottom: 30px;
+           }
+       }
+
+       .slide-in {
+           transform: translateX(0%);
+       }
+
+       .fade-in {
+           opacity: 1;
+       }
+
+       .flex-wrapper {
+           .flex-container-2 {
+               width: 98%;
+               margin-left: 10px;
+               margin-right: 15px;
+   
+               .listed-title {
+                   margin-left: 10px;
+               }
+   
+               .listed-record-container {
+                   margin-left: 0;
+               }
+           }
+       }
+
+
+   }
+
